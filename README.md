@@ -2,6 +2,9 @@
 ### The mod is an improved version of the Reactive Factions mod. Its purpose is to solve the main problems and inconveniences related to the basic version and content enrichment.
 
 
+[Release on Nexus](https://www.nexusmods.com/x4foundations/mods/746/)
+[Release on Steam](#Todo)
+
 ## Debug info:
 
 ### To debug this mod add these params to the game startup line.
