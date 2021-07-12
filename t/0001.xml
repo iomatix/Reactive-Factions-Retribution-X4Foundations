@@ -60,8 +60,8 @@
 	  <t id="1002">Minimum cost of an asset to take it into account during calculations.</t>
       <t id="1003">Modifiers specify the percentage value of owned Assets.</t>
 	  <t id="1004">Minimum credits value of assets to increase influence to this specific power level.</t>
-	  <t id="1005">Percentage value of the reputation gained applied as penalties to hostile factions in the event.</t>
-	  <t id="1006">Percentage value of the reputation gained applied as bonus reputation to the faction causing the event.</t>
+	  <t id="1005">Percentage value of the reputation gained applied as a penalty to hostile factions in the event.</t>
+	  <t id="1006">Percentage value of the reputation gained applied as a bonus reputation to the faction causing the event.</t>
 
 	  <t id="1020">Cooldown in gaining bonuses to reputation applied to faction causing the event.</t>
 	  <t id="1021">Cooldown in gaining penalties to reputation applied to hostile factions in the event.</t>
