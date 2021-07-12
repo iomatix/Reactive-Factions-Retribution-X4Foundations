@@ -4,7 +4,7 @@
 ## Releases
 ### [Release on Nexus](https://www.nexusmods.com/x4foundations/mods/746/)
 
-### [Release on Steam](#Todo)
+### [Release on Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=2545236840)
 
 
 ## Debug info:
