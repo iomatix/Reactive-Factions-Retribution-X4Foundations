@@ -67,7 +67,7 @@
 						$min = 250Cr, $max = 3000000Cr, $suffix = ' CR',
 						$default = 150000Cr,
 						$mouseOverText = {2005311642,1002} + '\n' + {2005311642,999} + ' ' + '150,000 CR',
-						$onSliderCellChanged = OnSMOSliderChange
+						$onSliderCellChanged = OnSMOSliderChangeCRvalue
 					]" />
 				<!-- Default Asset Modifier -->
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -160,6 +160,18 @@
 						$mouseOverText = {2005311642,1003} + '\n' + {2005311642,999} + ' ' + '65%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
+				<!-- Credits are a part of an Asset checkbox-->
+				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+				<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text={2005311642, 105}]" />
+				<signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox" param="table[
+						$id = 'CheckCreditsValue',
+						$checked = md.ReactiveMain.ReactiveInit.$CheckCreditsValue,
+						$col = 2,
+						$width = 'Helper.standardButtonHeight', $height = 'Helper.standardButtonHeight',
+						$default = true,
+						$mouseOverText = {2005311642,1007} + '\n' + {2005311642,999} + ' ' + 'True',
+						$onClick = OnSMOSCheckboxChange
+					]" />
 				<!-- [Lvl 1] 102-104 -->
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text='']" />
@@ -175,7 +187,7 @@
 						$min = 2500000Cr, $max = 13000000Cr, $suffix = ' CR',
 						$default = 7500000Cr,
 						$mouseOverText = {2005311642,1004} + '\n' + {2005311642,999} + ' ' + '7,500,000CR',
-						$onSliderCellChanged = OnSMOSliderChange
+						$onSliderCellChanged = OnSMOSliderChangeCRvalue
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text={2005311642, 103}]" />
@@ -216,7 +228,7 @@
 						$min = 13000000Cr, $max = 125000000Cr, $suffix = ' CR',
 						$default = 32500000Cr,
 						$mouseOverText = {2005311642,1004} + '\n' + {2005311642,999} + ' ' + '32,500,000CR',
-						$onSliderCellChanged = OnSMOSliderChange
+						$onSliderCellChanged = OnSMOSliderChangeCRvalue
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text={2005311642, 103}]" />
@@ -257,7 +269,7 @@
 						$min = 125000000Cr, $max = 450000000Cr, $suffix = ' CR',
 						$default = 250000000Cr,
 						$mouseOverText = {2005311642,1004} + '\n' + {2005311642,999} + ' ' + '250,000,000 CR',
-						$onSliderCellChanged = OnSMOSliderChange
+						$onSliderCellChanged = OnSMOSliderChangeCRvalue
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text={2005311642, 103}]" />
@@ -298,7 +310,7 @@
 						$min = 450000000Cr, $max = 850000000Cr, $suffix = ' CR',
 						$default = 650000000Cr,
 						$mouseOverText = {2005311642,1004} + '\n' + {2005311642,999} + ' ' + '650,000,000 CR',
-						$onSliderCellChanged = OnSMOSliderChange
+						$onSliderCellChanged = OnSMOSliderChangeCRvalue
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text={2005311642, 103}]" />
@@ -339,7 +351,7 @@
 						$min = 750000000Cr, $max = 1200000000Cr, $suffix = ' CR',
 						$default = 900000000Cr,
 						$mouseOverText = {2005311642,1004} + '\n' + {2005311642,999} + ' ' + '900,000,000 CR',
-						$onSliderCellChanged = OnSMOSliderChange
+						$onSliderCellChanged = OnSMOSliderChangeCRvalue
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text={2005311642, 103}]" />
@@ -380,7 +392,7 @@
 						$min = 1200000000Cr, $max = 2750000000Cr, $suffix = ' CR',
 						$default = 1450000000Cr,
 						$mouseOverText = {2005311642,1004} + '\n' + {2005311642,999} + ' ' + '1,450,000,000 CR',
-						$onSliderCellChanged = OnSMOSliderChange
+						$onSliderCellChanged = OnSMOSliderChangeCRvalue
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text={2005311642, 103}]" />
@@ -421,7 +433,7 @@
 						$min = 2750000000Cr, $max = 7500000000Cr, $suffix = ' CR',
 						$default = 3500000000Cr,
 						$mouseOverText = {2005311642,1004} + '\n' + {2005311642,999} + ' ' + '3,500,000,000 CR',
-						$onSliderCellChanged = OnSMOSliderChange
+						$onSliderCellChanged = OnSMOSliderChangeCRvalue
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text={2005311642, 103}]" />
@@ -462,7 +474,7 @@
 						$min = 7500000000Cr, $max = 35000000000Cr, $suffix = ' CR',
 						$default = 13000000000Cr,
 						$mouseOverText = {2005311642,1004} + '\n' + {2005311642,999} + ' ' + '13,000,000,000 CR',
-						$onSliderCellChanged = OnSMOSliderChange
+						$onSliderCellChanged = OnSMOSliderChangeCRvalue
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text={2005311642, 103}]" />
@@ -566,6 +578,19 @@
 				<!-- <debug_text text="event.param.$id + ' to: ' + @event.param.$value + ' or ' + @event.param.$checked" /> -->
 				<debug_text text="event.param.$id + ' pre: ' + md.ReactiveMain.ReactiveInit.{'$' + event.param.$id}" />
 				<set_value name="md.ReactiveMain.ReactiveInit.{'$' + event.param.$id}" exact="event.param.$value" />
+				<debug_text text="event.param.$id + ' post: ' + md.ReactiveMain.ReactiveInit.{'$' + event.param.$id}" />
+			</actions>
+		</cue>
+		<!-- special fix for CR values cuz Mod APIs is handling Cr values different than vanilla. -->
+		<cue name="OnSMOSliderChangeCRvalue" instantiate="true">
+			<conditions>
+				<event_cue_signalled />
+			</conditions>
+			<actions>
+				<!-- <debug_text text="event.param.$id + ' to: ' + @event.param.$value + ' or ' + @event.param.$checked" /> -->
+				<debug_text text="event.param.$id + ' pre: ' + md.ReactiveMain.ReactiveInit.{'$' + event.param.$id}" />
+				<set_value name="md.ReactiveMain.ReactiveInit.{'$' + event.param.$id}" exact="event.param.$value*1Cr" />
+				<!-- the fix is *1Cr (it should append 00 to the value) -->
 				<debug_text text="event.param.$id + ' post: ' + md.ReactiveMain.ReactiveInit.{'$' + event.param.$id}" />
 			</actions>
 		</cue>

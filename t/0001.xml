@@ -2,7 +2,7 @@
 <language>
 
 <page id="2005311642" title="Reactive Factions Retribution" descr="Texts" voice="no">
-	  <t id="1">Reactive Faction Retribution mod ver. 2.0 is installed</t>
+	  <t id="1">Reactive Faction Retribution mod is installed</t>
       <!-- Language config, feel free to edit it as you will -->
 	  <t id="2">Common Privateer</t>
       <t id="3">You are perceived as a common privateer. There are infinitely many beings like you in the galaxy. It doesn't even matter who you were in the past or what you are planning now. With a clear conscience, you are on the verge of bankruptcy on a galactic scale. Your actions don't matter on the intergalactic scene.</t>
@@ -39,6 +39,7 @@
 	  <t id="102">Assets Threshold</t>
 	  <t id="103">Penalty Coefficient</t>
 	  <t id="104">Bonus Coefficient</t>
+	  <t id="105">Consider Credits</t>
 	
 	  <t id="199">Min Price of Asset</t>
 	  <t id="200">Default Assets Cost Modifier</t>
@@ -62,10 +63,12 @@
 	  <t id="1004">Minimum credits value of assets to increase influence to this specific power level.</t>
 	  <t id="1005">Percentage value of the reputation gained applied as a penalty to hostile factions in the event.</t>
 	  <t id="1006">Percentage value of the reputation gained applied as a bonus reputation to the faction causing the event.</t>
+	  <t id="1007">The algorithm will take into account amount of credits held by the player to the final calculation.</t>
 
 	  <t id="1020">Cooldown in gaining bonuses to reputation applied to faction causing the event.</t>
 	  <t id="1021">Cooldown in gaining penalties to reputation applied to hostile factions in the event.</t>
 	  <t id="1022">RFR event cooldown. Slightly increases hardware efficiency but reduces overall responsiveness.</t>
+
 
 
 </page>	  

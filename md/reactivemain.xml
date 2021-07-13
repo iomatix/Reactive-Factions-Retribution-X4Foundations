@@ -23,6 +23,7 @@
              (7) 3,500,000,000 (8) 13,000,000,000 -->
         <set_value name="$SCAlock" exact="false" />
         <set_value name="$CheckHostile" exact="true" />
+        <set_value name="$CheckCreditsValue" exact="true" />
         <set_value name="$Power1aprox" exact="7500000Cr" />
         <set_value name="$Power1percent" exact="7" />
         <set_value name="$Power1bonuspercent" exact="10" />
@@ -107,7 +108,7 @@
       <cues>
         <!-- checkinterval -->
         <!-- DEBUG: 1min, DEFAULT: 20min IMMERSIVE: 25-35min -->
-        <cue name="ReactivePlayerPowerUpdate" instantiate="true" checkinterval="25min" checktime="player.age + 60s">
+        <cue name="ReactivePlayerPowerUpdate" instantiate="true" checkinterval="1min" checktime="player.age + 60s">
           <actions>
 
             <set_value name="$PlayerTotalAssetsCost" exact="0Cr" />
@@ -126,7 +127,7 @@
             <!-- calculating total assets cost -->
             <find_object name="$PlayerAssetsList" owner="faction.player" space="player.galaxy" multiple="true" recursive="true" />
             <do_for_each name="$Asset" in="$PlayerAssetsList">
-              <do_if value="$Asset.value ge $MinAssetCost/1Cr">
+              <do_if value="$Asset.value ge $MinAssetCost">
                 <do_if value="$Asset.primarypurpose == purpose.trade">
                   <set_value name="$PlayerTotalAssetsCost" exact="($Asset.value * $TradingAssetModifier / 100)/1Cr" operation="add" comment="round" />
                   <debug_to_file name="'ReactiveFactionsCalcAssets'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionRetribution LOG] ' + player.age + '; added ' + $Asset.macro + ' of type ' + $Asset.primarypurpose + ' with actual cost of ' + ($Asset.value)/1Cr + ' and weighted cost of ' + ($Asset.value * $TradingAssetModifier / 100)/1Cr + ' total cost now ' + $PlayerTotalAssetsCost" output="$isDebug" append="true" />
@@ -164,8 +165,9 @@
                 </do_else>
               </do_if>
             </do_for_each>
-
-            <set_value name="$PlayerTotalAssetsCost" exact="(player.money)/1Cr" operation="add" comment="round" />
+            <do_if value="$CheckCreditsValue == true">
+              <set_value name="$PlayerTotalAssetsCost" exact="(player.money)/1Cr" operation="add" comment="round" />
+            </do_if>
             <!-- Assigning Player Power Level -->
             <set_value name="$OldPlayerPower" exact="$PlayerPower" />
             <do_if value="$PlayerTotalAssetsCost lt ($Power1aprox/1Cr)">
@@ -317,7 +319,7 @@
                 <!-- Set value -->
                 <set_faction_relation faction="$FactionMain" otherfaction="faction.player" value="[($FactionMain.relationto.{faction.player} + $RepBonus), 1].min" reason="null" />
                 <set_faction_relation faction="faction.player" otherfaction="$FactionMain" value="$FactionMain.relationto.{faction.player}" />
-                <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionRetribution LOG] ' + player.age + '; (BONUS) rep was changed with ' + $FactionMain + ' for: ' + $RepBonus + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower" output="$isDebug" append="true" />    
+                <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionRetribution LOG] ' + player.age + '; (BONUS) rep was changed with ' + $FactionMain + ' for: ' + $RepBonus + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower" output="$isDebug" append="true" />
               </do_else>
               <remove_value name="$RepBonus" />
             </do_if>
