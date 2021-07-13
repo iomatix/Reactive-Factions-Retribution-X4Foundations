@@ -108,7 +108,7 @@
       <cues>
         <!-- checkinterval -->
         <!-- DEBUG: 1min, DEFAULT: 20min IMMERSIVE: 25-35min -->
-        <cue name="ReactivePlayerPowerUpdate" instantiate="true" checkinterval="1min" checktime="player.age + 60s">
+        <cue name="ReactivePlayerPowerUpdate" instantiate="true" checkinterval="25min" checktime="player.age + 60s">
           <actions>
 
             <set_value name="$PlayerTotalAssetsCost" exact="0Cr" />
@@ -174,7 +174,7 @@
               <set_value name="$PlayerPower" exact="0" />
               <do_if value="$PlayerPower != $OldPlayerPower">
                 <show_help duration="30s" custom="$PlayerPowerFluff0 + '\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
-                <write_to_logbook category="tips" title="$PlayerPowerName0" text="$PlayerPowerFluff0 + '\n\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
+                <write_to_logbook category="general" title="$PlayerPowerName0" text="$PlayerPowerFluff0 + '\n\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
               </do_if>
               <debug_to_file name="'ReactiveFactions'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionRetribution LOG] ' + player.age + '; player assets cost is ' + '%,s'.[$PlayerTotalAssetsCost] + ' (next step is '+ $Power1aprox/1Cr + ') power level of ' + $PlayerPower" output="$isDebug" append="true" />
             </do_if>
@@ -182,7 +182,7 @@
               <set_value name="$PlayerPower" exact="1" />
               <do_if value="$PlayerPower != $OldPlayerPower">
                 <show_help duration="30s" custom="$PlayerPowerFluff1 + '\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
-                <write_to_logbook category="tips" title="$PlayerPowerName1" text="$PlayerPowerFluff1  + '\n\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
+                <write_to_logbook category="general" title="$PlayerPowerName1" text="$PlayerPowerFluff1  + '\n\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
               </do_if>
               <debug_to_file name="'ReactiveFactions'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionRetribution LOG] ' + player.age + '; player assets cost is ' + '%,s'.[$PlayerTotalAssetsCost] + ' (next step is '+ $Power2aprox/1Cr + ') power level of ' + $PlayerPower" output="$isDebug" append="true" />
             </do_elseif>
@@ -190,7 +190,7 @@
               <set_value name="$PlayerPower" exact="2" />
               <do_if value="$PlayerPower != $OldPlayerPower">
                 <show_help duration="30s" custom="$PlayerPowerFluff2 + '\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
-                <write_to_logbook category="tips" title="$PlayerPowerName2" text="$PlayerPowerFluff2  + '\n\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
+                <write_to_logbook category="general" title="$PlayerPowerName2" text="$PlayerPowerFluff2  + '\n\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
               </do_if>
               <debug_to_file name="'ReactiveFactions'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionRetribution LOG] ' + player.age + '; player assets cost is ' + '%,s'.[$PlayerTotalAssetsCost] + ' (next step is '+ $Power3aprox/1Cr + ') power level of ' + $PlayerPower" output="$isDebug" append="true" />
             </do_elseif>
@@ -198,7 +198,7 @@
               <set_value name="$PlayerPower" exact="3" />
               <do_if value="$PlayerPower != $OldPlayerPower">
                 <show_help duration="30s" custom="$PlayerPowerFluff3 + '\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
-                <write_to_logbook category="tips" title="$PlayerPowerName3" text="$PlayerPowerFluff3  + '\n\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
+                <write_to_logbook category="general" title="$PlayerPowerName3" text="$PlayerPowerFluff3  + '\n\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
               </do_if>
               <debug_to_file name="'ReactiveFactions'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionRetribution LOG] ' + player.age + '; player assets cost is ' + '%,s'.[$PlayerTotalAssetsCost] + ' (next step is '+ $Power4aprox/1Cr + ') power level of ' + $PlayerPower" output="$isDebug" append="true" />
             </do_elseif>
@@ -206,7 +206,7 @@
               <set_value name="$PlayerPower" exact="4" />
               <do_if value="$PlayerPower != $OldPlayerPower">
                 <show_help duration="30s" custom="$PlayerPowerFluff4 + '\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
-                <write_to_logbook category="tips" title="$PlayerPowerName4" text="$PlayerPowerFluff4  + '\n\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
+                <write_to_logbook category="general" title="$PlayerPowerName4" text="$PlayerPowerFluff4  + '\n\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
               </do_if>
               <debug_to_file name="'ReactiveFactions'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionRetribution LOG] ' + player.age + '; player assets cost is ' + '%,s'.[$PlayerTotalAssetsCost] + ' (next step is '+ $Power5aprox/1Cr + ') power level of ' + $PlayerPower" output="$isDebug" append="true" />
             </do_elseif>
@@ -214,7 +214,7 @@
               <set_value name="$PlayerPower" exact="5" />
               <do_if value="$PlayerPower != $OldPlayerPower">
                 <show_help duration="30s" custom="$PlayerPowerFluff5 + '\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
-                <write_to_logbook category="tips" title="$PlayerPowerName5" text="$PlayerPowerFluff5  + '\n\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
+                <write_to_logbook category="general" title="$PlayerPowerName5" text="$PlayerPowerFluff5  + '\n\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
               </do_if>
               <debug_to_file name="'ReactiveFactions'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionRetribution LOG] ' + player.age + '; player assets cost is ' + '%,s'.[$PlayerTotalAssetsCost] + ' (next step is '+ $Power6aprox/1Cr + ') power level of ' + $PlayerPower" output="$isDebug" append="true" />
             </do_elseif>
@@ -222,7 +222,7 @@
               <set_value name="$PlayerPower" exact="6" />
               <do_if value="$PlayerPower != $OldPlayerPower">
                 <show_help duration="30s" custom="$PlayerPowerFluff6 + '\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
-                <write_to_logbook category="tips" title="$PlayerPowerName6" text="$PlayerPowerFluff6  + '\n\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
+                <write_to_logbook category="general" title="$PlayerPowerName6" text="$PlayerPowerFluff6  + '\n\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
               </do_if>
               <debug_to_file name="'ReactiveFactions'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionRetribution LOG] ' + player.age + '; player assets cost is ' + '%,s'.[$PlayerTotalAssetsCost] + ' (next step is '+ $Power7aprox/1Cr + ') power level of ' + $PlayerPower" output="$isDebug" append="true" />
             </do_elseif>
@@ -230,7 +230,7 @@
               <set_value name="$PlayerPower" exact="7" />
               <do_if value="$PlayerPower != $OldPlayerPower">
                 <show_help duration="30s" custom="$PlayerPowerFluff7 + '\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
-                <write_to_logbook category="tips" title="$PlayerPowerName7" text="$PlayerPowerFluff7  + '\n\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
+                <write_to_logbook category="general" title="$PlayerPowerName7" text="$PlayerPowerFluff7  + '\n\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
               </do_if>
               <debug_to_file name="'ReactiveFactions'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionRetribution LOG] ' + player.age + '; player assets cost is ' + '%,s'.[$PlayerTotalAssetsCost] + ' (next step is '+ $Power8aprox/1Cr + ') power level of ' + $PlayerPower" output="$isDebug" append="true" />
             </do_elseif>
@@ -238,7 +238,7 @@
               <set_value name="$PlayerPower" exact="8" />
               <do_if value="$PlayerPower != $OldPlayerPower">
                 <show_help duration="30s" custom="$PlayerPowerFluff8 + '\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
-                <write_to_logbook category="tips" title="$PlayerPowerName8" text="$PlayerPowerFluff8  + '\n\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
+                <write_to_logbook category="general" title="$PlayerPowerName8" text="$PlayerPowerFluff8  + '\n\n' + {2005311642,30} + ' ' + '%,s'.[$PlayerTotalAssetsCost] +'CR'" />
               </do_if>
               <debug_to_file name="'ReactiveFactions'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionRetribution LOG] ' + player.age + '; player assets cost is ' + '%,s'.[$PlayerTotalAssetsCost] + ' (Its max step)' + ' power level of ' + $PlayerPower" output="$isDebug" append="true" />
             </do_else>
