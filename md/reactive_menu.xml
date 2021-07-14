@@ -16,7 +16,7 @@
 				<signal_cue_instantly cue="md.Simple_Menu_API.Register_Options_Menu" param="table[
 						$id = 'reactive_factions_menu',
 						$columns = 2,
-						$title = {2005311642, 99},
+						$title = '\033C'+{2005311642, 79},
 						$onOpen = BuildOptionsMenu
 					]" />
 				<reset_cue cue="this" />
@@ -39,7 +39,7 @@
 						$col = 2,
 						$width = 'Helper.standardButtonHeight', $height = 'Helper.standardButtonHeight',
 						$default = false,
-						$mouseOverText = {2005311642,999} + '\n' + {2005311642,899} + ' ' + ' False',
+						$mouseOverText = {2005311642,999} + '\n' + {2005311642,899} + ' ' + 'False',
 						$onClick = OnSMOSCheckboxChange
 					]" />
 				<!-- SCA Lock checkbox-->
@@ -51,7 +51,7 @@
 						$col = 2,
 						$width = 'Helper.standardButtonHeight', $height = 'Helper.standardButtonHeight',
 						$default = false,
-						$mouseOverText = {2005311642,1000} + '\n' + {2005311642,899} + ' ' + ' False',
+						$mouseOverText = {2005311642,1000} + '\n' + {2005311642,899} + ' ' + 'False',
 						$onClick = OnSMOSCheckboxChange
 					]" />
 				<!-- Hostile Check checkbox-->
@@ -63,7 +63,7 @@
 						$col = 2,
 						$width = 'Helper.standardButtonHeight', $height = 'Helper.standardButtonHeight',
 						$default = true,
-						$mouseOverText = {2005311642,1001} + '\n' + {2005311642,899} + ' ' + ' True',
+						$mouseOverText = {2005311642,1001} + '\n' + {2005311642,899} + ' ' + 'True',
 						$onClick = OnSMOSCheckboxChange
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -78,7 +78,7 @@
 						$text = table[$text=''],
 						$min = 250Cr, $max = 3000000Cr, $suffix = ' CR',
 						$default = 150000Cr,
-						$mouseOverText = {2005311642,1002} + '\n' + {2005311642,899} + ' ' + ' 150,000 CR',
+						$mouseOverText = {2005311642,1002} + '\n' + {2005311642,899} + ' ' + '150,000 CR',
 						$onSliderCellChanged = OnSMOSliderChangeCRvalue
 					]" />
 				<!-- Default Asset Modifier -->
@@ -91,7 +91,7 @@
 						$text = table[$text=''],
 						$min = 0, $max = 100, $suffix = ' %',
 						$default = 90,
-						$mouseOverText = {2005311642,1003} + '\n' + {2005311642,899} + ' ' + ' 90%',
+						$mouseOverText = {2005311642,1003} + '\n' + {2005311642,899} + ' ' + '90%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<!-- Trading Asset Modifier -->
@@ -104,7 +104,7 @@
 						$text = table[$text=''],
 						$min = 0, $max = 100, $suffix = ' %',
 						$default = 45,
-						$mouseOverText = {2005311642,1003} + '\n' + {2005311642,899} + ' ' + ' 45%',
+						$mouseOverText = {2005311642,1003} + '\n' + {2005311642,899} + ' ' + '45%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<!-- Mining Asset Modifier -->
@@ -117,7 +117,7 @@
 						$text = table[$text=''],
 						$min = 0, $max = 100, $suffix = ' %',
 						$default = 35,
-						$mouseOverText = {2005311642,1003} + '\n' + {2005311642,899} + ' ' + ' 35%',
+						$mouseOverText = {2005311642,1003} + '\n' + {2005311642,899} + ' ' + '35%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<!-- Auxil Asset Modifier -->
@@ -130,7 +130,7 @@
 						$text = table[$text=''],
 						$min = 0, $max = 100, $suffix = ' %',
 						$default = 45,
-						$mouseOverText = {2005311642,1003} + '\n' + {2005311642,899} + ' ' + ' 45%',
+						$mouseOverText = {2005311642,1003} + '\n' + {2005311642,899} + ' ' + '45%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<!-- Production Asset Modifier -->
@@ -143,7 +143,7 @@
 						$text = table[$text=''],
 						$min = 0, $max = 100, $suffix = ' %',
 						$default = 75,
-						$mouseOverText = {2005311642,1003} + '\n' + {2005311642,899} + ' ' + ' 75%',
+						$mouseOverText = {2005311642,1003} + '\n' + {2005311642,899} + ' ' + '75%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<!-- Station Asset Modifier -->
@@ -156,7 +156,7 @@
 						$text = table[$text=''],
 						$min = 0, $max = 100, $suffix = ' %',
 						$default = 25,
-						$mouseOverText = {2005311642,1003} + '\n' + {2005311642,899} + ' ' + ' 25%',
+						$mouseOverText = {2005311642,1003} + '\n' + {2005311642,899} + ' ' + '25%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<!-- Wharf Station Asset Modifier -->
@@ -169,7 +169,7 @@
 						$text = table[$text=''],
 						$min = 0, $max = 100, $suffix = '%',
 						$default = 90,
-						$mouseOverText = {2005311642,1003} + '\n' + {2005311642,899} + ' ' + ' 65%',
+						$mouseOverText = {2005311642,1003} + '\n' + {2005311642,899} + ' ' + '65%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<!-- Credits are a part of an Asset checkbox-->
@@ -181,7 +181,7 @@
 						$col = 2,
 						$width = 'Helper.standardButtonHeight', $height = 'Helper.standardButtonHeight',
 						$default = true,
-						$mouseOverText = {2005311642,1004} + '\n' + {2005311642,899} + ' ' + ' True',
+						$mouseOverText = {2005311642,1004} + '\n' + {2005311642,899} + ' ' + 'True',
 						$onClick = OnSMOSCheckboxChange
 					]" />
 				<!-- [Lvl 1] 102-104 -->
@@ -198,7 +198,7 @@
 						$text = table[$text=''],
 						$min = 2500000Cr, $max = 13000000Cr, $suffix = ' CR',
 						$default = 7500000Cr,
-						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + ' 7,500,000CR',
+						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '7,500,000CR',
 						$onSliderCellChanged = OnSMOSliderChangeCRvalue
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -210,7 +210,7 @@
 						$text = table[$text=''],
 						$min = 1, $max = 40, $suffix = '%',
 						$default = 3,
-						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + ' 3%',
+						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + '3%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -222,7 +222,7 @@
 						$text = table[$text=''],
 						$min = 1, $max = 40, $suffix = '%',
 						$default = 6,
-						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + ' 6%',
+						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + '6%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -234,7 +234,7 @@
 							$text = table[$text=''],
 							$min = 1, $max = 25, $suffix = ' UI value',
 							$default = 1,
-							$mouseOverText = {2005311642,1107} + '\n' + {2005311642,899} + ' ' + ' 1 UI value',
+							$mouseOverText = {2005311642,1107} + '\n' + {2005311642,899} + ' ' + '1 UI value',
 							$onSliderCellChanged = OnSMOSliderChange
 						]" />
 				<!-- [Lvl 2] 105-107 -->
@@ -251,7 +251,7 @@
 						$text = table[$text=''],
 						$min = 13000000Cr, $max = 125000000Cr, $suffix = ' CR',
 						$default = 32500000Cr,
-						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + ' 32,500,000CR',
+						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '32,500,000CR',
 						$onSliderCellChanged = OnSMOSliderChangeCRvalue
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -263,7 +263,7 @@
 						$text = table[$text=''],
 						$min = 10, $max = 60, $suffix = '%',
 						$default = 13,
-						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + ' 13%',
+						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + '13%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -275,7 +275,7 @@
 						$text = table[$text=''],
 						$min = 10, $max = 60, $suffix = '%',
 						$default = 18,
-						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + ' 18%',
+						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + '18%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -287,7 +287,7 @@
 							$text = table[$text=''],
 							$min = 1, $max = 25, $suffix = ' UI value',
 							$default = 1,
-							$mouseOverText = {2005311642,1107} + '\n' + {2005311642,899} + ' ' + ' 1 UI value',
+							$mouseOverText = {2005311642,1107} + '\n' + {2005311642,899} + ' ' + '1 UI value',
 							$onSliderCellChanged = OnSMOSliderChange
 						]" />
 				<!-- [Lvl 3] 108-110 -->
@@ -304,7 +304,7 @@
 						$text = table[$text=''],
 						$min = 125000000Cr, $max = 450000000Cr, $suffix = ' CR',
 						$default = 250000000Cr,
-						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + ' 250,000,000 CR',
+						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '250,000,000 CR',
 						$onSliderCellChanged = OnSMOSliderChangeCRvalue
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -316,7 +316,7 @@
 						$text = table[$text=''],
 						$min = 15, $max = 80, $suffix = '%',
 						$default = 30,
-						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + ' 30%',
+						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + '30%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -328,7 +328,7 @@
 						$text = table[$text=''],
 						$min = 15, $max = 80, $suffix = '%',
 						$default = 33,
-						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + ' 33%',
+						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + '33%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -340,7 +340,7 @@
 							$text = table[$text=''],
 							$min = 1, $max = 25, $suffix = ' UI value',
 							$default = 2,
-							$mouseOverText = {2005311642,1107} + '\n' + {2005311642,899} + ' ' + ' 2 UI value',
+							$mouseOverText = {2005311642,1107} + '\n' + {2005311642,899} + ' ' + '2 UI value',
 							$onSliderCellChanged = OnSMOSliderChange
 						]" />
 				<!-- [Lvl 4] 111 - 113 -->
@@ -357,7 +357,7 @@
 						$text = table[$text=''],	       
 						$min = 450000000Cr, $max = 850000000Cr, $suffix = ' CR',
 						$default = 650000000Cr,
-						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + ' 650,000,000 CR',
+						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '650,000,000 CR',
 						$onSliderCellChanged = OnSMOSliderChangeCRvalue
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -369,7 +369,7 @@
 						$text = table[$text=''],
 						$min = 25, $max = 100, $suffix = '%',
 						$default = 55,
-						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + ' 55%',
+						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + '55%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -381,7 +381,7 @@
 						$text = table[$text=''],
 						$min = 25, $max = 100, $suffix = '%',
 						$default = 60,
-						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + ' 60%',
+						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + '60%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -393,7 +393,7 @@
 							$text = table[$text=''],
 							$min = 1, $max = 25, $suffix = ' UI value',
 							$default = 2,
-							$mouseOverText = {2005311642,1107} + '\n' + {2005311642,899} + ' ' + ' 2 UI value',
+							$mouseOverText = {2005311642,1107} + '\n' + {2005311642,899} + ' ' + '2 UI value',
 							$onSliderCellChanged = OnSMOSliderChange
 						]" />
 				<!-- [Lvl 5] 114 - 115 -->
@@ -410,7 +410,7 @@
 						$text = table[$text=''],
 						$min = 750000000Cr, $max = 1200000000Cr, $suffix = ' CR',
 						$default = 900000000Cr,
-						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + ' 900,000,000 CR',
+						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '900,000,000 CR',
 						$onSliderCellChanged = OnSMOSliderChangeCRvalue
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -422,7 +422,7 @@
 						$text = table[$text=''],
 						$min = 40, $max = 150, $suffix = '%',
 						$default = 85,
-						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + ' 85%',
+						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + '85%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -434,7 +434,7 @@
 						$text = table[$text=''],
 						$min = 40, $max = 150, $suffix = '%',
 						$default = 90,
-						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + ' 90%',
+						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + '90%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -446,7 +446,7 @@
 							$text = table[$text=''],
 							$min = 1, $max = 25, $suffix = ' UI value',
 							$default = 3,
-							$mouseOverText = {2005311642,1107} + '\n' + {2005311642,899} + ' ' + ' 3 UI value',
+							$mouseOverText = {2005311642,1107} + '\n' + {2005311642,899} + ' ' + '3 UI value',
 							$onSliderCellChanged = OnSMOSliderChange
 						]" />
 				<!-- [Lvl 6] 117 - 119 -->
@@ -463,7 +463,7 @@
 						$text = table[$text=''],
 						$min = 1200000000Cr, $max = 2750000000Cr, $suffix = ' CR',
 						$default = 1450000000Cr,
-						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + ' 1,450,000,000 CR',
+						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '1,450,000,000 CR',
 						$onSliderCellChanged = OnSMOSliderChangeCRvalue
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -475,7 +475,7 @@
 						$text = table[$text=''],
 						$min = 50, $max = 200, $suffix = '%',
 						$default = 120,
-						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + ' 120%',
+						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + '120%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -487,7 +487,7 @@
 						$text = table[$text=''],
 						$min = 50, $max = 200, $suffix = '%',
 						$default = 125,
-						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + ' 125%',
+						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + '125%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -499,7 +499,7 @@
 							$text = table[$text=''],
 							$min = 1, $max = 25, $suffix = ' UI value',
 							$default = 5,
-							$mouseOverText = {2005311642,1107} + '\n' + {2005311642,899} + ' ' + ' 5 UI value',
+							$mouseOverText = {2005311642,1107} + '\n' + {2005311642,899} + ' ' + '5 UI value',
 							$onSliderCellChanged = OnSMOSliderChange
 						]" />
 				<!-- [Lvl 7] 120 - 122 -->
@@ -516,7 +516,7 @@
 						$text = table[$text=''],
 						$min = 2750000000Cr, $max = 7500000000Cr, $suffix = ' CR',
 						$default = 3500000000Cr,
-						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + ' 3,500,000,000 CR',
+						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '3,500,000,000 CR',
 						$onSliderCellChanged = OnSMOSliderChangeCRvalue
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -528,7 +528,7 @@
 						$text = table[$text=''],
 						$min = 65, $max = 300, $suffix = '%',
 						$default = 170,
-						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + ' 170%',
+						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + '170%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -540,7 +540,7 @@
 						$text = table[$text=''],
 						$min = 65, $max = 300, $suffix = '%',
 						$default = 173,
-						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + ' 173%',
+						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + '173%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -552,7 +552,7 @@
 							$text = table[$text=''],
 							$min = 1, $max = 25, $suffix = ' UI value',
 							$default = 7,
-							$mouseOverText = {2005311642,1107} + '\n' + {2005311642,899} + ' ' + ' 7 UI value',
+							$mouseOverText = {2005311642,1107} + '\n' + {2005311642,899} + ' ' + '7 UI value',
 							$onSliderCellChanged = OnSMOSliderChange
 						]" />
 				<!-- [Lvl 8] 123 - 125 -->
@@ -569,7 +569,7 @@
 						$text = table[$text=''],
 						$min = 7500000000Cr, $max = 35000000000Cr, $suffix = ' CR',
 						$default = 13000000000Cr,
-						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + ' 13,000,000,000 CR',
+						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '13,000,000,000 CR',
 						$onSliderCellChanged = OnSMOSliderChangeCRvalue
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -581,7 +581,7 @@
 						$text = table[$text=''],
 						$min = 75, $max = 500, $suffix = '%',
 						$default = 240,
-						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + ' 240%',
+						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + '240%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -593,7 +593,7 @@
 						$text = table[$text=''],
 						$min = 75, $max = 500, $suffix = '%',
 						$default = 242,
-						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + ' 242%',
+						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + '242%',
 						$onSliderCellChanged = OnSMOSliderChange
 					]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -605,7 +605,7 @@
 							$text = table[$text=''],
 							$min = 1, $max = 25, $suffix = ' UI value',
 							$default = 10,
-							$mouseOverText = {2005311642,1107} + '\n' + {2005311642,899} + ' ' + ' 10 UI value',
+							$mouseOverText = {2005311642,1107} + '\n' + {2005311642,899} + ' ' + '10 UI value',
 							$onSliderCellChanged = OnSMOSliderChange
 						]" />
 				<!-- Advanced -->
@@ -623,7 +623,7 @@
 							$text = table[$text=''],
 							$min = 1, $max = 25,
 							$default = 3,
-							$mouseOverText = {2005311642,700100} + ' ' + {2005311642,105} + ' ' + {2005311642,700101} + ' ' + {2005311642,209} + '.' + '\n' + {2005311642,899} + ' ' + ' 5 UI value',
+							$mouseOverText = {2005311642,700100} + ' ' + {2005311642,105} + ' ' + {2005311642,700101} + ' ' + {2005311642,209} + '.' + '\n' + {2005311642,899} + ' ' + '5 UI value',
 							$onSliderCellChanged = OnSMOSliderChange
 						]" />
 				<!-- Divisor Value -->
@@ -636,7 +636,7 @@
 							$text = table[$text=''],
 							$min = 1, $max = 25,
 							$default = 2,
-							$mouseOverText = {2005311642,700105} + '\n' + {2005311642,899} + ' ' + ' 3',
+							$mouseOverText = {2005311642,700105} + '\n' + {2005311642,899} + ' ' + '3',
 							$onSliderCellChanged = OnSMOSliderChange
 						]" />
 				<!-- Relation Factor Multiplier -->
@@ -649,7 +649,7 @@
 							$text = table[$text=''],
 							$min = 1, $max = 35,
 							$default = 4,
-							$mouseOverText = {2005311642,700106} + '\n' + {2005311642,899} + ' ' + ' 4',
+							$mouseOverText = {2005311642,700106} + '\n' + {2005311642,899} + ' ' + '4',
 							$onSliderCellChanged = OnSMOSliderChange
 						]" />
 				<!-- Relation Factor Treshold -->
@@ -662,7 +662,7 @@
 							$text = table[$text=''],
 							$min = 1, $max = 45,
 							$default = 15,
-							$mouseOverText = {2005311642,700107} + '\n' + {2005311642,899} + ' ' + ' 15',
+							$mouseOverText = {2005311642,700107} + '\n' + {2005311642,899} + ' ' + '15',
 							$onSliderCellChanged = OnSMOSliderChange
 						]" />
 				<!-- Cooldowns -->
@@ -679,7 +679,7 @@
 							$text = table[$text=''],
 							$min = 1s, $max = 45s, $suffix = 's',
 							$default = 3s,
-							$mouseOverText = {2005311642,1020} + '\n' + {2005311642,899} + ' ' + ' 3s',
+							$mouseOverText = {2005311642,1020} + '\n' + {2005311642,899} + ' ' + '3s',
 							$onSliderCellChanged = OnSMOSliderChange
 						]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -691,7 +691,7 @@
 							$text = table[$text=''],
 							$min = 1s, $max = 45s, $suffix = 's',
 							$default = 5s,
-							$mouseOverText = {2005311642,1021} + '\n' + {2005311642,899} + ' ' + ' 5s',
+							$mouseOverText = {2005311642,1021} + '\n' + {2005311642,899} + ' ' + '5s',
 							$onSliderCellChanged = OnSMOSliderChange
 						]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -703,7 +703,7 @@
 							$text = table[$text=''],
 							$min = 0s, $max = 30s, $suffix = 's',
 							$default = 0s,
-							$mouseOverText = {2005311642,1022} + '\n' + {2005311642,899} + ' ' + ' 0s',
+							$mouseOverText = {2005311642,1022} + '\n' + {2005311642,899} + ' ' + '0s',
 							$onSliderCellChanged = OnSMOSliderChange
 						]" />
 				<!-- DEBUG checkbox-->
@@ -719,7 +719,7 @@
 						$col = 2,
 						$width = 'Helper.standardButtonHeight', $height = 'Helper.standardButtonHeight',
 						$default = false,
-						$mouseOverText = 'Debug' + '\n' + {2005311642,899} + ' ' + ' False',
+						$mouseOverText = 'Debug' + '\n' + {2005311642,899} + ' ' + 'False',
 						$onClick = OnSMOSCheckboxChange
 					]" />
 			</actions>

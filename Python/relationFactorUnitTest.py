@@ -6,10 +6,10 @@ NUMFORMATTER_Mul = "{:5.4f}"
 
 RelationFactorMul = 3 # Menu Input
 # Bonus Input
-RelationFriendshipFactor = 0.0 # Used also in Penalty Algorithm
+RelationFriendshipFactor = 0.216 # Used also in Penalty Algorithm
 
 # Penalty Input
-RelationDislikeFactor = 0.00316
+RelationDislikeFactor = 0.1234
 RepHit = 0.001 #RepBonus for Case 3
 
 # New idea
