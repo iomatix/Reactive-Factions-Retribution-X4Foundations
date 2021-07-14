@@ -87,7 +87,7 @@
 		<t id="700101">is divided by</t>
 		<t id="700105">Reduces the impact of the bonuses and penalties for factions with reputation close to a neutral. Set 1 to turn this off.</t>
 		<t id="700106">Has a significant impact on the amount of the final penalty. Increasing it accelerates the evolution of relationship.</t>
-		<t id="700107">Maximum of estimated reputation value used during calculation by dyncamic algorithm. Smaller values make relation changes more dynamic and unpredictable when larger ones improve the fluency of the relationships at the expense of dynamism.</t>
+		<t id="700107">Maximum of estimated reputation value used during calculation by dynamic algorithm. Smaller values make relation changes more dynamic and unpredictable when larger ones improve the fluency of the relationships at the expense of dynamism.</t>
 
 	</page>
 
