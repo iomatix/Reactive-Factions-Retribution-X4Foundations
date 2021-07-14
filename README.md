@@ -13,6 +13,6 @@
 
 -logfile debugLog.log -scriptlogfiles
 
-### For better performance with multicore cpu
+### For better performance with decent multicore CPU machine
 
 -malloc=system +mat_antialias 0 window -USEALLAVAILABLECORES 
