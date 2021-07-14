@@ -12,3 +12,7 @@
 ### To debug this mod add these params to the game startup line.
 
 -logfile debugLog.log -scriptlogfiles
+
+### For better performance with multicore cpus
+
+-malloc=system +mat_antialias 0 window -USEALLAVAILABLECORES 
