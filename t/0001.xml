@@ -1,76 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language>
 
-<page id="2005311642" title="Reactive Factions Retribution" descr="Texts" voice="no">
-	  <t id="1">Reactive Faction Retribution mod is installed</t>
-      <!-- Language config, feel free to edit it as you will -->
-	  <t id="2">Common Privateer</t>
-      <t id="3">You are perceived as a common privateer. There are infinitely many beings like you in the galaxy. It doesn't even matter who you were in the past or what you are planning now. With a clear conscience, you are on the verge of bankruptcy on a galactic scale. Your actions don't matter on the intergalactic scene.</t>
+	<page id="2005311642" title="Reactive Factions Retribution" descr="Texts" voice="no">
+		<t id="1">Reactive Faction Retribution mod is installed</t>
+		<!-- Basic language config, feel free to edit it as you will -->
+		<t id="2">Common Privateer</t>
+		<t id="3">You are perceived as a common privateer. There are infinitely many beings like you in the galaxy. It doesn't even matter who you were in the past or what you are planning now. With a clear conscience, you are on the verge of bankruptcy on a galactic scale. Your actions don't matter on the intergalactic scene.</t>
 
-	  <t id="4">Recognizable Influencer</t>
-      <t id="5">You are perceived as a recognizable individual. The beings of the galaxy call you a local celebrity. Your actions have a negligible impact on the intergalactic stage.</t>
+		<t id="4">Recognizable Influencer</t>
+		<t id="5">You are perceived as a recognizable individual. The beings of the galaxy call you a local celebrity. Your actions have a negligible impact on the intergalactic stage.</t>
 
-	  <t id="6">Fledgling Company</t>
-	  <t id="7">You are known as a CEO-Celebrity of a small fledgling company. Your actions have an insignificant impact on the intergalactic stage.</t>
+		<t id="6">Fledgling Company</t>
+		<t id="7">You are known as a CEO-Celebrity of a small fledgling company. Your actions have an insignificant impact on the intergalactic stage.</t>
 
-	  <t id="8">Organization</t>
-	  <t id="9">We are perceived equally with the rest of intergalactic companies. Our actions have a noticeable impact on the intergalactic stage.</t>
+		<t id="8">Organization</t>
+		<t id="9">We are perceived equally with the rest of intergalactic companies. Our actions have a noticeable impact on the intergalactic stage.</t>
 
-	  <t id="10">Large Organization</t>
-	  <t id="11">Our company is perceived as one of the large organizations. Its actions have a mediocre impact on the intergalactic stage.</t>
+		<t id="10">Large Organization</t>
+		<t id="11">Our company is perceived as one of the large organizations. Its actions have a mediocre impact on the intergalactic stage.</t>
 
-	  <t id="12">Corporation</t>
-	  <t id="13">Our organization is perceived as one of the major galactic corporations. Its actions have a meaningful impact on the intergalactic stage.</t>
+		<t id="12">Corporation</t>
+		<t id="13">Our organization is perceived as one of the major galactic corporations. Its actions have a meaningful impact on the intergalactic stage.</t>
 
-	  <t id="14">Faction</t>
-	  <t id="15">We are perceived equally with the rest of players on the intergalactic scene. Our actions have a significant impact on the intergalactic policy.</t>
+		<t id="14">Faction</t>
+		<t id="15">We are perceived equally with the rest of players on the intergalactic scene. Our actions have a significant impact on the intergalactic policy.</t>
 
-	  <t id="16">Major Faction</t>
-	  <t id="17">Our faction is perceived as one of the main forces in the galaxy. Its actions have a huge impact on the intergalactic stage.</t>
+		<t id="16">Major Faction</t>
+		<t id="17">Our faction is perceived as one of the main forces in the galaxy. Its actions have a huge impact on the intergalactic stage.</t>
 
-	  <t id="18">Galactic Empire</t>
-	  <t id="19">Our faction has obtained the status of the Galactic Empire - You have been appointed its emperor. The beings of the entire galaxy are closely watching your every move - their eyes are full of fear and hope.</t>
-	  <!-- -->
-	  <t id="30">Total assets cost estiamted at:</t>
-	  <!--GUI-->
-	  <t id="99">Reactive Factions Menu</t>
-	  <t id="100">SCA Reputation Lock</t>
-	  <t id="101">Hostile Bonus Lock</t>
-	  <t id="102">Assets Threshold</t>
-	  <t id="103">Penalty Coefficient</t>
-	  <t id="104">Bonus Coefficient</t>
-	  <t id="105">Consider Credits</t>
-	
-	  <t id="199">Min Price of Asset</t>
-	  <t id="200">Default Assets Cost Modifier</t>
-	  <t id="201">Trading Assets Cost Modifier</t>
-	  <t id="202">Mining Assets Cost Modifier</t>
-	  <t id="203">Auxillary Assets Cost Modifier</t>
-	  <t id="204">Production Assets Cost Modifier</t>
-	  <t id="205">Station Assets Cost Modifier</t>
-	  <t id="206">Wharf Station Assets Cost Modifier</t>
+		<t id="18">Galactic Empire</t>
+		<t id="19">Our faction has obtained the status of the Galactic Empire - You have been appointed its emperor. The beings of the entire galaxy are closely watching your every move - their eyes are full of fear and hope.</t>
+		<!-- End of basic language config -->
+		<!-- Advanced language config -->
+		<t id="30">Total assets cost estiamted at:</t>
+		<!--GUI-->
+		<t id="79">Reactive Factions Menu</t>
+		<t id="99">Suspend Notifications</t>
+		<t id="100">SCA Reputation Lock</t>
+		<t id="101">Hostile Bonus Lock</t>
+		<t id="102">Assets Threshold</t>
+		<t id="103">Penalty Coefficient</t>
+		<t id="104">Bonus Coefficient</t>
+		<t id="105">Max Reputation Amplitude</t>
 
-	  <t id="301">Optimalization</t>
-	  <t id="302">Bonus Cooldown</t>
-	  <t id="303">Penalty Cooldown</t>
-	  <t id="304">Global Cooldown</t>
+		<t id="199">Min Price of Asset</t>
+		<t id="200">Default Assets Cost Modifier</t>
+		<t id="201">Trading Assets Cost Modifier</t>
+		<t id="202">Mining Assets Cost Modifier</t>
+		<t id="203">Auxillary Assets Cost Modifier</t>
+		<t id="204">Production Assets Cost Modifier</t>
+		<t id="205">Station Assets Cost Modifier</t>
+		<t id="206">Wharf Station Assets Cost Modifier</t>
+		<t id="207">Consider Credits</t>
 
-	  <t id="999">Default:</t>
-	  <t id="1000">Lock of Scale Plate Pact reputaion value.</t>
-	  <t id="1001">Lock of bonus reputation gain for factions hostile to player.</t>
-	  <t id="1002">Minimum cost of an asset to take it into account during calculations.</t>
-      <t id="1003">Modifiers specify the percentage value of owned Assets.</t>
-	  <t id="1004">Minimum credits value of assets to increase influence to this specific power level.</t>
-	  <t id="1005">Percentage value of the reputation gained applied as a penalty to hostile factions in the event.</t>
-	  <t id="1006">Percentage value of the reputation gained applied as a bonus reputation to the faction causing the event.</t>
-	  <t id="1007">The algorithm will take into account amount of credits held by the player to the final calculation.</t>
+		<t id="208">Divisor Amplitude</t>
+		<t id="209">Reputation Divisor</t>
+		<t id="210">Relation Factor Multiplier</t>
+		<t id="210">Relation Factor Treshold</t>
 
-	  <t id="1020">Cooldown in gaining bonuses to reputation applied to faction causing the event.</t>
-	  <t id="1021">Cooldown in gaining penalties to reputation applied to hostile factions in the event.</t>
-	  <t id="1022">RFR event cooldown. Slightly increases hardware efficiency but reduces overall responsiveness.</t>
+		<t id="300">Advanced Settings</t>
+		<t id="301">Optimalization</t>
+		<t id="302">Bonus Cooldown</t>
+		<t id="303">Penalty Cooldown</t>
+		<t id="304">Global Cooldown</t>
+		
+		<t id="899">Default:</t>
+		<t id="999">Completely mutes notifications caused by the modification.</t>
+		<t id="1000">Lock of Scale Plate Pact reputaion value.</t>
+		<t id="1001">Lock of bonus reputation gain for factions hostile to player.</t>
+		<t id="1002">Minimum cost of an asset to take it into account during calculations.</t>
+		<t id="1003">Modifiers specify the percentage value of owned Assets.</t>
+		<t id="1004">The algorithm will take into account amount of credits held by the player to the final calculation.</t>
 
+		<t id="1104">Minimum credits value of assets to increase influence to this specific power level.</t>
+		<t id="1105">Percentage value of the reputation gained applied as a penalty to hostile factions in the event.</t>
+		<t id="1106">Percentage value of the reputation gained applied as a bonus reputation to the faction causing the event.</t>
+		<t id="1107">Maximum amplitude of the difference in the reputation gained as a bonus or penalty expressed in in-game Reputation UI unit.</t>
 
+		<t id="1020">Cooldown in gaining bonuses to reputation applied to faction causing the event.</t>
+		<t id="1021">Cooldown in gaining penalties to reputation applied to hostile factions in the event.</t>
+		<t id="1022">RFR event cooldown. Slightly increases hardware efficiency but reduces overall responsiveness.</t>
 
-</page>	  
+		<!-- Folded tips -->
+		<!-- Advanced -->
+		<t id="700100">Reputation amplitude in which range the</t>
+		<t id="700101">is divided by</t>
+		<t id="700105">Reduces the impact of the bonuses and penalties for factions with reputation close to a neutral. Set 1 to turn this off.</t>
+		<t id="700106">Has a significant impact on the amount of the final penalty. Increasing it accelerates the evolution of relationship.</t>
+		<t id="700107">Maximum of estimated reputation value used during calculation by dyncamic algorithm. Smaller values make relation changes more dynamic and unpredictable when larger ones improve the fluency of the relationships at the expense of dynamism.</t>
+
+	</page>
 
 </language>
