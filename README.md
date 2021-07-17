@@ -1,4 +1,4 @@
-# Reactive-Factions-Retribution-X4Foundations
+# Reactive Factions Retribution X4:Foundations
 ### The mod is an improved version of the Reactive Factions mod. Its purpose is to solve the main problems and inconveniences related to the basic version and content enrichment.
 
 ## Official Releases
