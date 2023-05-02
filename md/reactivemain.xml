@@ -315,7 +315,7 @@
               <do_if value="$ListofCooldowns.{$i}.{1} == $FactionMain">
                 <do_if value="$ListofCooldowns.{$i}.{2} gt player.age ">
                   <set_value name="$isFactionMainOnCooldown" exact="true" />
-                  <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (BONUS) rep was not changed (Main Faction Cooldown) with ' + $FactionMain + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower" output="$isDebug" append="true" />
+                  <debug_to_file name="'ReactiveRepUpdate_rejected'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (BONUS) rep was not changed (Main Faction Cooldown) with ' + $FactionMain + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower" output="$isDebug" append="true" />
                   <debug_to_file name="'ReactiveFactionsCooldowns'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + ';' + ' Cooldown of [' + 'Main Faction' + '] ' + $ListofCooldowns.{$i}.{1}.name + ' Details: '+ $ListofCooldowns.{$i} + ': ' + $ListofCooldowns.{$i}.{2}" output="$isDebug" append="true" />
                 </do_if>
                 <do_else>
@@ -329,7 +329,7 @@
             <!-- check if Player Power > 0, Faction is not on cooldown and relation is not hostile to player faction -->
             <do_if value="$PlayerPower gt 0 and $isFactionMainOnCooldown == false">
               <do_if value="$FactionMain.ishostileto.{faction.player} and $CheckHostile == true">
-                <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (BONUS) rep was not changed (Faction is Hostile to Player) with ' + $FactionMain + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower" output="$isDebug" append="true" />
+                <debug_to_file name="'ReactiveRepUpdate_rejected'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (BONUS) rep was not changed (Faction is Hostile to Player) with ' + $FactionMain + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower" output="$isDebug" append="true" />
               </do_if>
               <do_else>
                 <do_if value="$PlayerPower == 1">
@@ -373,7 +373,7 @@
                 <set_value name="$isRepNegative" exact="false" />
                 <include_actions ref="CalculatePossibleValueRepChange" />
                 <do_if value="$RepValuePossibleChange != null and $RepBonus gt $RepValuePossibleChange">
-                  <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; RepBonus: ' + $RepBonus + ' was higher than '+ $UIRelationChange +' UI. Changed to RepValuePossibleChange: ' + $RepValuePossibleChange" output="$isDebug" append="true" />
+                  <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; RepBonus: ' + $RepBonus + ' was higher than '+ $UIRelationChange +' UI. Changed RepValuePossibleChange: ' + $RepValuePossibleChange" output="$isDebug" append="true" />
                   <set_value name="$RepBonus" exact="$RepValuePossibleChange" />
                 </do_if>
                 <remove_value name="$RepValuePossibleChange" />
@@ -404,7 +404,7 @@
               <do_if value="($Enemy != null) and (not $IgnoredListofEnemies.indexof.{$Enemy})">
                 <do_if value="$PlayerPower == 0">
                   <!-- do nothing on power level 0 -->
-                  <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; rep was not changed (Player Level is 0) with ' + $Enemy + ' due to change with ' + $FactionMain + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower" output="$isDebug" append="true" />
+                  <debug_to_file name="'ReactiveRepUpdate_rejected'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; rep was not changed (Player Level is 0) with ' + $Enemy + ' due to change with ' + $FactionMain + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower" output="$isDebug" append="true" />
                 </do_if>
                 <do_else>
                   <!-- (FACTIONCOOLDOWN) Add cooldowns ($ListofCooldowns) for each -->
@@ -413,7 +413,7 @@
                     <do_if value="$ListofCooldowns.{$i}.{1} == $Enemy">
                       <do_if value="$ListofCooldowns.{$i}.{3} gt player.age ">
                         <set_value name="$isEnemyOnCooldown" exact="true" />
-                        <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (PENALTY) rep was not changed (Faction Cooldown) with ' + $Enemy + ' due to change with ' + $FactionMain + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower" output="$isDebug" append="true" />
+                        <debug_to_file name="'ReactiveRepUpdate_rejected'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (PENALTY) rep was not changed (Faction Cooldown) with ' + $Enemy + ' due to change with ' + $FactionMain + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower" output="$isDebug" append="true" />
                         <debug_to_file name="'ReactiveFactionsCooldowns'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + ';' + ' Cooldown of [' + 'Enemy Faction' + '] ' + $ListofCooldowns.{$i}.{1}.name + ' Details: '+ $ListofCooldowns.{$i} + ': ' + $ListofCooldowns.{$i}.{3}" output="$isDebug" append="true" />
                       </do_if>
                       <do_else>
@@ -479,9 +479,7 @@
                       <set_value name="$isRepNegative" exact="true" />
                       <include_actions ref="CalculatePossibleValueRepChange" />
                       <do_if value="$RepValuePossibleChange != null and $RepHit gt $RepValuePossibleChange">
-                        <debug_to_file name="'sanityDebug'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; ' + ' HARSHER ' + $RepHit + ' RepValuePossibleChange: ' + $RepValuePossibleChange" output="$isDebug" append="true" />
-
-                        <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; RepHit: ' + $RepHit + ' was harsher than '+ $UIRelationChange +' UI. Changed to RepValuePossibleChange: ' + $RepValuePossibleChange" output="$isDebug" append="true" />
+                        <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; RepHit: ' + $RepHit + ' was harsher than '+ $UIRelationChange +' UI. Changed RepValuePossibleChange: ' + $RepValuePossibleChange" output="$isDebug" append="true" />
                         <set_value name="$RepHit" exact="$RepValuePossibleChange" />
                       </do_if>
                       <remove_value name="$RepValuePossibleChange" />
@@ -493,7 +491,7 @@
                     </do_if>
                   </do_if>
                   <do_else>
-                    <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; rep was not changed with ' + $Enemy + ' for: ' + $RepHit + ' due to ' + $FactionMain + ' player already having a lower reputation with current power level of ' + $PlayerPower" output="$isDebug" append="true" />
+                    <debug_to_file name="'ReactiveRepUpdate_rejected'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; rep was not changed with ' + $Enemy + ' for: ' + $RepHit + ' due to ' + $FactionMain + ' player already having a lower reputation with current power level of ' + $PlayerPower" output="$isDebug" append="true" />
                   </do_else>
                 </do_if>
                 <remove_value name="$RepHit" />
@@ -577,7 +575,7 @@
                 </do_if>
               </do_if>
 
-              <debug_to_file name="'Experimental_ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; ' + ' Calculated RepValuePossibleChange: ' + $RepValuePossibleChange + ' based on calculation abs(' + $RepValue + ' - ' + $OldRepValue + ').'" output="$isDebug" append="true" />
+              <debug_to_file name="'ReactiveRepUpdate_Experimental'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; ' + ' Calculated RepValuePossibleChange: ' + $RepValuePossibleChange + ' based on calculation abs(' + $RepValue + ' - ' + $OldRepValue + ').'" output="$isDebug" append="true" />
 
             </do_if>
             <remove_value name="$FactionOne" />
