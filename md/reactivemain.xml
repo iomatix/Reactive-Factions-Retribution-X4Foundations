@@ -569,9 +569,9 @@
               <!-- Calculate Experimental UI change value -->
               <do_if value="$isAmplitudeExperimental == true">
                 <set_value name="$RepValuePossibleChange" exact="abs($RepValue - $OldRepValue)" />
-                <do_if value="$RepValuePossibleChange lt 0.00000001">
-                  <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; ' + ' RepValuePossibleChange is less than 0.00000001 - ' + $RepValuePossibleChange + '!'" output="$isDebug" append="true" />
-                  <set_value name="$RepValuePossibleChange" exact="0.00000001" />
+                <do_if value="$RepValuePossibleChange lt 0.000001">
+                  <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; ' + ' RepValuePossibleChange is less than 0.000001 - ' + $RepValuePossibleChange + '!'" output="$isDebug" append="true" />
+                  <set_value name="$RepValuePossibleChange" exact="0.000001" />
                 </do_if>
               </do_if>
 
