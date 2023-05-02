@@ -32,10 +32,22 @@
 				<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text={2005311642, 79}, $color = 'Helper.color.blue']" />
 				<!-- Suspend Notifications checkbox-->
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-				<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text={2005311642, 99}]" />
+				<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text={2005311642, 98}]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox" param="table[
 						$id = 'TurnOffNotifications',
 						$checked = md.ReactiveMain.ReactiveInit.$TurnOffNotifications,
+						$col = 2,
+						$width = 'Helper.standardButtonHeight', $height = 'Helper.standardButtonHeight',
+						$default = false,
+						$mouseOverText = {2005311642,998} + '\n' + {2005311642,899} + ' ' + 'False',
+						$onClick = OnSMOSCheckboxChange
+					]" />
+				<!-- Detailed Notifications checkbox-->
+				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+				<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text={2005311642, 99}]" />
+				<signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox" param="table[
+						$id = 'TurnOnAllNotifications',
+						$checked = md.ReactiveMain.ReactiveInit.$TurnOnAllNotifications,
 						$col = 2,
 						$width = 'Helper.standardButtonHeight', $height = 'Helper.standardButtonHeight',
 						$default = false,
@@ -612,6 +624,30 @@
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text='']" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+				<!-- Experimental Amplitude checkbox-->
+				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+				<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text={2005311642, 212}]" />
+				<signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox" param="table[
+						$id = 'isAmplitudeExperimental',
+						$checked = md.ReactiveMain.ReactiveInit.$isAmplitudeExperimental,
+						$col = 2,
+						$width = 'Helper.standardButtonHeight', $height = 'Helper.standardButtonHeight',
+						$default = false,
+						$mouseOverText = {2005311642,1005} + '\n' + {2005311642,899} + ' ' + 'False',
+						$onClick = OnSMOSCheckboxChange
+					]" />
+				<!-- Relative Amplitude checkbox-->
+				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+				<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text={2005311642, 213}]" />
+				<signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox" param="table[
+						$id = 'isAmplitudeRelative',
+						$checked = md.ReactiveMain.ReactiveInit.$isAmplitudeRelative,
+						$col = 2,
+						$width = 'Helper.standardButtonHeight', $height = 'Helper.standardButtonHeight',
+						$default = false,
+						$mouseOverText = {2005311642,1006} + '\n' + {2005311642,899} + ' ' + 'False',
+						$onClick = OnSMOSCheckboxChange
+					]" />
 				<!-- Divisor Amplitude -->
 				<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text" param="table[$col=1, $text={2005311642, 300}, $color = 'Helper.color.blue']" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -623,7 +659,7 @@
 							$text = table[$text=''],
 							$min = 1, $max = 25,
 							$default = 3,
-							$mouseOverText = {2005311642,700100} + ' ' + {2005311642,105} + ' ' + {2005311642,700101} + ' ' + {2005311642,209} + '.' + '\n' + {2005311642,899} + ' ' + '5 UI value',
+							$mouseOverText = {2005311642,700100} + ' ' + {2005311642,105} + ' ' + {2005311642,700101} + ' ' + {2005311642,209} + '.' + '\n' + {2005311642,899} + ' ' + '3 UI value',
 							$onSliderCellChanged = OnSMOSliderChange
 						]" />
 				<!-- Divisor Value -->
@@ -635,7 +671,7 @@
 							$col = 2,
 							$text = table[$text=''],
 							$min = 1, $max = 25,
-							$default = 2,
+							$default = 3,
 							$mouseOverText = {2005311642,700105} + '\n' + {2005311642,899} + ' ' + '3',
 							$onSliderCellChanged = OnSMOSliderChange
 						]" />

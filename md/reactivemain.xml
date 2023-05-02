@@ -3,7 +3,7 @@
 <mdscript name="ReactiveMain"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://x4dynlib.access.ly/libraries/md.xsd">
   <cues>
-    <cue name="ReactiveInit" version="10">
+    <cue name="ReactiveInit" version="210">
       <conditions>
         <check_any>
           <event_cue_signalled cue="md.Setup.GameStart" />
@@ -21,6 +21,7 @@
              (4) 650,000,000   (5) 900,000,000  (6) 1,450,000,000
              (7) 3,500,000,000 (8) 13,000,000,000 -->
         <set_value name="$TurnOffNotifications" exact="false" />
+        <set_value name="$TurnOnAllNotifications" exact="false" />
         <set_value name="$SCAlock" exact="false" />
         <set_value name="$CheckHostile" exact="true" />
         <set_value name="$CheckCreditsValue" exact="true" />
@@ -51,10 +52,11 @@
 
         <!-- GUI value -->
         <set_value name="$UIRelationDivisorRange" exact="3" />
-        <set_value name="$UIRelationDivisor" exact="2" />
+        <set_value name="$UIRelationDivisor" exact="3" />
         <set_value name="$RelationFactorMul" exact="4" />
         <set_value name="$RelationTreshhold" exact="15"/>
-
+        <set_value name="$isAmplitudeExperimental" exact="false" />
+        <set_value name="$isAmplitudeRelative" exact="false" />
 
         <set_value name="$Power1UIMaxChangeValue" exact="1" />
         <set_value name="$Power2UIMaxChangeValue" exact="1" />
@@ -130,10 +132,22 @@
         <set_value name="$Power7UIMaxChangeValue" exact="7" />
         <set_value name="$Power8UIMaxChangeValue" exact="10" />
 
-        <show_help duration="35s" custom="'Reactive Factions Retribution \033G2.0.7\033X' + ' successfully updated.\nSomething new has appeared on tips page inside of your logbook!'" />
-        <write_to_logbook money="185000Cr" category="tips" title="'\033B[Update Info]\033X Reactive Factions Retribution \033G[2.0.7]'" text="'\nHello there ' + player.name + ',\nThe modification was successfully updated to version ' +  '\033G2.0.7\033X' + '\n\n The extension menu was updated with new extra options. The default values also have changed. Make sure to check it out!\n Detailed changlog has been attached to the modification folder and is also available on both, Steam and Nexus websites.\n Please report all encountered problems or share your impressions about the modification so far.\n\nOh, also sending a small gift to help your galactic activities prosper!\n\033BThank you for being here, Commander! '" />
+        <show_help duration="35s" custom="'Reactive Factions Retribution \033G2.0.7\033X' + ' successfully updated.\nSomething new has appeared on a tips page inside of your logbook!'" />
+        <write_to_logbook money="185000Cr" category="tips" title="'\033B[Update Info]\033X Reactive Factions Retribution \033G[2.0.7]'" text="'\nHello there ' + player.name + ',\nThe modification was successfully updated to version ' +  '\033G2.0.7\033X' + '\n\n The extension menu was updated with new extra options. The default values also have changed. Make sure to check it out!\n Detailed changlog has been attached to the modification folder and is also available on both, Steam and Nexus websites.\n Please report all encountered problems or share your impressions about the modification so far.\n\nOh, also sending a small gift to help your galactic activities prosper!\n\n\033BThank you for being here, Commander! '" />
         <transfer_money from="faction.visitor" to="faction.player" amount="185000Cr" />
       </patch>
+      <!-- 2.1.0 update -->
+      <patch sinceversion="210">
+        <debug_to_file name="'Patch_RFR'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] 2.1.0 update - created Mandatory variables to handle important changes.'" output="$isDebug" append="true" />
+        <set_value name="$TurnOnAllNotifications" exact="false" />
+        <set_value name="$isAmplitudeExperimental" exact="false" />
+        <set_value name="$isAmplitudeRelative" exact="false" />
+
+        <show_help duration="35s" custom="'Reactive Factions Retribution \033G2.1.0\033X' + ' successfully updated.\nSomething new has appeared on a tips page inside of your logbook!'" />
+        <write_to_logbook money="75000Cr" category="tips" title="'\033B[Update Info]\033X Reactive Factions Retribution \033G[2.1.0]'" text="'\nHello there ' + player.name + ',\nThe modification was successfully updated to version ' +  '\033G2.1.0\033X' + '\n\n  The mod has been updated to support X4 6.0. A few fixes and improvements have been applied to the mod.\n Detailed changlog has been attached to the modification folder and is also available on both, Steam and Nexus websites.\n Please report all encountered problems or share your impressions about the modification so far.\n\nOh, also sending a small gift to help your galactic activities prosper!\n\n\033BThank you for being here, Commander! '" />
+        <transfer_money from="faction.visitor" to="faction.player" amount="75000Cr" />
+      </patch>
+
       <!-- -->
       <cues>
         <!-- checkinterval -->
@@ -344,7 +358,7 @@
                 </do_else>
                 <!-- Friendship Factors -->
                 <set_value name="$RelationFriendshipFactor" exact="$FactionMain.relationto.{faction.player}"/>
-                <set_value name="$RelationFriendshipFactor" exact="(10*log(1000*sqrt($RelationFriendshipFactor^2))/log(10))/$RelationTreshhold"/>
+                <set_value name="$RelationFriendshipFactor" exact="(10*log(1000*abs($RelationFriendshipFactor))/log(10))/$RelationTreshhold"/>
                 <!-- Multiplier GUI $RelationFactorMul -->
                 <do_if value="$RelationFriendshipFactor gt 0">
                   <!-- Convert absolute value to UI value and make it a factor actualy by dividing in by Max Value (30 UI Value) but to make things more unstable at end game the better value will be somewhere in this range 18-25 -->
@@ -356,12 +370,13 @@
                 <set_value name="$FactionOne" exact="$FactionMain" />
                 <set_value name="$FactionTwo" exact="faction.player" />
                 <set_value name="$FactionPowerLevel" exact="$PlayerPower" />
-                <include_actions ref="CalculateUiValueRepChange" />
-                <do_if value="$RepBonus gt $AbsoluteRepValueChange and $AbsoluteRepValueChange != null">
-                  <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; RepBonus: ' + $RepBonus + ' was higher than '+ $UIRelationChange +' UI. Changed to AbsoluteRepValueChange: ' + $AbsoluteRepValueChange" output="$isDebug" append="true" />
-                  <set_value name="$RepBonus" exact="$AbsoluteRepValueChange" />
+                <set_value name="$isRepNegative" exact="false" />
+                <include_actions ref="CalculatePossibleValueRepChange" />
+                <do_if value="$RepValuePossibleChange != null and $RepBonus gt $RepValuePossibleChange">
+                  <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; RepBonus: ' + $RepBonus + ' was higher than '+ $UIRelationChange +' UI. Changed to RepValuePossibleChange: ' + $RepValuePossibleChange" output="$isDebug" append="true" />
+                  <set_value name="$RepBonus" exact="$RepValuePossibleChange" />
                 </do_if>
-                <remove_value name="$AbsoluteRepValueChange" />
+                <remove_value name="$RepValuePossibleChange" />
                 <!-- Set value -->
                 <set_value name="$FactionOne" exact="$FactionMain" />
                 <set_value name="$RepChange" exact="$RepBonus" />
@@ -384,7 +399,7 @@
             <append_list_elements name="$EnemiesList" other="$FactionsList" />
             <remove_value name="$FactionsList" />
             <do_for_each name="$Enemy" in="$EnemiesList" counter="$i">
-              <!-- Remove buccaneers, holyorderfanatic,  trinity when added. -->
+              <!-- Remove buccaneers, holyorderfanatic, trinity when added. -->
               <!-- cleaned up this long entry and formatting -->
               <do_if value="($Enemy != null) and (not $IgnoredListofEnemies.indexof.{$Enemy})">
                 <do_if value="$PlayerPower == 0">
@@ -442,7 +457,7 @@
                     <set_value name="$RelationDislikeFactor" exact="$Enemy.relationto.{$FactionMain}"/>
                     <set_value name="$RelationFriendshipFactor" exact="$FactionMain.relationto.{faction.player}"/>
                     <!-- Multiplier GUI $RelationFactorMul -->
-                    <set_value name="$RelationDislikeFactor" exact="(10*log(1000*sqrt($RelationDislikeFactor^2))/log(10))/$RelationTreshhold"/>
+                    <set_value name="$RelationDislikeFactor" exact="(10*log(1000*abs($RelationDislikeFactor))/log(10))/$RelationTreshhold"/>
                     <do_if value="$RelationFriendshipFactor gt 0">
                       <!-- Convert absolute value to UI value and make it a factor actualy by dividing in by Max Value (30 UI Value) but to make things more unstable at end game the better value will be somewhere in this range 18-25 -->
                       <set_value name="$RelationFriendshipFactor" exact="(10*log(1000*$RelationFriendshipFactor)/log(10))/$RelationTreshhold"/>
@@ -461,12 +476,15 @@
                       <set_value name="$FactionOne" exact="$Enemy" />
                       <set_value name="$FactionTwo" exact="faction.player" />
                       <set_value name="$FactionPowerLevel" exact="$PlayerPower" />
-                      <include_actions ref="CalculateUiValueRepChange" />
-                      <do_if value="$RepHit gt $AbsoluteRepValueChange and $AbsoluteRepValueChange != null">
-                        <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; RepHit: ' + $RepHit + ' was harsher than '+ $UIRelationChange +' UI. Changed to AbsoluteRepValueChange: ' + $AbsoluteRepValueChange" output="$isDebug" append="true" />
-                        <set_value name="$RepHit" exact="$AbsoluteRepValueChange" />
+                      <set_value name="$isRepNegative" exact="true" />
+                      <include_actions ref="CalculatePossibleValueRepChange" />
+                      <do_if value="$RepValuePossibleChange != null and $RepHit gt $RepValuePossibleChange">
+                        <debug_to_file name="'sanityDebug'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; ' + ' HARSHER ' + $RepHit + ' RepValuePossibleChange: ' + $RepValuePossibleChange" output="$isDebug" append="true" />
+
+                        <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; RepHit: ' + $RepHit + ' was harsher than '+ $UIRelationChange +' UI. Changed to RepValuePossibleChange: ' + $RepValuePossibleChange" output="$isDebug" append="true" />
+                        <set_value name="$RepHit" exact="$RepValuePossibleChange" />
                       </do_if>
-                      <remove_value name="$AbsoluteRepValueChange" />
+                      <remove_value name="$RepValuePossibleChange" />
                       <!-- Changing Reputation (PENALTY) -->
                       <set_value name="$FactionOne" exact="$Enemy" />
                       <set_value name="$RepChange" exact="$RepHit" />
@@ -490,19 +508,16 @@
             <remove_value name="$EnemiesList" />
           </actions>
         </cue>
-        <library name="CalculateAbsoluteValueRepChange">
-          <actions>
-          </actions>
-        </library>
-        <library name="CalculateUiValueRepChange">
+        <library name="CalculatePossibleValueRepChange">
           <actions>
             <!-- 1.0 = 30		0.32 = 25		0.1 = 20		0.032 = 15		0.01 = 10		0.0032 = 5 -->
             <!-- 1.0 = 30		0.316 = 25		0.1 = 20		0.0316 = 15		0.01 = 10		0.00316 = 5 -->
-            <!-- Requires $FactionOne, $FactionTwo, and $FactionPowerLevel -->
-            <!-- Returns $NewAbsoluteRepValue and $AbsoluteRepValueChange and $UIRelationChange -->
+            <!-- Requires $isRepNegative, $FactionOne, $FactionTwo, and $FactionPowerLevel -->
+            <!-- Returns $RepValuePossibleChange -->
             <do_if value="$FactionPowerLevel gt 0 and $FactionPowerLevel != 99 and $FactionOne != null and $FactionTwo != null">
               <set_value name="$OldUIRepValue" exact="$FactionOne.relation.{$FactionOne.relationto.{$FactionTwo}}.uivalue" />
-              <set_value name="$OldAbsoluteRepValue" exact="$FactionOne.relationto.{$FactionTwo}" />
+              <set_value name="$OldRepValue" exact="$FactionOne.relationto.{$FactionTwo}" />
+              <!-- set max allowed UI relation change in var UIRelationChange -->
               <do_if value="$FactionPowerLevel lt 2">
                 <set_value name="$UIRelationChange" exact="$Power1UIMaxChangeValue" />
               </do_if>
@@ -528,29 +543,47 @@
                 <set_value name="$UIRelationChange" exact="$Power8UIMaxChangeValue" />
               </do_elseif>
               <do_else>
-                <set_value name="$UIRelationChange" exact="0" />
+                <set_value name="$UIRelationChange" exact="$Power1UIMaxChangeValue" />
               </do_else>
 
-              <!-- check if reputation is between Range $UIRelationDivisorRange (default and eg.) -5 and 5  -5 < X > 5, if yes make $UIRelationChange smaller divide by $UIRelationDivisor -->
+              <!-- Calculate UI change values range -->
+              <set_value name="$UIRepValue" exact="$UIRelationChange" />
+              <do_if value="$isAmplitudeRelative == true">
+                <do_if value="$isRepNegative == true">
+                  <set_value name="$UIRepValue" exact="$OldUIRepValue - $UIRelationChange" />
+                </do_if>
+                <do_else>
+                  <set_value name="$UIRepValue" exact="$OldUIRepValue + $UIRelationChange" />
+                </do_else>
+              </do_if>
+
+              <!-- =(10^(abs(S2+T2)/10)/1000)*IF(S2+T2<0,-1,1) -->
+              <set_value name="$RepValue" exact="(10^(abs($UIRepValue)/10) / 1000) * (if ($UIRepValue lt 0) then -1 else 1)" />
+
+              <!-- check if reputation is between Range $UIRelationDivisorRange (default and eg.) -5 and 5  -5 < X > 5, if yes divide absValues by $UIRelationDivisor -->
               <do_if value="$UIRelationDivisor gt 1 and (($OldUIRepValue lt $UIRelationDivisorRange) and ($OldUIRepValue gt (-1*$UIRelationDivisorRange)))">
                 <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; ' + $UIRelationChange + ' in range of amplitude ' + $UIRelationDivisorRange + ' - proceding division.'" output="$isDebug" append="true" />
-                <set_value name="$UIRelationChange" exact="$UIRelationChange/$UIRelationDivisor" />
-                <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; ' + ' UI value is changed to ' + $UIRelationChange" output="$isDebug" append="true" />
+                <set_value name="$RepValue" exact="$RepValue/$UIRelationDivisor" />
+                <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; ' + ' Calculated RepValue: ' + $RepValue '.'" output="$isDebug" append="true" />
               </do_if>
-              <set_value name="$NewUIRepValue" exact="$OldUIRepValue + $UIRelationChange" />
-              <!-- =(10^(SQRT((S2+T2)^2)/10)/1000)*IF(S2+T2<0,-1,1) -->
-              <set_value name="$NewAbsoluteRepValue" exact="(10^(sqrt($NewUIRepValue ^ 2)/10) / 1000) * (if ($NewUIRepValue lt 0) then -1 else 1)" />
-              <do_if value="$NewAbsoluteRepValue lt -1">
-                <set_value name="$NewAbsoluteRepValue" exact="-1" />
+
+              <set_value name="$RepValuePossibleChange" exact="$RepValue" />
+              <!-- Calculate Experimental UI change value -->
+              <do_if value="$isAmplitudeExperimental == true">
+                <set_value name="$RepValuePossibleChange" exact="abs($RepValue - $OldRepValue)" />
+                <do_if value="$RepValuePossibleChange lt 0.00000001">
+                  <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; ' + ' RepValuePossibleChange is less than 0.00000001 - ' + $RepValuePossibleChange + '!'" output="$isDebug" append="true" />
+                  <set_value name="$RepValuePossibleChange" exact="0.00000001" />
+                </do_if>
               </do_if>
-              <do_if value="$NewAbsoluteRepValue gt 1">
-                <set_value name="$NewAbsoluteRepValue" exact="1" />
-              </do_if>
-              <set_value name="$AbsoluteRepValueChange" exact="$NewAbsoluteRepValue - $OldAbsoluteRepValue" />
+
+              <debug_to_file name="'Experimental_ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; ' + ' Calculated RepValuePossibleChange: ' + $RepValuePossibleChange + ' based on calculation abs(' + $RepValue + ' - ' + $OldRepValue + ').'" output="$isDebug" append="true" />
+
             </do_if>
             <remove_value name="$FactionOne" />
             <remove_value name="$FactionTwo" />
             <remove_value name="$FactionPowerLevel" />
+            <remove_value name="$isRepNegative" />
           </actions>
         </library>
         <library name="SetNewReputation">
@@ -559,7 +592,11 @@
           <!-- Notification Simplifer -->
           <actions>
             <do_if value="$FactionOne != null and $RepChange gt 0">
-              <do_if value="$TurnOffNotifications == false and (($FactionOne.relationto.{faction.player} gt 0.00316 or $FactionOne.relationto.{faction.player} lt -0.00316) and ($FactionOne.relationto.{faction.player} lt 0.1 or $FactionOne.relationto.{faction.player} gt -0.1)) and $RepChange ge 0.0012">
+              <!-- Notify the player only IF the target Faction is on relation ~3<>20 or ~3<>20 range with the Player and RepChange was significant  -->
+              <do_if value="$TurnOnAllNotifications == true or ($TurnOffNotifications == false and (
+                  ($FactionOne.relationto.{faction.player} gt 0.0016 and $FactionOne.relationto.{faction.player} lt 0.1)
+                   or ($FactionOne.relationto.{faction.player} lt -0.0016 and $FactionOne.relationto.{faction.player} gt -0.1)
+                    ) and $RepChange ge 0.0012)">
                 <do_if value="$isRepNegative == true">
                   <set_value name="$RepChange" exact="-1*$RepChange" />
                   <set_faction_relation faction="$FactionOne" otherfaction="faction.player" value="[($FactionOne.relationto.{faction.player} + $RepChange), -1].max" />
@@ -575,11 +612,11 @@
                 <do_if value="$isRepNegative == true">
                   <set_value name="$RepChange" exact="-1*$RepChange" />
                   <set_faction_relation faction="$FactionOne" otherfaction="faction.player" value="[($FactionOne.relationto.{faction.player} + $RepChange), -1].max" reason="null"/>
-                  <set_faction_relation faction="faction.player" otherfaction="$FactionOne" value="$FactionOne.relationto.{faction.player}" />
+                  <set_faction_relation faction="faction.player" otherfaction="$FactionOne" value="$FactionOne.relationto.{faction.player}" reason="null"/>
                 </do_if>
                 <do_else>
                   <set_faction_relation faction="$FactionOne" otherfaction="faction.player" value="[($FactionOne.relationto.{faction.player} + $RepChange), 1].min" reason="null"/>
-                  <set_faction_relation faction="faction.player" otherfaction="$FactionOne" value="$FactionOne.relationto.{faction.player}" />
+                  <set_faction_relation faction="faction.player" otherfaction="$FactionOne" value="$FactionOne.relationto.{faction.player}" reason="null"/>
                 </do_else>
                 <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Rep was changed with ' + $FactionOne + ' by: ' + $RepChange + ' due to change with ' + $FactionMain + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower + ' without notification.'" output="$isDebug" append="true" />
               </do_else>
@@ -617,7 +654,7 @@
             <!-- Returns $FactionsList filtered  -->
             <do_if value="$FactionsList != null and $FactionsList.count gt 0">
               <!-- we could just use remove_from_list here -->
-              <set_value name="$IgnoredListofEnemies" exact="[faction.buccaneers, faction.civilian, faction.court, faction.criminal, faction.holyorderfanatic, faction.khaak, faction.smuggler, faction.trinity, faction.visitor, faction.xenon, faction.ownerless]" />
+              <set_value name="$IgnoredListofEnemies" exact="[faction.scaleplate, faction.buccaneers, faction.civilian, faction.court, faction.criminal, faction.holyorderfanatic, faction.khaak, faction.smuggler, faction.trinity, faction.visitor, faction.xenon, faction.ownerless]" />
               <!-- checking if any factions in ignored list are active. story stuff makes coding so much more tedious -->
               <do_all exact="$FactionsList.count" counter="$i">
                 <do_if value="($FactionsList.{$i} == faction.buccaneers or $FactionsList.{$i} == faction.court or $FactionsList.{$i} == faction.holyorderfanatic or $FactionsList.{$i} == faction.trinity) and ($FactionsList.{$i}.isactive)">

@@ -32,10 +32,11 @@
 		<t id="19">Our faction has obtained the status of the Galactic Empire - You have been appointed its emperor. The beings of the entire galaxy are closely watching your every move - their eyes are full of fear and hope.</t>
 		<!-- End of basic language config -->
 		<!-- Advanced language config -->
-		<t id="30">Total assets cost estiamted at:</t>
+		<t id="30">Total assets cost estimated at:</t>
 		<!--GUI-->
 		<t id="79">Reactive Factions Menu</t>
-		<t id="99">Suspend Notifications</t>
+		<t id="98">Suspend Notifications</t>
+		<t id="99">Detailed Notifications</t>
 		<t id="100">SCA Reputation Lock</t>
 		<t id="101">Hostile Bonus Lock</t>
 		<t id="102">Assets Threshold</t>
@@ -57,20 +58,25 @@
 		<t id="209">Reputation Divisor</t>
 		<t id="210">Relation Factor Multiplier</t>
 		<t id="211">Relation Factor Treshold</t>
+		<t id="212">Experimental Amplitude</t>
+		<t id="213">Relative Amplitude</t>
 
 		<t id="300">Advanced Settings</t>
 		<t id="301">Optimalization</t>
 		<t id="302">Bonus Cooldown</t>
 		<t id="303">Penalty Cooldown</t>
 		<t id="304">Global Cooldown</t>
-		
+
 		<t id="899">Default:</t>
-		<t id="999">Completely mutes notifications caused by the modification.</t>
+		<t id="998">Completely mutes notifications caused by the modification.</t>
+		<t id="999">Turns on all notifications caused by the modification.</t>
 		<t id="1000">Lock of Scale Plate Pact reputaion value.</t>
 		<t id="1001">Lock of bonus reputation gain for factions hostile to player.</t>
 		<t id="1002">Minimum cost of an asset to take it into account during calculations.</t>
 		<t id="1003">Modifiers specify the percentage value of owned Assets.</t>
 		<t id="1004">The algorithm will take into account amount of credits held by the player to the final calculation.</t>
+		<t id="1005">The algorithm will experimentally calculate a reputation amplitude limiter, resulting in less significant changes to the reputation.</t>
+		<t id="1006">The algorithm will use a relative limiter instead of an absolute one, resulting in more substantial fluctuations to the reputation. If the value is high, the fluctuations will be smaller than in the case of low values that tend to approach high values.</t>
 
 		<t id="1104">Minimum credits value of assets to increase influence to this specific power level.</t>
 		<t id="1105">Percentage value of the reputation gained applied as a penalty to hostile factions in the event.</t>
