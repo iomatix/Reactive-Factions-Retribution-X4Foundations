@@ -562,7 +562,7 @@
               <do_if value="$UIRelationDivisor gt 1 and (($OldUIRepValue lt $UIRelationDivisorRange) and ($OldUIRepValue gt (-1*$UIRelationDivisorRange)))">
                 <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; ' + $UIRelationChange + ' in range of amplitude ' + $UIRelationDivisorRange + ' - proceding division.'" output="$isDebug" append="true" />
                 <set_value name="$RepValue" exact="$RepValue/$UIRelationDivisor" />
-                <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; ' + ' Calculated RepValue: ' + $RepValue '.'" output="$isDebug" append="true" />
+                <debug_to_file name="'ReactiveRepUpdate'" directory="'ReactiveFactionsRetribution_log'" text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; ' + ' Calculated RepValue: ' + $RepValue + '.'" output="$isDebug" append="true" />
               </do_if>
 
               <set_value name="$RepValuePossibleChange" exact="$RepValue" />
