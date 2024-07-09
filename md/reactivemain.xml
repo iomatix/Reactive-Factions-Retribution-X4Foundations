@@ -3,7 +3,7 @@
 <mdscript name="ReactiveMain"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://x4dynlib.access.ly/libraries/md.xsd">
   <cues>
-    <cue name="ReactiveInit" version="210">
+    <cue name="ReactiveInit" version="220">
       <conditions>
         <check_any>
           <event_cue_signalled cue="md.Setup.GameStart" />
@@ -22,7 +22,7 @@
              (7) 3,500,000,000 (8) 13,000,000,000 -->
         <set_value name="$TurnOffNotifications" exact="false" />
         <set_value name="$TurnOnAllNotifications" exact="false" />
-        <set_value name="$SCAlock" exact="false" />
+        <set_value name="$SCAlock" exact="true" />
         <set_value name="$CheckHostile" exact="true" />
         <set_value name="$CheckCreditsValue" exact="true" />
         <set_value name="$Power1aprox" exact="7500000Cr" />
@@ -100,7 +100,7 @@
         <set_value name="$PlayerPowerFluff8" exact="{2005311642,19}" />
 
         <!-- setting time constraint variables & GUI time variables -->
-        <set_value name="$MainFactionCooldown" exact="3s" />
+        <set_value name="$MainFactionCooldown" exact="5s" />
         <set_value name="$EnemyFactionCooldown" exact="5s" />
         <set_value name="$GlobalCooldown" exact="0s" />
 
@@ -152,7 +152,7 @@
       <cues>
         <!-- checkinterval -->
         <!-- DEBUG: 1min, DEFAULT: 20min IMMERSIVE: 25-35min -->
-        <cue name="ReactivePlayerPowerUpdate" instantiate="true" checkinterval="25min" checktime="player.age + 60s">
+        <cue name="ReactivePlayerPowerUpdate" checkinterval="25min" checktime="player.age + 60s" onfail="cancel">
           <actions>
             <!-- Re-allocate Memory For Factions. Loads new factions or removes deleted factions. -->
             <include_actions ref="LoadAllFactionsToAllocatedMemory" />
@@ -292,7 +292,7 @@
           </actions>
         </cue>
         <!-- Rep Penalty/Bonus -->
-        <cue name="ReactiveApplyRep" instantiate="true">
+        <cue name="ReactiveApplyRep" instantiate="true" onfail="cancel">
           <conditions>
             <event_player_relation_changed />
             <!-- only for positive changes -->
@@ -304,12 +304,12 @@
           </conditions>
           <actions>
             <!-- (GLOBALCOOLDOWN) here is where we set the timer for how often this can trigger -->
-            <set_value name="$NextPossibleRepChangeTime" exact="player.age + 0.003s + $GlobalCooldown" />
+            <set_value name="$NextPossibleRepChangeTime" exact="player.age + $GlobalCooldown" />
             <set_value name="$FactionMain" exact="event.param" />
             <!-- event.param2.{1} - new value > event.param2.{2} - old value -->
             <set_value name="$RepDiff" exact="event.param2.{1} - event.param2.{2}" />
             <!-- Apply Bonus -->
-            <!-- (FACTIONCOOLDOWN) Add cooldown for bonus value ($FactionMain) -->
+            <!-- (FACTIONCOOLDOWN) cooldown for bonus value ($FactionMain) -->
             <set_value name="$isFactionMainOnCooldown" exact="false" />
             <do_for_each name="$el" in="$ListofCooldowns" counter="$i">
               <do_if value="$ListofCooldowns.{$i}.{1} == $FactionMain">

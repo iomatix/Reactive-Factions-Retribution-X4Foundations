@@ -208,7 +208,7 @@
 						$start = md.ReactiveMain.ReactiveInit.$Power1aprox,
 						$col = 2,
 						$text = table[$text=''],
-						$min = 2500000Cr, $max = 13000000Cr, $suffix = ' CR',
+						$min = 1500Cr, $step = 3500Cr, $max = 350000000000Cr, $suffix = ' CR',
 						$default = 7500000Cr,
 						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '7,500,000CR',
 						$onSliderCellChanged = OnSMOSliderChangeCRvalue
@@ -261,7 +261,7 @@
 						$start = md.ReactiveMain.ReactiveInit.$Power2aprox,
 						$col = 2,
 						$text = table[$text=''],
-						$min = 13000000Cr, $max = 125000000Cr, $suffix = ' CR',
+						$min = 3500Cr, $step = 7500Cr, $max = 350000000000Cr, $suffix = ' CR',
 						$default = 32500000Cr,
 						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '32,500,000CR',
 						$onSliderCellChanged = OnSMOSliderChangeCRvalue
@@ -314,7 +314,7 @@
 						$start = md.ReactiveMain.ReactiveInit.$Power3aprox,
 						$col = 2,
 						$text = table[$text=''],
-						$min = 125000000Cr, $max = 450000000Cr, $suffix = ' CR',
+						$min = 7500Cr, $step = 21500Cr, $max = 350000000000Cr, $suffix = ' CR',
 						$default = 250000000Cr,
 						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '250,000,000 CR',
 						$onSliderCellChanged = OnSMOSliderChangeCRvalue
@@ -367,7 +367,7 @@
 						$start = md.ReactiveMain.ReactiveInit.$Power4aprox,
 						$col = 2,
 						$text = table[$text=''],	       
-						$min = 450000000Cr, $max = 850000000Cr, $suffix = ' CR',
+						$min = 21500Cr, $step = 64500Cr, $max = 350000000000Cr, $suffix = ' CR',
 						$default = 650000000Cr,
 						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '650,000,000 CR',
 						$onSliderCellChanged = OnSMOSliderChangeCRvalue
@@ -420,7 +420,7 @@
 						$start = md.ReactiveMain.ReactiveInit.$Power5aprox,
 						$col = 2,
 						$text = table[$text=''],
-						$min = 750000000Cr, $max = 1200000000Cr, $suffix = ' CR',
+						$min = 64500Cr, $step = 150000Cr, $max = 350000000000Cr, $suffix = ' CR',
 						$default = 900000000Cr,
 						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '900,000,000 CR',
 						$onSliderCellChanged = OnSMOSliderChangeCRvalue
@@ -473,7 +473,7 @@
 						$start = md.ReactiveMain.ReactiveInit.$Power6aprox,
 						$col = 2,
 						$text = table[$text=''],
-						$min = 1200000000Cr, $max = 2750000000Cr, $suffix = ' CR',
+						$min = 150000Cr, $step = 150000Cr, $max = 350000000000Cr, $suffix = ' CR',
 						$default = 1450000000Cr,
 						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '1,450,000,000 CR',
 						$onSliderCellChanged = OnSMOSliderChangeCRvalue
@@ -526,7 +526,7 @@
 						$start = md.ReactiveMain.ReactiveInit.$Power7aprox,
 						$col = 2,
 						$text = table[$text=''],
-						$min = 2750000000Cr, $max = 7500000000Cr, $suffix = ' CR',
+						$min = 150000Cr, $step = 200000Cr, $max = 350000000000Cr, $suffix = ' CR',
 						$default = 3500000000Cr,
 						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '3,500,000,000 CR',
 						$onSliderCellChanged = OnSMOSliderChangeCRvalue
@@ -579,7 +579,7 @@
 						$start = md.ReactiveMain.ReactiveInit.$Power8aprox,
 						$col = 2,
 						$text = table[$text=''],
-						$min = 7500000000Cr, $max = 35000000000Cr, $suffix = ' CR',
+						$min = 200000Cr, $step = 250000Cr, $max = 350000000000Cr, $suffix = ' CR',
 						$default = 13000000000Cr,
 						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '13,000,000,000 CR',
 						$onSliderCellChanged = OnSMOSliderChangeCRvalue
@@ -713,9 +713,9 @@
 							$start = md.ReactiveMain.ReactiveInit.$MainFactionCooldown,
 							$col = 2,
 							$text = table[$text=''],
-							$min = 1s, $max = 45s, $suffix = 's',
-							$default = 3s,
-							$mouseOverText = {2005311642,1020} + '\n' + {2005311642,899} + ' ' + '3s',
+							$min = 0s, $max = 45s, $suffix = 's',
+							$default = 5s,
+							$mouseOverText = {2005311642,1020} + '\n' + {2005311642,899} + ' ' + '5s',
 							$onSliderCellChanged = OnSMOSliderChange
 						]" />
 				<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
@@ -725,7 +725,7 @@
 							$start = md.ReactiveMain.ReactiveInit.$EnemyFactionCooldown,
 							$col = 2,
 							$text = table[$text=''],
-							$min = 1s, $max = 45s, $suffix = 's',
+							$min = 0s, $max = 45s, $suffix = 's',
 							$default = 5s,
 							$mouseOverText = {2005311642,1021} + '\n' + {2005311642,899} + ' ' + '5s',
 							$onSliderCellChanged = OnSMOSliderChange
