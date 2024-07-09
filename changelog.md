@@ -8,6 +8,7 @@
 - Customizable approximate values for CR at each power level in the mod menu.
 - (Experimental) Cooldowns can now be set to a real value of 0 seconds.
 - TODO: Bugfix (to be confirmed in tests) for missing event faction check against ignore list, potentially causing issues.
+- TODO: Fixes to the event logics, custom trigger name e.g. repchange_reactivefactions and canceling cues for instances of repchange_reactivefactions (avalanche syndrome to be avoided if cooldown may eq 0).
 
 ## 2.1.0 for X4 6.0
 
