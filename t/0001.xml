@@ -34,7 +34,12 @@
 		<!-- Advanced language config -->
 		<t id="30">Total assets cost estimated at:</t>
 		<!--GUI-->
-		<t id="79">Reactive Factions Menu</t>
+		<t id="79">Reactive Factions Retribution</t>
+		<t id="80">General Options Menu</t>
+		<t id="81">??? Menu</t>
+		<t id="82">??? Menu</t>
+		<t id="83">??? Menu</t>
+
 		<t id="98">Suspend Notifications</t>
 		<t id="99">Detailed Notifications</t>
 		<t id="100">SCA Reputation Lock</t>

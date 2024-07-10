@@ -411,7 +411,7 @@
                 directory="'ReactiveFactionsRetribution_log'"
                 text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Event faction is not active or is visitor - cancelling the cue and cleaning up...' + $FactionMain"
                 output="$isDebug" append="true" />
-              <cancel_cue cue="'''this'''" />
+              <cancel_cue cue="this" />
             </do_if>
             <!-- (GLOBALCOOLDOWN) here is where we set the timer for how often this can trigger -->
             <set_value name="$NextPossibleRepChangeTime" exact="player.age + $GlobalCooldown" />
