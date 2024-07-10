@@ -16,3 +16,8 @@
 ### For better performance with decent multicore CPU machine
 
 -malloc=system +mat_antialias 0 window -USEALLAVAILABLECORES 
+
+## [MD Documentation](https://wiki.egosoft.com:1337/X%20Rebirth%20Wiki/Modding%20support/Mission%20Director%20Guide/#HCompletepropertydocumentation)
+
+### MD refreshing
+To refresh the MD at run-time using the command "refreshmd" on the in-game command line.
