@@ -1,21 +1,24 @@
-# Changelog of Reactive Factions Retribution 
-
+# Changelog of Reactive Factions Retribution
 
 ## Backlog
-- TODO: Rep changes for more events like e.g. destroying assets
-- TODO: Political lobbing e.g. change relation X and Y, Player and X etc. for credits/rep/assets/law etc.  //vary on community feedback
+
+- TODO: RepHits for more events like e.g. destroying assets //vary on community feedback, or as new mod e.g. credits and rewards for activities or dynamic events/missions (if is it possible).  
+- TODO: Political lobbing e.g. change relation X and Y, Player and X etc. for credits/rep/assets/law etc. Send envoy delegation or via new black market NPC ?  //vary on community feedback
 - TODO: More RPG tiers //vary on community feedback
+- TODO: KD Menu API integration adding new features and moving existing there.
 
 ## 2.2.0 for X4 7.0
 
-- SCA Reputation Lock is now set back to true by default.
+- SCA Reputation Lock is now enabled by default.
 - Optimized memory usage for cues.
-- Default MainFactionCooldown changed to 5 seconds.
-- Customizable approximate values for CR at each power level in the mod menu.
-- Unlocked DefaultAssetModifier the mod menu slider's cap from 100% up to 350%.
-- (Experimental) Cooldowns can now be set to a real value of 0 seconds.
-- TODO: Bugfix (to be confirmed in tests) for missing event faction check against ignore list, potentially causing issues.
-- TODO: Fixes to the event logics, custom trigger name e.g. repchange_reactivefactions and canceling cues for instances of repchange_reactivefactions (avalanche syndrome to be avoided if cooldown may eq 0).
+- Set all default cooldown values to 0 seconds.
+- Added customizable approximate values for CR at each power level in the mod menu.
+- Increased Asset Modifiers mod menu slider cap from 100% to 350%.
+- Excluded visitor factions from the mod.
+- Changed default cooldown values to 0 seconds.
+- Improved logic, added a cue cancel event, and allowed cooldowns to be set to a true 0 seconds without triggering avalanche syndrome.
+- Implemented custom tag name relationchangereason.reactivefaction and added functionality to cancel cues for instances of cues. Note: The X4 mechanism for creating new enums is currently malfunctioning so it will be null instead at the moment.
+- TODO: Confirm bug and fix it. Bug regards probably missing event faction check against the ignore list, which could potentially cause issues.
 
 ## 2.1.0 for X4 6.0
 

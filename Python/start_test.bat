@@ -1,0 +1,2 @@
+python relationFactorUnitTest.py
+pause 
