@@ -878,21 +878,21 @@
               much more tedious -->
               <do_all exact="$FactionsList.count" counter="$i">
                 <do_if
-                  value="($FactionsList.{$i} == faction.buccaneers or $FactionsList.{$i} == faction.court or $FactionsList.{$i} == faction.holyorderfanatic or $FactionsList.{$i} == faction.trinity) and $FactionsList.{$i}.isactive">
+                value="($FactionsList.{$i} == faction.buccaneers or $FactionsList.{$i} == faction.court or $FactionsList.{$i} == faction.holyorderfanatic or $FactionsList.{$i} == faction.trinity) and $FactionsList.{$i}.isactive">
+                  <remove_from_list name="$IgnoredListofFactions"
+                    exact="$FactionsList.{$i}" multiple="true" />
                   <debug_to_file name="'FactionFilter'"
                     directory="'ReactiveFactionsRetribution_log'"
                     text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Removed active faction from ignore list: ' + $FactionsList.{$i}"
                     output="$isDebug" append="true" />
-                  <remove_from_list name="$IgnoredListofFactions"
-                    exact="$FactionsList.{$i}" multiple="true" />
                 </do_if>
                 <do_elseif value="$FactionsList.{$i} == null or $FactionsList.{$i}.isactive == false or $FactionsList.{$i}.isvisitor">
-                  <debug_to_file name="'FactionFilter'"
+                  <remove_from_list name="$FactionsList"
+                    exact="$FactionsList.{$i}" multiple="true" />
+                    <debug_to_file name="'FactionFilter'"
                     directory="'ReactiveFactionsRetribution_log'"
                     text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Removed not allocated, nulled, not active, or visitor faction from the main list: ' + $FactionsList.{$i}"
                     output="$isDebug" append="true" />
-                  <remove_from_list name="$FactionsList"
-                    exact="$FactionsList.{$i}" multiple="true" />
                 </do_elseif>
               </do_all>
               <remove_from_list name="$FactionsList" list="$IgnoredListofFactions" multiple="true" />
