@@ -101,7 +101,7 @@
 						$start = md.ReactiveMain.ReactiveInit.$DefaultAssetModifier,
 						$col = 2,
 						$text = table[$text=''],
-						$min = 0, $max = 100, $suffix = ' %',
+						$min = 0, $max = 350, $suffix = ' %',
 						$default = 90,
 						$mouseOverText = {2005311642,1003} + '\n' + {2005311642,899} + ' ' + '90%',
 						$onSliderCellChanged = OnSMOSliderChange
