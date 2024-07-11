@@ -12,7 +12,7 @@
 - SCA Reputation Lock is now enabled by default.
 - Optimized memory usage for cues.
 - Set all default cooldown values to 0 seconds.
-- Added customizable approximate values for CR at each power level in the mod menu.
+- Added more customizable approximate values for CR at each power level in the mod menu.
 - Increased Asset Modifiers mod menu slider cap from 100% to 350%.
 - Excluded visitor factions from the mod.
 - Changed default cooldown values to 0 seconds.
