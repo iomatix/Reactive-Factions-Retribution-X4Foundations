@@ -60,7 +60,7 @@
 					<actions>
 						<!-- Add Links here -->
 						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Submenu_Link"
-							param="table[$text={33232474,80}, $id='general_settings_menu']" />
+							param="table[$text={2005311642,80}, $id='general_settings_menu']" />
 					</actions>
 				</cue>
 				<!-- GeneralSettingsMenu -->
