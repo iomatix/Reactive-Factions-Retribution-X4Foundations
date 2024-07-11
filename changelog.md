@@ -7,6 +7,12 @@
 - TODO: More RPG tiers //vary on community feedback
 - TODO: KD Menu API integration adding new features and moving existing there. // or some new system provided by Egosoft from 7.0 to 8.0? https://wiki.egosoft.com:1337/X4%20Foundations%20Wiki/Modding%20Support/Breaking%20Changes/ 
 
+## 2.2.1 Your X Game - Your Rules
+
+- Further improvements to the mod menus, and other related features that are not yet implemented in the mod menu for this update.
+- API Menu and its elements have the possibility to be dynamic. Implemented this for most settings improving settings customization and accessibility.
+- Most of the mod settings may be change dynamically without further limitations, bending the experience provided by Reactive Factions Retribution to individual players needs.
+
 ## 2.2.0 for X4 7.0
 
 - SCA Reputation Lock is now enabled by default.
