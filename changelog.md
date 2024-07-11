@@ -21,6 +21,7 @@
 - Mod Menu has been reworked on the backend.
 - The bug with missing event faction check against the ignore list, which could potentially cause issues has been fixed.
 - From now player's enemy faction can not take part in the mod's main event. Helping the enemy is assumed as accidental by default, so if you are e.g. helping Xenons by killing your foes next to their stations, it is assumed as accidental and will no longer destroy the reputation of every faction.
+- Full support for custom factions is provided with this update.
 
 ## 2.1.0 for X4 6.0
 
