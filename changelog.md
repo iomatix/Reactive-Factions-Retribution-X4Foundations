@@ -18,9 +18,9 @@
 - Changed default cooldown values to 0 seconds.
 - Improved logic, added a cue cancel event, and allowed cooldowns to be set to a true 0 seconds without triggering avalanche syndrome.
 - Implemented custom tag name relationchangereason.reactivefaction and added functionality to cancel cues for instances of cues. Note: The X4 mechanism for creating new enums is currently malfunctioning so it will be null instead at the moment.
-- Mod Menu has been reworked on backend.
-- Bug with missing event faction check against the ignore list, which could potentially cause issues has been fixed.
-- From now player's enemy faction can not take part in the mod's main event. Helping enemy is assumed as accidental by default, so if you are e.g. helping Xenons by killing your foes next to their stations, it is assumed as accidental and will no longer destroy reputation with every factions.
+- Mod Menu has been reworked on the backend.
+- The bug with missing event faction check against the ignore list, which could potentially cause issues has been fixed.
+- From now player's enemy faction can not take part in the mod's main event. Helping the enemy is assumed as accidental by default, so if you are e.g. helping Xenons by killing your foes next to their stations, it is assumed as accidental and will no longer destroy the reputation of every faction.
 
 ## 2.1.0 for X4 6.0
 

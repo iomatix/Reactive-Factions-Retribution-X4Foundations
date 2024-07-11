@@ -1,0 +1,75 @@
+==================================== ******** =================================================================================================================
+				      2.2.0 - Support for X4 7.0 
+==================================== ******** =================================================================================================================
+- The bug with missing event faction check against the ignore list, which could potentially cause issues has been fixed.
+- From now player's enemy faction can not take part in the mod's main event. Helping the enemy is assumed as accidental by default, so if you are e.g. helping Xenons by killing your foes next to their stations, it is assumed as accidental and will no longer destroy the reputation of every faction.- SCA Reputation Lock is now enabled by default.
+- Optimized memory usage for cues.
+- Set all default cooldown values to 0 seconds.
+- Added more customizable approximate values for CR at each power level in the mod menu.
+- Increased Asset Modifiers mod menu slider cap from 100% to 350%.
+- Excluded visitor factions from the mod.
+- Changed default cooldown values to 0 seconds.
+- Improved logic, added a cue cancel event, and allowed cooldowns to be set to a true 0 seconds without triggering avalanche syndrome.
+- Implemented custom tag name relationchangereason.reactivefaction and added functionality to cancel cues for instances of cues. Note: The X4 mechanism for creating new enums is currently malfunctioning so it will be null instead at the moment.
+- Mod Menu has been reworked on the backend.
+==================================== ******** =================================================================================================================
+				      2.1.0 - X4 6.0 and Fixes
+==================================== ******** =================================================================================================================
+- Language file corrected from typos.
+- SCA Reputation Lock is set to false by default.
+- SCA is added to FactionFilter.
+- Notifications will appear only at significant relation changes by default.
+- Suspend Notifications fixed.
+- Detailed Notifications checkbox is added to turn on all notifications.
+- UIRelationDivisor is set to 3 by default.
+- Maximum amplitude algorithm is reimplemented.
+- Experimental Amplitude is implemented.
+- Relative Amplitude is implemented.
+
+==================================== ******** =================================================================================================================
+				      2.0.7 - Balance & Enrichment - Update
+==================================== ******** =================================================================================================================
+- Penalties are no longer calculated in the wrong UI range. (Mandatory Fix) 
+- Default Penalty Cooldown value decreased from 25 seconds to 5 seconds. This means accelerating receiving reputation penalties up to 5 times by default during events where are many reputation changes in a short period. (i.a. during trading or fighting with large fleets.) 
+- Default Penalty Coefficient drops for each power level. (1: 7%->3%, 2: 20%->13%, 3: 40%->30%, 4: 65%->55%, 5: 90%->85%, 6: 135%->120% , 7: 175%->170% , 8: 245%->240%)
+- Default Bonus Coefficient drops for each power level. (1: 10%->6%, 2: 30%->18%, 3: 50->33%, 4: 70%->60%, 5: 100%->90%, 6: 140%->125% , 7: 180%->173% , 8: 250%-242%)
+I hope the changes will improve the gameplay and make the game at different stages force players to adopt different strategies on the intergalactic stage and keep it balanced for a casual player.
+To make the experience more difficult I'd suggest decreasing Bonus Coefficients by Extension Options Menu for the end-game stages to keep them at least equal or slightly smaller than the Penalty ones.
+- Main algorithm is reworked. (Development)
+- Filter's algorithm is reworked. (Development)
+- LoadAllFactionsToAllocatedMemory library has been created. (Development)
+- SetNewReputation library has been created. (Development)
+- Notification System has been reworked. (Development, QoL)
+- Max Reputation Amplitude option is added to the Mod APIs menu. It's a maximum amplitude of the difference in the reputation gained as a bonus or penalty expressed in the in-game Reputation UI unit. (QoL)
+To put it more simply, value is responsible for min and max cap values of reputation change.
+- New Advanced options are added to the Extension Menu. The Divisor Amplitude, the Divisor Value, Relation Factor Multiplier, and Relation Factor Threshold. (QoL)
+Divisor Amplitude is a reputation amplitude in which range the Max Reputation Amplitude is divided by Divisor Value.
+Divisor Value reduces the impact of the bonuses and penalties for factions with reputations close to a neutral. Set 1 to turn this off.
+Relation Factor Multiplier has a significant impact on the amount of the final penalty. Increasing it accelerates the evolution of relationships.
+Relation Factor Treshhold is the maximum of estimated reputation value used during calculation by the dynamic algorithm. Smaller values make relation changes more dynamic and unpredictable when larger ones improve the fluency of the relationships at the expense of dynamism
+- Improved language file and in-scripted strings handling. (QoL)
+- Introduced Relation Factor - the greater the difference between the relationship of the two factions is, the greater the penalty value for the player will be. However, the better the relationship with a given faction, the harder it is to spoil it instantly. (Gameplay Improvement)
+- Implemented Suspend Notifications checkbox to the extension menu. (QoL)
+- Algorithm's check has been changed from Killmilitary to an Enemy. (Development)
+- Older versions will be patched automatically to the 2.0.7 version during a loading screen. It means this update is compatible with previous saves. (QoL)
+- Small gift for players who update the modification from older versions! (In-game Gift)
+Note:
+This update introduces a lot of Math to the algorithm and needs decent testing.
+
+==================================== ******** =================================================================================================================
+				      2.0.6 - Quality of Life
+==================================== ******** =================================================================================================================
+- Moved logbook messages from tips to general category.
+- Check interval increased from 1 minute (Debug) to 25 minutes. It means the Player's Power Level will update once per 25 minutes.
+
+==================================== ******** =================================================================================================================
+				      2.0.5 - Mandatory Fix
+==================================== ******** =================================================================================================================
+- Fixed Vanilla and Mod APIs Cr values compatibility. The GUI credits values work as intended now.
+- New Consider Credits checkbox has been added to the menu.
+- Content.xml is compatible now with steam and nexus.
+
+==================================== ******** =================================================================================================================
+				      2.0.0
+==================================== ******** =================================================================================================================
+- Creation of Reactive Factions Retribution
