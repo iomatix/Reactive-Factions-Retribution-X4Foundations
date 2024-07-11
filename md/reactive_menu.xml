@@ -360,7 +360,7 @@
 						$text = table[$text=''],
 						$min = 1, $minSelect = 1,
 						$step = 1, 
-						$max = power1bonuspercentMax, $maxSelect = power1bonuspercentMax, 
+						$max = $power1bonuspercentMax, $maxSelect = $power1bonuspercentMax, 
 						$suffix = '%',
 						$default = 6,
 						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + '6%',
