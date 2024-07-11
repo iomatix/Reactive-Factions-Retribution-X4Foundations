@@ -20,4 +20,12 @@
 ## [MD Documentation](https://wiki.egosoft.com:1337/X%20Rebirth%20Wiki/Modding%20support/Mission%20Director%20Guide/#HCompletepropertydocumentation)
 
 ### MD refreshing
-To refresh the MD at run-time using the command "refreshmd" on the in-game command line.
+
+- To refresh the MD at run-time using the command "refreshmd" on the in-game command line.
+
+### [Publishing](https://wiki.egosoft.com:1337/X%20Rebirth%20Wiki/Modding%20support/Steam%20Workshop%20for%20X%20Rebirth%20and%20X4/)
+
+- To build and create new release with workshop support use `WorkshopTool publishx4 -path "..\X4 Foundations\extensions\xyz_mod" -preview "..\X4 Foundations\extensions\xyz\preview.jpg" -buildcat`
+- To build and update release with workshop support use `WorkshopTool update -path "..\X4 Foundations\extensions\xyz_modd" -buildcat -changenote "This is my x update"`
+
+
