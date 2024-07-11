@@ -167,7 +167,7 @@
         <debug_to_file name="'Patch_RFR'" directory="'ReactiveFactionsRetribution_log'"
           text="'[ReactiveFactionsRetribution LOG] 2.2.0 for 7.0 update - check the changelog on Nexus page for more information.'"
           output="$isDebug" append="true" />
-          <write_to_logbook money="75000Cr" category="tips"
+        <write_to_logbook money="75000Cr" category="tips"
           title="'\033B[Update Info]\033X Reactive Factions Retribution \033G[2.2.0]'"
           text="'\nHello there ' + player.name + ',\nThe modification was successfully updated to version ' +  '\033G2.2.0\033X' + '\n\n  The mod has been updated to support X4 7.0. A few fixes and improvements have been applied to the mod.\n Detailed changlog has been attached to the modification folder and is also available on both, Steam and Nexus websites.\n Please report all encountered problems or share your impressions about the modification so far.\n\nOh, also sending a small gift to help your galactic activities prosper!\n\n\033BThank you for being here, Commander! '" />
         <transfer_money from="faction.visitor" to="faction.player" amount="7500Cr" />
@@ -393,19 +393,25 @@
         <cue name="ReactiveApplyRep" instantiate="true">
           <conditions>
             <event_player_relation_changed />
-            <!-- only for positive changes and relationchangereason is not reactivefaction, event case is not null -->
-            <!-- tag.{relationchangereason.reactivefaction} won't work for now and it will receive null instead but docs says it should work  -->
+            <!-- only for positive changes and relationchangereason is not reactivefaction, event
+            case is not null -->
+            <!-- tag.{relationchangereason.reactivefaction} won't work for now and it will receive
+            null instead but docs says it should work  -->
             <check_value
               value="event.object == null and event.param3 != null and event.param3 != tag.{relationchangereason.reactivefaction} and event.param != null and event.param2.{1} gt event.param2.{2}" />
             <!-- only trigger once every seconds defined by GlobalCooldown  -->
             <check_value value="$NextPossibleRepChangeTime le player.age" />
+
+            <check_value value="event.param.isactive" comment="Exclude Inactive Factions from processing"/>
+             <check_value value="not event.param.isvisitor" comment="Exclude Visitor Factions from processing"/>
+             <!-- (hasrelation.<relationrange>.{$faction}) -->
+            <check_value value="event.param.hasrelation.killmilitary.{faction.player}" comment="Exclude killmilitary faction. Assuming that player provided an accidental help."/>
             <!-- to prevent running before power is checked -->
             <check_value value="$PlayerPower != 99" />
           </conditions>
           <actions>
             <set_value name="$FactionMain" exact="event.param" />
-            <!-- cancel this cue if the main event faction is not active, shouldn't happen but for
-            being sure it is there -->
+            <!-- e.g. (dead-code) cancel this cue if the main event faction is not active or is visitor, It will never happen due cue's <conditions/> -->
             <do_if value="$FactionMain.isactive == false or $FactionMain.isvisitor == true">
               <debug_to_file name="'ReactiveRepUpdate_rejected'"
                 directory="'ReactiveFactionsRetribution_log'"
@@ -413,274 +419,291 @@
                 output="$isDebug" append="true" />
               <cancel_cue cue="this" />
             </do_if>
-            <!-- (GLOBALCOOLDOWN) here is where we set the timer for how often this can trigger -->
-            <set_value name="$NextPossibleRepChangeTime" exact="player.age + $GlobalCooldown" />
-            <!-- event.param2.{1} - new value > event.param2.{2} - old value -->
-            <set_value name="$RepDiff" exact="event.param2.{1} - event.param2.{2}" />
-            <!-- Apply Bonus -->
-            <!-- (FACTIONCOOLDOWN) cooldown for bonus value ($FactionMain) -->
-            <set_value name="$isFactionMainOnCooldown" exact="false" />
-            <do_for_each name="$el" in="$ListofCooldowns" counter="$i">
-              <do_if value="$el.{1} == $FactionMain">
-                <do_if value="$el.{2} gt player.age ">
-                  <set_value name="$isFactionMainOnCooldown" exact="true" />
+            <!-- e.g. (dead-code) cancel this cue if the main event faction is killmilitary
+            (hasrelation.<relationrange>.{$faction}) to player, assuming that player provided an
+            accidental help, It will never happen due cue's <conditions/> -->
+            <do_elseif value="$FactionMain.hasrelation.killmilitary.{faction.player}">
+              <debug_to_file name="'ReactiveRepUpdate_rejected'"
+                directory="'ReactiveFactionsRetribution_log'"
+                text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Event faction is killmilitary - assuming that player has provided an accidental help so cancelling the cue and cleaning up...' + $FactionMain"
+                output="$isDebug" append="true" />
+              <cancel_cue cue="this" />
+            </do_elseif>
+            <!-- run ReactiveApplyRep -->
+            <do_else>
+              <!-- (GLOBALCOOLDOWN) here is where we set the timer for how often this can trigger -->
+              <set_value name="$NextPossibleRepChangeTime" exact="player.age + $GlobalCooldown" />
+              <!-- event.param2.{1} - new value > event.param2.{2} - old value -->
+              <set_value name="$RepDiff" exact="event.param2.{1} - event.param2.{2}" />
+              <!-- Apply Bonus -->
+              <!-- (FACTIONCOOLDOWN) cooldown for bonus value ($FactionMain) -->
+              <set_value name="$isFactionMainOnCooldown" exact="false" />
+              <do_for_each name="$el" in="$ListofCooldowns" counter="$i">
+                <do_if value="$el.{1} == $FactionMain">
+                  <do_if value="$el.{2} gt player.age ">
+                    <set_value name="$isFactionMainOnCooldown" exact="true" />
+                    <debug_to_file name="'ReactiveRepUpdate_rejected'"
+                      directory="'ReactiveFactionsRetribution_log'"
+                      text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (BONUS) rep was not changed (Main Faction Cooldown) with ' + $FactionMain + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower"
+                      output="$isDebug" append="true" />
+                    <debug_to_file name="'ReactiveFactionsCooldowns'"
+                      directory="'ReactiveFactionsRetribution_log'"
+                      text="'[ReactiveFactionsRetribution LOG] ' + player.age + ';' + ' Cooldown of [' + 'Main Faction' + '] ' + $el.{1}.name + ' Details: '+ $el + ': ' + $el.{2}"
+                      output="$isDebug" append="true" />
+                  </do_if>
+                  <do_else>
+                    <set_value name="$el.{2}" exact="player.age+$MainFactionCooldown" />
+                    <debug_to_file name="'ReactiveFactionsCooldowns'"
+                      directory="'ReactiveFactionsRetribution_log'"
+                      text="'[ReactiveFactionsRetribution LOG] ' + player.age + ';' + ' New Cooldown for [' + 'Main Faction' + '] ' + $el.{1}.name + ' Details: '+ $el + ': ' + $el.{2}"
+                      output="$isDebug" append="true" />
+                  </do_else>
+                  <break />
+                </do_if>
+              </do_for_each>
+              <remove_value name="$i" />
+              <!-- check if Player Power > 0, Faction is not on cooldown, faction is not ignored and
+            relation is not hostile to player faction -->
+              <do_if value="$PlayerPower gt 0 and $isFactionMainOnCooldown == false">
+                <include_actions ref="FactionFilter" />
+                <do_if
+                  value="$FactionMain.ishostileto.{faction.player} and $CheckHostile == true and (not $IgnoredListofFactions.indexof.{$FactionMain}">
                   <debug_to_file name="'ReactiveRepUpdate_rejected'"
                     directory="'ReactiveFactionsRetribution_log'"
-                    text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (BONUS) rep was not changed (Main Faction Cooldown) with ' + $FactionMain + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower"
-                    output="$isDebug" append="true" />
-                  <debug_to_file name="'ReactiveFactionsCooldowns'"
-                    directory="'ReactiveFactionsRetribution_log'"
-                    text="'[ReactiveFactionsRetribution LOG] ' + player.age + ';' + ' Cooldown of [' + 'Main Faction' + '] ' + $el.{1}.name + ' Details: '+ $el + ': ' + $el.{2}"
+                    text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (BONUS) rep was not changed (Faction is Hostile to Player) with ' + $FactionMain + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower"
                     output="$isDebug" append="true" />
                 </do_if>
                 <do_else>
-                  <set_value name="$el.{2}" exact="player.age+$MainFactionCooldown" />
-                  <debug_to_file name="'ReactiveFactionsCooldowns'"
-                    directory="'ReactiveFactionsRetribution_log'"
-                    text="'[ReactiveFactionsRetribution LOG] ' + player.age + ';' + ' New Cooldown for [' + 'Main Faction' + '] ' + $el.{1}.name + ' Details: '+ $el + ': ' + $el.{2}"
-                    output="$isDebug" append="true" />
-                </do_else>
-                <break />
-              </do_if>
-            </do_for_each>
-            <remove_value name="$i" />
-            <!-- check if Player Power > 0, Faction is not on cooldown, faction is not ignored and
-            relation is not hostile to player faction -->
-            <do_if value="$PlayerPower gt 0 and $isFactionMainOnCooldown == false">
-              <include_actions ref="FactionFilter" />
-              <do_if
-                value="$FactionMain.ishostileto.{faction.player} and $CheckHostile == true and (not $IgnoredListofFactions.indexof.{$FactionMain}">
-                <debug_to_file name="'ReactiveRepUpdate_rejected'"
-                  directory="'ReactiveFactionsRetribution_log'"
-                  text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (BONUS) rep was not changed (Faction is Hostile to Player) with ' + $FactionMain + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower"
-                  output="$isDebug" append="true" />
-              </do_if>
-              <do_else>
-                <do_if value="$PlayerPower == 1">
-                  <set_value name="$RepBonus" exact="$RepDiff * $Power1bonuspercent/100" />
-                </do_if>
-                <do_if value="$PlayerPower == 2">
-                  <set_value name="$RepBonus" exact="$RepDiff * $Power2bonuspercent/100" />
-                </do_if>
-                <do_elseif value="$PlayerPower == 3">
-                  <set_value name="$RepBonus" exact="$RepDiff * $Power3bonuspercent/100" />
-                </do_elseif>
-                <do_elseif value="$PlayerPower == 4">
-                  <set_value name="$RepBonus" exact="$RepDiff * $Power4bonuspercent/100" />
-                </do_elseif>
-                <do_elseif value="$PlayerPower == 5">
-                  <set_value name="$RepBonus" exact="$RepDiff * $Power5bonuspercent/100" />
-                </do_elseif>
-                <do_elseif value="$PlayerPower == 6">
-                  <set_value name="$RepBonus" exact="$RepDiff * $Power6bonuspercent/100" />
-                </do_elseif>
-                <do_elseif value="$PlayerPower == 7">
-                  <set_value name="$RepBonus" exact="$RepDiff * $Power7bonuspercent/100" />
-                </do_elseif>
-                <do_else>
-                  <set_value name="$RepBonus" exact="$RepDiff * $Power8bonuspercent/100" />
-                </do_else>
-                <!-- Friendship Factors -->
-                <set_value name="$RelationFriendshipFactor"
-                  exact="$FactionMain.relationto.{faction.player}" />
-                <set_value name="$RelationFriendshipFactor"
-                  exact="(10*log(1000*abs($RelationFriendshipFactor))/log(10))/$RelationTreshhold" />
-                <!-- Multiplier GUI $RelationFactorMul -->
-                <do_if value="$RelationFriendshipFactor gt 0">
-                  <!-- Convert absolute value to UI value and make it a factor actualy by dividing
+                  <do_if value="$PlayerPower == 1">
+                    <set_value name="$RepBonus" exact="$RepDiff * $Power1bonuspercent/100" />
+                  </do_if>
+                  <do_if value="$PlayerPower == 2">
+                    <set_value name="$RepBonus" exact="$RepDiff * $Power2bonuspercent/100" />
+                  </do_if>
+                  <do_elseif value="$PlayerPower == 3">
+                    <set_value name="$RepBonus" exact="$RepDiff * $Power3bonuspercent/100" />
+                  </do_elseif>
+                  <do_elseif value="$PlayerPower == 4">
+                    <set_value name="$RepBonus" exact="$RepDiff * $Power4bonuspercent/100" />
+                  </do_elseif>
+                  <do_elseif value="$PlayerPower == 5">
+                    <set_value name="$RepBonus" exact="$RepDiff * $Power5bonuspercent/100" />
+                  </do_elseif>
+                  <do_elseif value="$PlayerPower == 6">
+                    <set_value name="$RepBonus" exact="$RepDiff * $Power6bonuspercent/100" />
+                  </do_elseif>
+                  <do_elseif value="$PlayerPower == 7">
+                    <set_value name="$RepBonus" exact="$RepDiff * $Power7bonuspercent/100" />
+                  </do_elseif>
+                  <do_else>
+                    <set_value name="$RepBonus" exact="$RepDiff * $Power8bonuspercent/100" />
+                  </do_else>
+                  <!-- Friendship Factors -->
+                  <set_value name="$RelationFriendshipFactor"
+                    exact="$FactionMain.relationto.{faction.player}" />
+                  <set_value name="$RelationFriendshipFactor"
+                    exact="(10*log(1000*abs($RelationFriendshipFactor))/log(10))/$RelationTreshhold" />
+                  <!-- Multiplier GUI $RelationFactorMul -->
+                  <do_if value="$RelationFriendshipFactor gt 0">
+                    <!-- Convert absolute value to UI value and make it a factor actualy by dividing
                   in by Max Value (30 UI Value) but to make things more unstable at end game the
                   better value will be somewhere in this range 18-25 -->
-                  <set_value name="$RepBonus"
-                    exact="$RepBonus*log(1.15+($RelationFactorMul*$RelationFriendshipFactor^2))" />
-                  <debug_to_file name="'ReactiveRepUpdate'"
-                    directory="'ReactiveFactionsRetribution_log'"
-                    text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (Friendship Factor Case) Change recalculated: ' + $RepBonus +'. Values: [FriendshipFactor] ' + $RelationFriendshipFactor + ' [Multiplier] '+$RelationFactorMul"
-                    output="$isDebug" append="true" />
-                </do_if>
-                <remove_value name="$RelationFriendshipFactor" />
-                <!-- Check that change isn't more than $UIRelationChange ui value. If it is, then
+                    <set_value name="$RepBonus"
+                      exact="$RepBonus*log(1.15+($RelationFactorMul*$RelationFriendshipFactor^2))" />
+                    <debug_to_file name="'ReactiveRepUpdate'"
+                      directory="'ReactiveFactionsRetribution_log'"
+                      text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (Friendship Factor Case) Change recalculated: ' + $RepBonus +'. Values: [FriendshipFactor] ' + $RelationFriendshipFactor + ' [Multiplier] '+$RelationFactorMul"
+                      output="$isDebug" append="true" />
+                  </do_if>
+                  <remove_value name="$RelationFriendshipFactor" />
+                  <!-- Check that change isn't more than $UIRelationChange ui value. If it is, then
                 only go up $UIRelationChange UI -->
-                <set_value name="$FactionOne" exact="$FactionMain" />
-                <set_value name="$FactionTwo" exact="faction.player" />
-                <set_value name="$FactionPowerLevel" exact="$PlayerPower" />
-                <set_value name="$isRepNegative" exact="false" />
-                <include_actions ref="CalculatePossibleValueRepChange" />
+                  <set_value name="$FactionOne" exact="$FactionMain" />
+                  <set_value name="$FactionTwo" exact="faction.player" />
+                  <set_value name="$FactionPowerLevel" exact="$PlayerPower" />
+                  <set_value name="$isRepNegative" exact="false" />
+                  <include_actions ref="CalculatePossibleValueRepChange" />
+                  <do_if
+                    value="$RepValuePossibleChange != null and $RepBonus gt $RepValuePossibleChange">
+                    <debug_to_file name="'ReactiveRepUpdate'"
+                      directory="'ReactiveFactionsRetribution_log'"
+                      text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; RepBonus: ' + $RepBonus + ' was higher than '+ $UIRelationChange +' UI. Changed RepValuePossibleChange: ' + $RepValuePossibleChange"
+                      output="$isDebug" append="true" />
+                    <set_value name="$RepBonus" exact="$RepValuePossibleChange" />
+                  </do_if>
+                  <remove_value name="$RepValuePossibleChange" />
+                  <!-- Set value -->
+                  <set_value name="$FactionOne" exact="$FactionMain" />
+                  <set_value name="$RepChange" exact="$RepBonus" />
+                  <set_value name="$isRepNegative" exact="false" />
+                  <include_actions ref="SetNewReputation" />
+                </do_else>
+                <remove_value name="$RepBonus" />
+                <remove_value name="$isFactionMainOnCooldown" />
+              </do_if>
+              <!-- Power level hit multiplayers -->
+              <!-- Power1-8percent/100 -->
+              <!-- 2.0.7 Change killmilitary -> enemy -->
+              <get_factions_by_relation relation="enemy" faction="$FactionMain"
+                result="$EnemiesList" />
+
+              <!-- Filter for useless factions -->
+              <create_list name="$FactionsList" />
+              <append_list_elements name="$FactionsList" other="$EnemiesList" />
+              <include_actions ref="FactionFilter" />
+              <remove_value name="$EnemiesList" />
+              <create_list name="$EnemiesList" />
+              <append_list_elements name="$EnemiesList" other="$FactionsList" />
+              <remove_value name="$FactionsList" />
+              <do_for_each name="$Enemy" in="$EnemiesList" counter="$i">
+                <!-- Remove buccaneers, holyorderfanatic, trinity when added. -->
+                <!-- cleaned up this long entry and formatting -->
                 <do_if
-                  value="$RepValuePossibleChange != null and $RepBonus gt $RepValuePossibleChange">
-                  <debug_to_file name="'ReactiveRepUpdate'"
-                    directory="'ReactiveFactionsRetribution_log'"
-                    text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; RepBonus: ' + $RepBonus + ' was higher than '+ $UIRelationChange +' UI. Changed RepValuePossibleChange: ' + $RepValuePossibleChange"
-                    output="$isDebug" append="true" />
-                  <set_value name="$RepBonus" exact="$RepValuePossibleChange" />
-                </do_if>
-                <remove_value name="$RepValuePossibleChange" />
-                <!-- Set value -->
-                <set_value name="$FactionOne" exact="$FactionMain" />
-                <set_value name="$RepChange" exact="$RepBonus" />
-                <set_value name="$isRepNegative" exact="false" />
-                <include_actions ref="SetNewReputation" />
-              </do_else>
-              <remove_value name="$RepBonus" />
-              <remove_value name="$isFactionMainOnCooldown" />
-            </do_if>
-            <!-- Power level hit multiplayers -->
-            <!-- Power1-8percent/100 -->
-            <!-- 2.0.7 Change killmilitary -> enemy -->
-            <get_factions_by_relation relation="enemy" faction="$FactionMain" result="$EnemiesList" />
-            <!-- Filter for useless factions -->
-            <create_list name="$FactionsList" />
-            <append_list_elements name="$FactionsList" other="$EnemiesList" />
-            <include_actions ref="FactionFilter" />
-            <remove_value name="$EnemiesList" />
-            <create_list name="$EnemiesList" />
-            <append_list_elements name="$EnemiesList" other="$FactionsList" />
-            <remove_value name="$FactionsList" />
-            <do_for_each name="$Enemy" in="$EnemiesList" counter="$i">
-              <!-- Remove buccaneers, holyorderfanatic, trinity when added. -->
-              <!-- cleaned up this long entry and formatting -->
-              <do_if
-                value="($Enemy != null) and ($Enemy.isactive and $Enemy.isvisitor == false) and (not $IgnoredListofFactions.indexof.{$Enemy})">
-                <do_if value="$PlayerPower == 0">
-                  <!-- do nothing on power level 0 -->
-                  <debug_to_file name="'ReactiveRepUpdate_rejected'"
-                    directory="'ReactiveFactionsRetribution_log'"
-                    text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; rep was not changed (Player Level is 0) with ' + $Enemy + ' due to change with ' + $FactionMain + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower"
-                    output="$isDebug" append="true" />
-                </do_if>
-                <do_else>
-                  <!-- (FACTIONCOOLDOWN) Add cooldowns ($ListofCooldowns) for each -->
-                  <set_value name="$isEnemyOnCooldown" exact="false" />
-                  <do_for_each name="$el" in="$ListofCooldowns" counter="$i">
-                    <do_if value="$el.{1} == $Enemy">
-                      <do_if value="$el.{3} gt player.age ">
-                        <set_value name="$isEnemyOnCooldown" exact="true" />
-                        <debug_to_file name="'ReactiveRepUpdate_rejected'"
+                  value="($Enemy != null) and ($Enemy.isactive and $Enemy.isvisitor == false) and (not $IgnoredListofFactions.indexof.{$Enemy})">
+                  <do_if value="$PlayerPower == 0">
+                    <!-- do nothing on power level 0 -->
+                    <debug_to_file name="'ReactiveRepUpdate_rejected'"
+                      directory="'ReactiveFactionsRetribution_log'"
+                      text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; rep was not changed (Player Level is 0) with ' + $Enemy + ' due to change with ' + $FactionMain + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower"
+                      output="$isDebug" append="true" />
+                  </do_if>
+                  <do_else>
+                    <!-- (FACTIONCOOLDOWN) Add cooldowns ($ListofCooldowns) for each -->
+                    <set_value name="$isEnemyOnCooldown" exact="false" />
+                    <do_for_each name="$el" in="$ListofCooldowns" counter="$i">
+                      <do_if value="$el.{1} == $Enemy">
+                        <do_if value="$el.{3} gt player.age ">
+                          <set_value name="$isEnemyOnCooldown" exact="true" />
+                          <debug_to_file name="'ReactiveRepUpdate_rejected'"
+                            directory="'ReactiveFactionsRetribution_log'"
+                            text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (PENALTY) rep was not changed (Faction Cooldown) with ' + $Enemy + ' due to change with ' + $FactionMain + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower"
+                            output="$isDebug" append="true" />
+                          <debug_to_file name="'ReactiveFactionsCooldowns'"
+                            directory="'ReactiveFactionsRetribution_log'"
+                            text="'[ReactiveFactionsRetribution LOG] ' + player.age + ';' + ' Cooldown of [' + 'Enemy Faction' + '] ' + $el.{1}.name + ' Details: '+ $el + ': ' + $el.{3}"
+                            output="$isDebug" append="true" />
+                        </do_if>
+                        <do_else>
+                          <set_value name="$el.{3}" exact="player.age+$EnemyFactionCooldown" />
+                          <debug_to_file name="'ReactiveFactionsCooldowns'"
+                            directory="'ReactiveFactionsRetribution_log'"
+                            text="'[ReactiveFactionsRetribution LOG] ' + player.age + ';' + ' New Cooldown for [' + 'Enemy Faction' + '] ' + $el.{1}.name + ' Details: '+ $el + ': ' + $el.{3}"
+                            output="$isDebug" append="true" />
+                        </do_else>
+                        <break />
+                      </do_if>
+                    </do_for_each>
+                    <remove_value name="$i" />
+                    <remove_value name="$element" />
+                  </do_else>
+                  <do_if value="$PlayerPower gt 0 and $isEnemyOnCooldown == false">
+                    <do_if value="$PlayerPower == 1">
+                      <set_value name="$RepHit" exact="($RepDiff * $Power1percent/100)" />
+                    </do_if>
+                    <do_elseif value="$PlayerPower == 2">
+                      <set_value name="$RepHit" exact="($RepDiff * $Power2percent/100)" />
+                    </do_elseif>
+                    <do_elseif value="$PlayerPower == 3">
+                      <set_value name="$RepHit" exact="($RepDiff * $Power3percent/100)" />
+                    </do_elseif>
+                    <do_elseif value="$PlayerPower == 4">
+                      <set_value name="$RepHit" exact="($RepDiff * $Power4percent/100)" />
+                    </do_elseif>
+                    <do_elseif value="$PlayerPower == 5">
+                      <set_value name="$RepHit" exact="($RepDiff * $Power5percent/100)" />
+                    </do_elseif>
+                    <do_elseif value="$PlayerPower == 6">
+                      <set_value name="$RepHit" exact="($RepDiff * $Power6percent/100)" />
+                    </do_elseif>
+                    <do_elseif value="$PlayerPower == 7">
+                      <set_value name="$RepHit" exact="($RepDiff * $Power7percent/100)" />
+                    </do_elseif>
+                    <do_elseif value="$PlayerPower == 8">
+                      <set_value name="$RepHit" exact="($RepDiff * $Power8percent/100)" />
+                    </do_elseif>
+                    <!-- Apply penalty only if Event Faction <-> Enemy Faction relation is worse
+                    than
+                  Player Faction <-> Enemy Faction -->
+                    <do_if
+                      value="$Enemy.relationto.{$FactionMain} lt $Enemy.relationto.{faction.player}">
+                      <!-- Dislike & Friendship Factors -->
+                      <set_value name="$RelationDislikeFactor"
+                        exact="$Enemy.relationto.{$FactionMain}" />
+                      <set_value name="$RelationFriendshipFactor"
+                        exact="$FactionMain.relationto.{faction.player}" />
+                      <!-- Multiplier GUI $RelationFactorMul -->
+                      <set_value name="$RelationDislikeFactor"
+                        exact="(10*log(1000*abs($RelationDislikeFactor))/log(10))/$RelationTreshhold" />
+                      <do_if value="$RelationFriendshipFactor gt 0">
+                        <!-- Convert absolute value to UI value and make it a factor actualy by
+                      dividing in by Max Value (30 UI Value) but to make things more unstable at end
+                      game the better value will be somewhere in this range 18-25 -->
+                        <set_value name="$RelationFriendshipFactor"
+                          exact="(10*log(1000*$RelationFriendshipFactor)/log(10))/$RelationTreshhold" />
+                        <set_value name="$RepHit"
+                          exact="$RepHit*log(1.15+($RelationFactorMul*$RelationDislikeFactor*($RelationDislikeFactor/$RelationFriendshipFactor)))" />
+                        <debug_to_file name="'ReactiveRepUpdate'"
                           directory="'ReactiveFactionsRetribution_log'"
-                          text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (PENALTY) rep was not changed (Faction Cooldown) with ' + $Enemy + ' due to change with ' + $FactionMain + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower"
-                          output="$isDebug" append="true" />
-                        <debug_to_file name="'ReactiveFactionsCooldowns'"
-                          directory="'ReactiveFactionsRetribution_log'"
-                          text="'[ReactiveFactionsRetribution LOG] ' + player.age + ';' + ' Cooldown of [' + 'Enemy Faction' + '] ' + $el.{1}.name + ' Details: '+ $el + ': ' + $el.{3}"
+                          text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (Dislike Factor Case 1) Change recalculated: ' + $RepHit +'. Values: [DislikeFactor] ' + $RelationDislikeFactor + ' [FriendshipFactor] ' + $RelationFriendshipFactor + ' [Multiplier] '+$RelationFactorMul"
                           output="$isDebug" append="true" />
                       </do_if>
                       <do_else>
-                        <set_value name="$el.{3}" exact="player.age+$EnemyFactionCooldown" />
-                        <debug_to_file name="'ReactiveFactionsCooldowns'"
-                          directory="'ReactiveFactionsRetribution_log'"
-                          text="'[ReactiveFactionsRetribution LOG] ' + player.age + ';' + ' New Cooldown for [' + 'Enemy Faction' + '] ' + $el.{1}.name + ' Details: '+ $el + ': ' + $el.{3}"
-                          output="$isDebug" append="true" />
-                      </do_else>
-                      <break />
-                    </do_if>
-                  </do_for_each>
-                  <remove_value name="$i" />
-                  <remove_value name="$element" />
-                </do_else>
-                <do_if value="$PlayerPower gt 0 and $isEnemyOnCooldown == false">
-                  <do_if value="$PlayerPower == 1">
-                    <set_value name="$RepHit" exact="($RepDiff * $Power1percent/100)" />
-                  </do_if>
-                  <do_elseif value="$PlayerPower == 2">
-                    <set_value name="$RepHit" exact="($RepDiff * $Power2percent/100)" />
-                  </do_elseif>
-                  <do_elseif value="$PlayerPower == 3">
-                    <set_value name="$RepHit" exact="($RepDiff * $Power3percent/100)" />
-                  </do_elseif>
-                  <do_elseif value="$PlayerPower == 4">
-                    <set_value name="$RepHit" exact="($RepDiff * $Power4percent/100)" />
-                  </do_elseif>
-                  <do_elseif value="$PlayerPower == 5">
-                    <set_value name="$RepHit" exact="($RepDiff * $Power5percent/100)" />
-                  </do_elseif>
-                  <do_elseif value="$PlayerPower == 6">
-                    <set_value name="$RepHit" exact="($RepDiff * $Power6percent/100)" />
-                  </do_elseif>
-                  <do_elseif value="$PlayerPower == 7">
-                    <set_value name="$RepHit" exact="($RepDiff * $Power7percent/100)" />
-                  </do_elseif>
-                  <do_elseif value="$PlayerPower == 8">
-                    <set_value name="$RepHit" exact="($RepDiff * $Power8percent/100)" />
-                  </do_elseif>
-                  <!-- Apply penalty only if Event Faction <-> Enemy Faction relation is worse than
-                  Player Faction <-> Enemy Faction -->
-                  <do_if
-                    value="$Enemy.relationto.{$FactionMain} lt $Enemy.relationto.{faction.player}">
-                    <!-- Dislike & Friendship Factors -->
-                    <set_value name="$RelationDislikeFactor"
-                      exact="$Enemy.relationto.{$FactionMain}" />
-                    <set_value name="$RelationFriendshipFactor"
-                      exact="$FactionMain.relationto.{faction.player}" />
-                    <!-- Multiplier GUI $RelationFactorMul -->
-                    <set_value name="$RelationDislikeFactor"
-                      exact="(10*log(1000*abs($RelationDislikeFactor))/log(10))/$RelationTreshhold" />
-                    <do_if value="$RelationFriendshipFactor gt 0">
-                      <!-- Convert absolute value to UI value and make it a factor actualy by
-                      dividing in by Max Value (30 UI Value) but to make things more unstable at end
-                      game the better value will be somewhere in this range 18-25 -->
-                      <set_value name="$RelationFriendshipFactor"
-                        exact="(10*log(1000*$RelationFriendshipFactor)/log(10))/$RelationTreshhold" />
-                      <set_value name="$RepHit"
-                        exact="$RepHit*log(1.15+($RelationFactorMul*$RelationDislikeFactor*($RelationDislikeFactor/$RelationFriendshipFactor)))" />
-                      <debug_to_file name="'ReactiveRepUpdate'"
-                        directory="'ReactiveFactionsRetribution_log'"
-                        text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (Dislike Factor Case 1) Change recalculated: ' + $RepHit +'. Values: [DislikeFactor] ' + $RelationDislikeFactor + ' [FriendshipFactor] ' + $RelationFriendshipFactor + ' [Multiplier] '+$RelationFactorMul"
-                        output="$isDebug" append="true" />
-                    </do_if>
-                    <do_else>
-                      <set_value name="$RepHit"
-                        exact="$RepHit*log($RelationFactorMul*$RelationDislikeFactor^2)" />
-                      <debug_to_file name="'ReactiveRepUpdate'"
-                        directory="'ReactiveFactionsRetribution_log'"
-                        text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (Dislike Factor Case 2) Change recalculated: ' + $RepHit +'. Values: [DislikeFactor] ' + $RelationDislikeFactor + ' [Multiplier] '+$RelationFactorMul"
-                        output="$isDebug" append="true" />
-                    </do_else>
-                    <remove_value name="$RelationDislikeFactor" />
-                    <remove_value name="$RelationFriendshipFactor" />
-                    <!-- Calculations -->
-                    <do_if value="$RepHit gt 0">
-                      <!-- Check that change isn't less than -$UIRelationChange ui value. If it is,
-                      then only go down X UI -->
-                      <set_value name="$FactionOne" exact="$Enemy" />
-                      <set_value name="$FactionTwo" exact="faction.player" />
-                      <set_value name="$FactionPowerLevel" exact="$PlayerPower" />
-                      <set_value name="$isRepNegative" exact="true" />
-                      <include_actions ref="CalculatePossibleValueRepChange" />
-                      <do_if
-                        value="$RepValuePossibleChange != null and $RepHit gt $RepValuePossibleChange">
+                        <set_value name="$RepHit"
+                          exact="$RepHit*log($RelationFactorMul*$RelationDislikeFactor^2)" />
                         <debug_to_file name="'ReactiveRepUpdate'"
                           directory="'ReactiveFactionsRetribution_log'"
-                          text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; RepHit: ' + $RepHit + ' was harsher than '+ $UIRelationChange +' UI. Changed RepValuePossibleChange: ' + $RepValuePossibleChange"
+                          text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (Dislike Factor Case 2) Change recalculated: ' + $RepHit +'. Values: [DislikeFactor] ' + $RelationDislikeFactor + ' [Multiplier] '+$RelationFactorMul"
                           output="$isDebug" append="true" />
-                        <set_value name="$RepHit" exact="$RepValuePossibleChange" />
+                      </do_else>
+                      <remove_value name="$RelationDislikeFactor" />
+                      <remove_value name="$RelationFriendshipFactor" />
+                      <!-- Calculations -->
+                      <do_if value="$RepHit gt 0">
+                        <!-- Check that change isn't less than -$UIRelationChange ui value. If it
+                        is,
+                      then only go down X UI -->
+                        <set_value name="$FactionOne" exact="$Enemy" />
+                        <set_value name="$FactionTwo" exact="faction.player" />
+                        <set_value name="$FactionPowerLevel" exact="$PlayerPower" />
+                        <set_value name="$isRepNegative" exact="true" />
+                        <include_actions ref="CalculatePossibleValueRepChange" />
+                        <do_if
+                          value="$RepValuePossibleChange != null and $RepHit gt $RepValuePossibleChange">
+                          <debug_to_file name="'ReactiveRepUpdate'"
+                            directory="'ReactiveFactionsRetribution_log'"
+                            text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; RepHit: ' + $RepHit + ' was harsher than '+ $UIRelationChange +' UI. Changed RepValuePossibleChange: ' + $RepValuePossibleChange"
+                            output="$isDebug" append="true" />
+                          <set_value name="$RepHit" exact="$RepValuePossibleChange" />
+                        </do_if>
+                        <remove_value name="$RepValuePossibleChange" />
+                        <!-- Changing Reputation (PENALTY) -->
+                        <set_value name="$FactionOne" exact="$Enemy" />
+                        <set_value name="$RepChange" exact="$RepHit" />
+                        <set_value name="$isRepNegative" exact="true" />
+                        <include_actions ref="SetNewReputation" />
                       </do_if>
-                      <remove_value name="$RepValuePossibleChange" />
-                      <!-- Changing Reputation (PENALTY) -->
-                      <set_value name="$FactionOne" exact="$Enemy" />
-                      <set_value name="$RepChange" exact="$RepHit" />
-                      <set_value name="$isRepNegative" exact="true" />
-                      <include_actions ref="SetNewReputation" />
                     </do_if>
+                    <do_else>
+                      <debug_to_file name="'ReactiveRepUpdate_rejected'"
+                        directory="'ReactiveFactionsRetribution_log'"
+                        text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; rep was not changed with ' + $Enemy + ' for: ' + $RepHit + ' due to ' + $FactionMain + ' player already having a lower reputation with current power level of ' + $PlayerPower"
+                        output="$isDebug" append="true" />
+                    </do_else>
                   </do_if>
-                  <do_else>
-                    <debug_to_file name="'ReactiveRepUpdate_rejected'"
-                      directory="'ReactiveFactionsRetribution_log'"
-                      text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; rep was not changed with ' + $Enemy + ' for: ' + $RepHit + ' due to ' + $FactionMain + ' player already having a lower reputation with current power level of ' + $PlayerPower"
-                      output="$isDebug" append="true" />
-                  </do_else>
+                  <remove_value name="$RepHit" />
+                  <remove_value name="$isEnemyOnCooldown" />
                 </do_if>
-                <remove_value name="$RepHit" />
-                <remove_value name="$isEnemyOnCooldown" />
-              </do_if>
-              <do_else>
-                <debug_to_file name="'ReactiveRepUpdate'"
-                  directory="'ReactiveFactionsRetribution_log'"
-                  text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Excluded faction ' + $Enemy + ' or something gone wrong'"
-                  output="$isDebug" append="true" />
-              </do_else>
-            </do_for_each>
-            <remove_value name="$i" />
-            <remove_value name="$Enemy" />
-            <remove_value name="$EnemiesList" />
+                <do_else>
+                  <debug_to_file name="'ReactiveRepUpdate'"
+                    directory="'ReactiveFactionsRetribution_log'"
+                    text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Excluded faction ' + $Enemy + ' or something gone wrong'"
+                    output="$isDebug" append="true" />
+                </do_else>
+              </do_for_each>
+              <remove_value name="$i" />
+              <remove_value name="$Enemy" />
+              <remove_value name="$EnemiesList" />
+            </do_else>
           </actions>
         </cue>
         <library name="CalculatePossibleValueRepChange">
@@ -816,14 +839,16 @@
                     value="[($FactionOne.relationto.{faction.player} + $RepChange), -1].max"
                     reason="tag.{relationchangereason.reactivefaction}" />
                   <set_faction_relation faction="faction.player" otherfaction="$FactionOne"
-                    value="$FactionOne.relationto.{faction.player}" reason="tag.{relationchangereason.reactivefaction}" />
+                    value="$FactionOne.relationto.{faction.player}"
+                    reason="tag.{relationchangereason.reactivefaction}" />
                 </do_if>
                 <do_else>
                   <set_faction_relation faction="$FactionOne" otherfaction="faction.player"
                     value="[($FactionOne.relationto.{faction.player} + $RepChange), 1].min"
                     reason="tag.{relationchangereason.reactivefaction}" />
                   <set_faction_relation faction="faction.player" otherfaction="$FactionOne"
-                    value="$FactionOne.relationto.{faction.player}" reason="tag.{relationchangereason.reactivefaction}" />
+                    value="$FactionOne.relationto.{faction.player}"
+                    reason="tag.{relationchangereason.reactivefaction}" />
                 </do_else>
                 <debug_to_file name="'ReactiveRepUpdate'"
                   directory="'ReactiveFactionsRetribution_log'"
@@ -872,13 +897,13 @@
               <set_value name="$IgnoredListofFactions"
                 exact="[faction.scaleplate, faction.buccaneers, faction.civilian, faction.court, faction.criminal, faction.holyorderfanatic, faction.khaak, faction.smuggler, faction.trinity, faction.visitor, faction.xenon, faction.ownerless]" />
               <!-- catch all visitor factions -->
-                <get_factions_by_tag tag="tag.visitor" result="$VisitorList" />
+              <get_factions_by_tag tag="tag.visitor" result="$VisitorList" />
 
               <!-- checking if any factions in ignored list are active. story stuff makes coding so
               much more tedious -->
               <do_all exact="$FactionsList.count" counter="$i">
                 <do_if
-                value="($FactionsList.{$i} == faction.buccaneers or $FactionsList.{$i} == faction.court or $FactionsList.{$i} == faction.holyorderfanatic or $FactionsList.{$i} == faction.trinity) and $FactionsList.{$i}.isactive">
+                  value="($FactionsList.{$i} == faction.buccaneers or $FactionsList.{$i} == faction.court or $FactionsList.{$i} == faction.holyorderfanatic or $FactionsList.{$i} == faction.trinity) and $FactionsList.{$i}.isactive">
                   <remove_from_list name="$IgnoredListofFactions"
                     exact="$FactionsList.{$i}" multiple="true" />
                   <debug_to_file name="'FactionFilter'"
@@ -886,10 +911,11 @@
                     text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Removed active faction from ignore list: ' + $FactionsList.{$i}"
                     output="$isDebug" append="true" />
                 </do_if>
-                <do_elseif value="$FactionsList.{$i} == null or $FactionsList.{$i}.isactive == false or $FactionsList.{$i}.isvisitor">
+                <do_elseif
+                  value="$FactionsList.{$i} == null or $FactionsList.{$i}.isactive == false or $FactionsList.{$i}.isvisitor">
                   <remove_from_list name="$FactionsList"
                     exact="$FactionsList.{$i}" multiple="true" />
-                    <debug_to_file name="'FactionFilter'"
+                  <debug_to_file name="'FactionFilter'"
                     directory="'ReactiveFactionsRetribution_log'"
                     text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Removed not allocated, nulled, not active, or visitor faction from the main list: ' + $FactionsList.{$i}"
                     output="$isDebug" append="true" />
