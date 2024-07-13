@@ -157,13 +157,18 @@
 						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
 						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 200}]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+							<set_value name="$defaultAssetModifierMax"
+							exact="[350,md.ReactiveMain.ReactiveInit.$DefaultAssetModifier * 2].max" />
+							<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'DefaultAssetModifier',
 						$start = md.ReactiveMain.ReactiveInit.$DefaultAssetModifier,
 						$col = 2,
 						$text = table[$text=''],
-						$min = 0, $max = 350, $suffix = ' %',
+						$min = 0, $minSelect = 0,
+						$step = 1, 
+						$max = $defaultAssetModifierMax, $maxSelect = $defaultAssetModifierMax, $exceedMaxValue = false,
+						$suffix = ' %',
 						$default = 90,
 						$mouseOverText = {2005311642,1003} + '\n' + {2005311642,899} + ' ' + '90%',
 						$onSliderCellConfirm = OnSMOSliderChange
