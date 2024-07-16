@@ -28,4 +28,6 @@
 - To build and create new release with workshop support use `WorkshopTool publishx4 -path "..\X4 Foundations\extensions\xyz_mod" -preview "..\X4 Foundations\extensions\xyz\preview.jpg" -buildcat`
 - To build and update release with workshop support use `WorkshopTool update -path "..\X4 Foundations\extensions\xyz_modd" -buildcat -changenote "This is my x update"`
 
+### By downloading mods from Nexus you will support their authors.
+
 
