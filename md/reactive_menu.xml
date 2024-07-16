@@ -10,7 +10,7 @@
 		</cue>
 		<cue name="Init" instantiate="false" version="221">
 			<actions>
-				<!-- TODO: Generaol Menu -->
+				<!-- General Menu -->
 				<set_value name="md.$MenuVarTable" exact="table[]" />
 				<!-- Shortcuts -->
 				<set_value name="$RFVT" exact="md.$ReactiveFactionsMenuVarTable" />
