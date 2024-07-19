@@ -3,7 +3,6 @@
 
 ## Official Releases
 ### [Release on Nexus](https://www.nexusmods.com/x4foundations/mods/746/)
-
 ### [Release on Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=2545236840)
 
 
@@ -29,5 +28,3 @@
 - To build and update release with workshop support use `WorkshopTool update -path "..\X4 Foundations\extensions\xyz_modd" -buildcat -changenote "This is my x update"`
 
 ### By downloading mods from Nexus you will support their authors.
-
-
