@@ -8,5 +8,9 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"spaceboxai.personalizedName": "ollama run codegeex4",
+		"spaceboxai.customModel": "codegeex4",
+		"spaceboxai.generateCode-enabled": true
+	}
 }
