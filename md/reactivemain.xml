@@ -4,7 +4,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="http://x4dynlib.access.ly/libraries/md.xsd">
   <cues>
-    <cue name="ReactiveInit" version="221">
+    <cue name="ReactiveInit" version="222">
       <conditions>
         <check_any>
           <event_cue_signalled cue="md.Setup.GameStart" />
@@ -177,7 +177,8 @@
       <cues>
         <!-- checkinterval -->
         <!-- DEBUG: 1min, DEFAULT: 20min IMMERSIVE: 25-35min -->
-        <cue name="ReactivePlayerPowerUpdate" checkinterval="25min" checktime="player.age + 60s">
+         <!-- TODO: SET BACK TO 25m -->
+        <cue name="ReactivePlayerPowerUpdate" checkinterval="25min" checktime="player.age + 60s" instantiate="true">
           <actions>
             <!-- Re-allocate Memory For Factions. Loads new factions or removes deleted factions. -->
             <include_actions ref="LoadAllFactionsToAllocatedMemory" />
