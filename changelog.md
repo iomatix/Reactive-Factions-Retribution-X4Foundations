@@ -7,6 +7,10 @@
 - TODO: More RPG tiers //vary on community feedback
 - TODO: KD Menu API integration adding new features and moving existing there. // or some new system provided by Egosoft from 7.0 to 8.0? https://wiki.egosoft.com:1337/X4%20Foundations%20Wiki/Modding%20Support/Breaking%20Changes/ 
 
+## 2.2.3 Fix
+
+- Patched an issue where the mod was not automatically refreshing players' asset calculations.
+
 ## 2.2.2 Update
 
 - Patched an issue where the mod was not automatically refreshing players' asset calculations.
