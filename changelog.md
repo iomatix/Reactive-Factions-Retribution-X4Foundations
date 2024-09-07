@@ -9,7 +9,7 @@
 
 ## 2.2.3 Fix
 
-- Patched an issue where the mod was not automatically refreshing players' asset calculations.
+- Fixed an issue which stopped applying bonuses and penalties for the rep change event.
 
 ## 2.2.2 Update
 
