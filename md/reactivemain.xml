@@ -178,7 +178,7 @@
         <!-- checkinterval -->
         <!-- DEBUG: 1min, DEFAULT: 20min IMMERSIVE: 25-35min -->
          <!-- TODO: SET BACK TO 25m -->
-        <cue name="ReactivePlayerPowerUpdate" checkinterval="25min" checktime="player.age + 60s" instantiate="true">
+        <cue name="ReactivePlayerPowerUpdate" checkinterval="90s" checktime="player.age + 60s" instantiate="true">
           <actions>
             <!-- Re-allocate Memory For Factions. Loads new factions or removes deleted factions. -->
             <include_actions ref="LoadAllFactionsToAllocatedMemory" />
@@ -401,12 +401,11 @@
             <check_value
               value="event.object == null and event.param3 != null and event.param3 != tag.{relationchangereason.reactivefaction} and event.param != null and event.param2.{1} gt event.param2.{2}" />
             <!-- only trigger once every seconds defined by GlobalCooldown  -->
-            <check_value value="$NextPossibleRepChangeTime le player.age" />
-
+            <check_value value="player.age gt $NextPossibleRepChangeTime" />
             <check_value value="event.param.isactive" comment="Exclude Inactive Factions from processing"/>
              <check_value value="not event.param.isvisitor" comment="Exclude Visitor Factions from processing"/>
              <!-- (hasrelation.<relationrange>.{$faction}) -->
-            <check_value value="event.param.hasrelation.killmilitary.{faction.player}" comment="Exclude killmilitary faction. Assuming that player provided an accidental help."/>
+            <check_value value="not event.param.hasrelation.killmilitary.{faction.player}" comment="Exclude killmilitary faction. Assuming that player provided an accidental help."/>
             <!-- to prevent running before power is checked -->
             <check_value value="$PlayerPower != 99" />
           </conditions>
@@ -458,8 +457,8 @@
                       directory="'ReactiveFactionsRetribution_log'"
                       text="'[ReactiveFactionsRetribution LOG] ' + player.age + ';' + ' New Cooldown for [' + 'Main Faction' + '] ' + $el.{1}.name + ' Details: '+ $el + ': ' + $el.{2}"
                       output="$isDebug" append="true" />
+                      <break />
                   </do_else>
-                  <break />
                 </do_if>
               </do_for_each>
               <remove_value name="$i" />
