@@ -4,7 +4,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="http://x4dynlib.access.ly/libraries/md.xsd">
   <cues>
-    <cue name="ReactiveInit" version="222">
+    <cue name="ReactiveInit" version="224">
       <conditions>
         <check_any>
           <event_cue_signalled cue="md.Setup.GameStart" />
@@ -171,6 +171,17 @@
           title="'\033B[Update Info]\033X Reactive Factions Retribution \033G[2.2.0]'"
           text="'\nHello there ' + player.name + ',\nThe modification was successfully updated to version ' +  '\033G2.2.0\033X' + '\n\n  The mod has been updated to support X4 7.0. A few fixes and improvements have been applied to the mod.\n Detailed changlog has been attached to the modification folder and is also available on both, Steam and Nexus websites.\n Please report all encountered problems or share your impressions about the modification so far.\n\nOh, also sending a small gift to help your galactic activities prosper!\n\n\033BThank you for being here, Commander! '" />
         <transfer_money from="faction.visitor" to="faction.player" amount="7500Cr" />
+      </patch>
+      <!-- 2.2.4 update -->
+      <patch sinceversion="224">
+        <!--- -->
+        <debug_to_file name="'Patch_RFR'" directory="'ReactiveFactionsRetribution_log'"
+          text="'[ReactiveFactionsRetribution LOG] 2.2.4 update - check the changelog on Nexus page for more information.'"
+          output="$isDebug" append="true" />
+        <write_to_logbook money="5000Cr" category="tips"
+          title="'\033B[Update Info]\033X Reactive Factions Retribution \033G[2.2.4]'"
+          text="'\nHello there ' + player.name + ',\nThe modification was successfully updated to version ' +  '\033G2.2.4\033X' + '\n\n  The mod has been updated providing simple logging feature to the mod. The notifications will appear within the tips tab of your logbook.\n Detailed changlog has been attached to the modification folder and is also available on both, Steam and Nexus websites.\n Please report all encountered problems or share your impressions about the modification so far.\n\nOh, also sending a small gift to help your galactic activities prosper!\n\n\033BThank you for being here, Commander! '" />
+        <transfer_money from="faction.visitor" to="faction.player" amount="5000Cr" />
       </patch>
 
       <!-- -->
