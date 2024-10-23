@@ -101,7 +101,7 @@
 		<t id="700107">Maximum of estimated reputation value used during calculation by dynamic algorithm. Smaller values make relation changes more dynamic and unpredictable when larger ones improve the fluency of the relationships at the expense of dynamism.</t>
 
         <!-- Logs -->
-        <t id="900100">[Update Info]</t>
+        <t id="900100">[Rep Event Info]</t>
         <t id="900101">[Notification]</t>
         <t id="900102">Your reputation with</t>
         <t id="900103">was increased by</t>
