@@ -63,10 +63,9 @@
 						<signal_cue_instantly
                             cue="md.Simple_Menu_API.Make_Text"
                             param="table[$col=1, $text={2005311642, 910100}, $color='Helper.color.gray']" />
-                            
 					    <signal_cue_instantly
                             cue="md.Simple_Menu_API.Make_Text"
-                            param="table[$col=2, $text=md.ReactiveMain.ReactiveInit.$PlayerAssetsValue]" />
+                            param="table[$col=2, $text=md.ReactiveMain.ReactiveInit.$PlayerAssetsValue, $suffix = ' CR']" />
                         <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
 						<signal_cue_instantly
                             cue="md.Simple_Menu_API.Make_Text"
@@ -74,8 +73,6 @@
 					    <signal_cue_instantly
                             cue="md.Simple_Menu_API.Make_Text"
                             param="table[$col=2, $text=md.ReactiveMain.ReactiveInit.$PlayerPowerName]" />
-
-                            
                         <!-- Add Links here -->
                         <signal_cue_instantly
                             cue="md.Simple_Menu_API.Add_Row" />
