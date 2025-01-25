@@ -73,6 +73,7 @@
 					    <signal_cue_instantly
                             cue="md.Simple_Menu_API.Make_Text"
                             param="table[$col=2, $text=md.ReactiveMain.ReactiveInit.$PlayerPowerName]" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
                         <!-- Add Links here -->
                         <signal_cue_instantly
                             cue="md.Simple_Menu_API.Add_Row" />
