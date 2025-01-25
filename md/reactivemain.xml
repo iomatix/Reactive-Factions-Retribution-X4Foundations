@@ -410,7 +410,7 @@
                 text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; player assets cost is ' + '%,s'.[$PlayerTotalAssetsCost] + ' (Its max step)' + ' power level of ' + $PlayerPower"
                 output="$isDebug" append="true" />
             </do_else>
-            <set_value name="$PlayerAssetsValue" exact="PlayerTotalAssetsCost" />
+            <set_value name="$PlayerAssetsValue" exact="$PlayerTotalAssetsCost" />
             <remove_value name="$PlayerTotalAssetsCost" />
           </actions>
         </cue>
