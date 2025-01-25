@@ -7,6 +7,10 @@
 - TODO: More RPG tiers //vary on community feedback
 - TODO: KD Menu API integration adding new features and moving existing there. // or some new system provided by Egosoft from 7.0 to 8.0? https://wiki.egosoft.com:1337/X4%20Foundations%20Wiki/Modding%20Support/Breaking%20Changes/ 
 
+## 2.2.5 User Info
+
+- Added information display to the mod menu.
+
 ## 2.2.4 Log Writes
 
 - Added missing in-game logging functionality. Note that the logs are not displayed using the UI game values currently but raw values instead.

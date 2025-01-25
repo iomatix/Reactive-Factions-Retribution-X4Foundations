@@ -108,6 +108,10 @@
         <t id="900104">was decreased by</t>
         <t id="900105">due to reputation change event with</t>
         <t id="900106">The reputation difference of the event was</t>
+
+        <!-- User Info in Mod Menu -->
+        <t id="910100">Assets value after last evaluation</t>
+        <t id="910101">Your Power Level is</t>
 	</page>
 
 </language>
