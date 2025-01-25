@@ -66,14 +66,14 @@
                             
 					    <signal_cue_instantly
                             cue="md.Simple_Menu_API.Make_Text"
-                            param="table[$col=1, $text=md.ReactiveMain.ReactiveInit.PlayerAssetsValue]" />
+                            param="table[$col=2, $text=md.ReactiveMain.ReactiveInit.PlayerAssetsValue]" />
                         <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
 						<signal_cue_instantly
                             cue="md.Simple_Menu_API.Make_Text"
                             param="table[$col=1, $text={2005311642, 910101}]" />
 					    <signal_cue_instantly
                             cue="md.Simple_Menu_API.Make_Text"
-                            param="table[$col=1, $text=md.ReactiveMain.ReactiveInit.PlayerPowerName]" />
+                            param="table[$col=2, $text=md.ReactiveMain.ReactiveInit.PlayerPowerName]" />
 
                             
                         <!-- Add Links here -->
