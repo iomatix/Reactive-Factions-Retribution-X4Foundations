@@ -9,7 +9,7 @@ Main Features List
 🌌 Implemented cooldowns system. Its main goal is to prevent the viral effect. Every faction has its own cooldown slots making the mod more dynamic.
 🌌 Revamped language file and credits value formatting.
 🌌 The number of power levels is increased.
-🌌 And more...
+🌌 And more... - Check the changelog !
 
 Installation:
 Simply extract the compressed file inside of the extensions folder. Mod should be compatible with all mods.
