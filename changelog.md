@@ -11,6 +11,7 @@
 
 - Added Yaki lock option to the mod's menu UI. You may want to turn it on during the Yaki storyline to prevent losing reputation with the Yaki faction.
 - Changed `checkinterval` variable for check method, from debug 90 seconds back to immersive 25 minutes.
+## TODO if is SCA/Yaki is locked add them to faction filter!
 
 ## 2.2.5 User Info
 

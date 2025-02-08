@@ -943,13 +943,14 @@
             <do_if value="$FactionsList != null and $FactionsList.count gt 0">
               <!-- we could just use remove_from_list here -->
               <set_value name="$IgnoredListofFactions"
-                exact="[faction.scaleplate, faction.buccaneers, faction.civilian, faction.court, faction.criminal, faction.holyorderfanatic, faction.khaak, faction.smuggler, faction.trinity, faction.visitor, faction.xenon, faction.ownerless]" />
+                exact="[faction.scaleplate, faction.yaki, faction.buccaneers, faction.civilian, faction.court, faction.criminal, faction.holyorderfanatic, faction.khaak, faction.smuggler, faction.trinity, faction.visitor, faction.xenon, faction.ownerless]" />
               <!-- catch all visitor factions -->
               <get_factions_by_tag tag="tag.visitor" result="$VisitorList" />
 
               <!-- checking if any factions in ignored list are active. story stuff makes coding so
               much more tedious -->
               <do_all exact="$FactionsList.count" counter="$i">
+                <!-- TODO:  Add checks if faction.scaleplate && SCAlock is off, if faction.yaki && YakiLock is off then remove from list IgnoredListofFactions -->
                 <do_if
                   value="($FactionsList.{$i} == faction.buccaneers or $FactionsList.{$i} == faction.court or $FactionsList.{$i} == faction.holyorderfanatic or $FactionsList.{$i} == faction.trinity) and $FactionsList.{$i}.isactive">
                   <remove_from_list name="$IgnoredListofFactions"
