@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mdscript name="Reactive_Menu"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://x4dynlib.access.ly/libraries/md.xsd">
-	<cues>
-		<cue name="Config" namespace="this" version="1">
-			<actions>
-				<debug_text text="''" />
-			</actions>
-		</cue>
-		<cue name="Init" instantiate="false" version="226">
-			<actions>
-				<!-- General Menu -->
-				<set_value name="md.$MenuVarTable" exact="table[]" />
-				<!-- Shortcuts -->
-				<set_value name="$RFVT" exact="md.$ReactiveFactionsMenuVarTable" />
-				<set_value name="$GSM" exact="md.$GeneralSettingsMenuVarTable" />
-				<!-- Debug Var -->
-				<set_value name="$RFVT.$MenuDebugEnable" exact="true" />
-			</actions>
-			<cues>
-				<cue name="ReactiveFactionsMenu">
-					<actions>
-						<set_value name="$RFVT.$egMenuSelectedFaction" exact="$FactionList.{1}" />
-						<!-- This cue runs after init and is primarily used for variable storage for
+    <cues>
+        <cue name="Config" namespace="this" version="1">
+            <actions>
+                <debug_text text="''" />
+            </actions>
+        </cue>
+        <cue name="Init" instantiate="false" version="226">
+            <actions>
+                <!-- General Menu -->
+                <set_value name="md.$MenuVarTable" exact="table[]" />
+                <!-- Shortcuts -->
+                <set_value name="$RFVT" exact="md.$ReactiveFactionsMenuVarTable" />
+                <set_value name="$GSM" exact="md.$GeneralSettingsMenuVarTable" />
+                <!-- Debug Var -->
+                <set_value name="$RFVT.$MenuDebugEnable" exact="true" />
+            </actions>
+            <cues>
+                <cue name="ReactiveFactionsMenu">
+                    <actions>
+                        <set_value name="$RFVT.$egMenuSelectedFaction" exact="$FactionList.{1}" />
+                        <!-- This cue runs after init and is primarily used for variable storage for
 					options selection -->
-					</actions>
-				</cue>
-				<!--
+                    </actions>
+                </cue>
+                <!--
 					Menu Structure:
 						Mod Menu (Main Menu)
 							General Menu
 				-->
-				<cue name="Register_Options_Menu" instantiate="true">
-					<conditions>
-						<event_cue_signalled cue="md.Simple_Menu_Options.Reloaded" />
-					</conditions>
-					<actions>
-						<debug_text
+                <cue name="Register_Options_Menu" instantiate="true">
+                    <conditions>
+                        <event_cue_signalled cue="md.Simple_Menu_Options.Reloaded" />
+                    </conditions>
+                    <actions>
+                        <debug_text
 							text="'signal_cue_instantly ' + @md.Simple_Menu_API.Register_Options_Menu" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Register_Options_Menu"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Register_Options_Menu"
 							param="table[$id = 'mod_main_menu', $columns = 2, $title = 'ioMatix: \033C' + {2005311642,79}, $onOpen  = ModMainMenu ]" />
-						<!-- Define sub-menus here -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Register_Options_Menu"
+                        <!-- Define sub-menus here -->
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Register_Options_Menu"
 							param="table[
 								$id      = 'general_settings_menu',
 								$columns = 2, 
@@ -49,57 +49,57 @@
 								$onOpen  = General_Settings_Menu,
 								$private = 1,
 							]" />
-						<reset_cue cue="this" />
-					</actions>
-				</cue>
-				<!-- ModMainMenu -->
-				<cue name="ModMainMenu" instantiate="true">
-					<conditions>
+                        <reset_cue cue="this" />
+                    </actions>
+                </cue>
+                <!-- ModMainMenu -->
+                <cue name="ModMainMenu" instantiate="true">
+                    <conditions>
                         <event_cue_signalled />
-					</conditions>
-					<actions>
+                    </conditions>
+                    <actions>
                         <!-- Mod User Data Info -->
                         <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly
+                        <signal_cue_instantly
                             cue="md.Simple_Menu_API.Make_Text"
                             param="table[$col=1, $text='\033X' + {2005311642, 910100}]" />
-					    <signal_cue_instantly
+                        <signal_cue_instantly
                             cue="md.Simple_Menu_API.Make_Text"
                             param="table[$col=2, $text=md.ReactiveMain.ReactiveInit.$PlayerAssetsValue + ' CR']" />
                         <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly
+                        <signal_cue_instantly
                             cue="md.Simple_Menu_API.Make_Text"
                             param="table[$col=1, $text='\033X' + {2005311642, 910101}]" />
-					    <signal_cue_instantly
+                        <signal_cue_instantly
                             cue="md.Simple_Menu_API.Make_Text"
                             param="table[$col=2, $text=md.ReactiveMain.ReactiveInit.$PlayerPowerName]" />
                         <!-- Spacing -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text='']" />
                         <!-- Add Links here -->
                         <signal_cue_instantly
                             cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly
+                        <signal_cue_instantly
                             cue="md.Simple_Menu_API.Add_Submenu_Link"
                             param="table[$text={2005311642,80}, $id='general_settings_menu']" />
-                         </actions>
+                    </actions>
                 </cue>
                 <!-- GeneralSettingsMenu -->
-				<cue name="General_Settings_Menu" instantiate="true">
-					<conditions>
-						<event_cue_signalled />
-					</conditions>
-					<actions>
-						<debug_text text="''" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                <cue name="General_Settings_Menu" instantiate="true">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <actions>
+                        <debug_text text="''" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 79}, $color = 'Helper.color.blue']" />
                         <!-- Suspend Notifications checkbox-->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 98}]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
 							param="table[
 						$id = 'TurnOffNotifications',
 						$checked = md.ReactiveMain.ReactiveInit.$TurnOffNotifications,
@@ -110,10 +110,10 @@
 						$onClick = OnSMOSCheckboxChange
 					]" />
                         <!-- Detailed Notifications checkbox-->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 99}]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
 							param="table[
 						$id = 'TurnOnAllNotifications',
 						$checked = md.ReactiveMain.ReactiveInit.$TurnOnAllNotifications,
@@ -124,10 +124,10 @@
 						$onClick = OnSMOSCheckboxChange
 					]" />
                         <!-- SCA Lock checkbox-->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 100}]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
 							param="table[
 						$id = 'SCAlock',
 						$checked = md.ReactiveMain.ReactiveInit.$SCAlock,
@@ -138,10 +138,10 @@
 						$onClick = OnSMOSCheckboxChange
 					]" />
                         <!-- Yaki Lock checkbox-->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 100}]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
 							param="table[
 						$id = 'Yakilock',
 						$checked = md.ReactiveMain.ReactiveInit.$Yakilock,
@@ -152,10 +152,10 @@
 						$onClick = OnSMOSCheckboxChange
 					]" />
                         <!-- Hostile Check checkbox-->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 101}]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
 							param="table[
 						$id = 'CheckHostile',
 						$checked = md.ReactiveMain.ReactiveInit.$CheckHostile,
@@ -165,17 +165,16 @@
 						$mouseOverText = {2005311642,1001} + '\n' + {2005311642,899} + ' ' + 'True',
 						$onClick = OnSMOSCheckboxChange
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text='']" />
                         <!-- Min Asset's Cost -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 199}]" />
-
-						<set_value name="$minAssetCostMax"
+                        <set_value name="$minAssetCostMax"
 							exact="[300000Cr,md.ReactiveMain.ReactiveInit.$MinAssetCost * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'MinAssetCost',
 						$start = md.ReactiveMain.ReactiveInit.$MinAssetCost,
@@ -190,12 +189,12 @@
 						$onSliderCellConfirm = OnSMOSliderChangeCRvalue
 					]" />
                         <!-- Default Asset Modifier -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 200}]" />
-							<set_value name="$defaultAssetModifierMax"
+                        <set_value name="$defaultAssetModifierMax"
 							exact="[350,md.ReactiveMain.ReactiveInit.$DefaultAssetModifier * 2].max" />
-							<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'DefaultAssetModifier',
 						$start = md.ReactiveMain.ReactiveInit.$DefaultAssetModifier,
@@ -210,12 +209,12 @@
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
                         <!-- Trading Asset Modifier -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 201}]" />
-						<set_value name="$tradingAssetModifierMax"
+                        <set_value name="$tradingAssetModifierMax"
 							exact="[350,md.ReactiveMain.ReactiveInit.$TradingAssetModifier * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'TradingAssetModifier',
 						$start = md.ReactiveMain.ReactiveInit.$TradingAssetModifier,
@@ -230,12 +229,12 @@
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
                         <!-- Mining Asset Modifier -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 202}]" />
-						<set_value name="$miningAssetModifierMax"
+                        <set_value name="$miningAssetModifierMax"
 							exact="[350,md.ReactiveMain.ReactiveInit.$MiningAssetModifier * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'MiningAssetModifier',
 						$start = md.ReactiveMain.ReactiveInit.$MiningAssetModifier,
@@ -250,12 +249,12 @@
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
                         <!-- Auxil Asset Modifier -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 203}]" />
-						<set_value name="$auxillaryAssetModifierMax"
+                        <set_value name="$auxillaryAssetModifierMax"
 							exact="[350,md.ReactiveMain.ReactiveInit.$AuxillaryAssetModifier * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'AuxillaryAssetModifier',
 						$start = md.ReactiveMain.ReactiveInit.$AuxillaryAssetModifier,
@@ -270,12 +269,12 @@
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
                         <!-- Production Asset Modifier -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 204}]" />
-						<set_value name="$productionAssetModifierMax"
+                        <set_value name="$productionAssetModifierMax"
 							exact="[350,md.ReactiveMain.ReactiveInit.$ProductionAssetModifier * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'ProductionAssetModifier',
 						$start = md.ReactiveMain.ReactiveInit.$ProductionAssetModifier,
@@ -290,12 +289,12 @@
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
                         <!-- Station Asset Modifier -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 205}]" />
-						<set_value name="$stationAssetModifierMax"
+                        <set_value name="$stationAssetModifierMax"
 							exact="[350,md.ReactiveMain.ReactiveInit.$StationAssetModifier * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'StationAssetModifier',
 						$start = md.ReactiveMain.ReactiveInit.$StationAssetModifier,
@@ -310,12 +309,12 @@
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
                         <!-- Wharf Station Asset Modifier -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 206}]" />
-						<set_value name="$stationSWAssetModifierMax"
+                        <set_value name="$stationSWAssetModifierMax"
 							exact="[300,md.ReactiveMain.ReactiveInit.$StationSWAssetModifier * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'StationSWAssetModifier',
 						$start = md.ReactiveMain.ReactiveInit.$StationSWAssetModifier,
@@ -330,10 +329,10 @@
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
                         <!-- Credits are a part of an Asset checkbox-->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 207}]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
 							param="table[
 						$id = 'CheckCreditsValue',
 						$checked = md.ReactiveMain.ReactiveInit.$CheckCreditsValue,
@@ -344,18 +343,18 @@
 						$onClick = OnSMOSCheckboxChange
 					]" />
                         <!-- [Lvl 1] 102-104 -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text='']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 4}, $color = 'Helper.color.blue']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 102}]" />
-						<set_value name="$power1aproxMax"
+                        <set_value name="$power1aproxMax"
 							exact="[22500000Cr,md.ReactiveMain.ReactiveInit.$Power1aprox * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power1aprox',
 						$start = md.ReactiveMain.ReactiveInit.$Power1aprox,
@@ -369,12 +368,12 @@
 						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '7,500,000CR',
 						$onSliderCellConfirm = OnSMOSliderChangeCRvalue
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 103}]" />
-						<set_value name="$power1percentMax"
+                        <set_value name="$power1percentMax"
 							exact="[15,md.ReactiveMain.ReactiveInit.$Power1percent * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power1percent',
 						$start = md.ReactiveMain.ReactiveInit.$Power1percent,
@@ -388,12 +387,12 @@
 						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + '3%',
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 104}]" />
-						<set_value name="$power1bonuspercentMax"
+                        <set_value name="$power1bonuspercentMax"
 							exact="[15,md.ReactiveMain.ReactiveInit.$Power1bonuspercent * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power1bonuspercent',
 						$start = md.ReactiveMain.ReactiveInit.$Power1bonuspercent,
@@ -407,10 +406,10 @@
 						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + '6%',
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 105}]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 							$id = 'Power1UIMaxChangeValue',
 							$start = md.ReactiveMain.ReactiveInit.$Power1UIMaxChangeValue,
@@ -422,18 +421,18 @@
 							$onSliderCellConfirm = OnSMOSliderChange
 						]" />
                         <!-- [Lvl 2] 105-107 -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text='']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 6}, $color = 'Helper.color.blue']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 102}]" />
-						<set_value name="$power2aproxMax"
+                        <set_value name="$power2aproxMax"
 							exact="[97500000Cr,md.ReactiveMain.ReactiveInit.$Power2aprox * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power2aprox',
 						$start = md.ReactiveMain.ReactiveInit.$Power2aprox,
@@ -447,12 +446,12 @@
 						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '32,500,000CR',
 						$onSliderCellConfirm = OnSMOSliderChangeCRvalue
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 103}]" />
-						<set_value name="$power2percentMax"
+                        <set_value name="$power2percentMax"
 							exact="[35,md.ReactiveMain.ReactiveInit.$Power2percent * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power2percent',
 						$start = md.ReactiveMain.ReactiveInit.$Power2percent,
@@ -466,12 +465,12 @@
 						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + '13%',
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 104}]" />
-						<set_value name="$power2bonuspercentMax"
+                        <set_value name="$power2bonuspercentMax"
 							exact="[35,md.ReactiveMain.ReactiveInit.$Power2bonuspercent * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power2bonuspercent',
 						$start = md.ReactiveMain.ReactiveInit.$Power2bonuspercent,
@@ -485,10 +484,10 @@
 						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + '18%',
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 105}]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 							$id = 'Power2UIMaxChangeValue',
 							$start = md.ReactiveMain.ReactiveInit.$Power2UIMaxChangeValue,
@@ -500,18 +499,18 @@
 							$onSliderCellConfirm = OnSMOSliderChange
 						]" />
                         <!-- [Lvl 3] 108-110 -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text='']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 8}, $color = 'Helper.color.blue']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 102}]" />
-						<set_value name="$power3aproxMax"
+                        <set_value name="$power3aproxMax"
 							exact="[750000000Cr,md.ReactiveMain.ReactiveInit.$Power3aprox * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power3aprox',
 						$start = md.ReactiveMain.ReactiveInit.$Power3aprox,
@@ -525,12 +524,12 @@
 						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '250,000,000 CR',
 						$onSliderCellConfirm = OnSMOSliderChangeCRvalue
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 103}]" />
-						<set_value name="$power3percentMax"
+                        <set_value name="$power3percentMax"
 							exact="[90,md.ReactiveMain.ReactiveInit.$Power3percent * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power3percent',
 						$start = md.ReactiveMain.ReactiveInit.$Power3percent,
@@ -544,12 +543,12 @@
 						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + '30%',
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 104}]" />
-						<set_value name="$power3bonuspercentMax"
+                        <set_value name="$power3bonuspercentMax"
 							exact="[90,md.ReactiveMain.ReactiveInit.$Power3bonuspercent * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power3bonuspercent',
 						$start = md.ReactiveMain.ReactiveInit.$Power3bonuspercent,
@@ -563,10 +562,10 @@
 						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + '33%',
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 105}]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 							$id = 'Power3UIMaxChangeValue',
 							$start = md.ReactiveMain.ReactiveInit.$Power3UIMaxChangeValue,
@@ -578,18 +577,18 @@
 							$onSliderCellConfirm = OnSMOSliderChange
 						]" />
                         <!-- [Lvl 4] 111 - 113 -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text='']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 10}, $color = 'Helper.color.blue']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 102}]" />
-						<set_value name="$power4aproxMax"
+                        <set_value name="$power4aproxMax"
 							exact="[1950000000Cr,md.ReactiveMain.ReactiveInit.$Power4aprox * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power4aprox',
 						$start = md.ReactiveMain.ReactiveInit.$Power4aprox,
@@ -603,12 +602,12 @@
 						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '650,000,000 CR',
 						$onSliderCellConfirm = OnSMOSliderChangeCRvalue
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 103}]" />
-						<set_value name="$power4percentMax"
+                        <set_value name="$power4percentMax"
 							exact="[150,md.ReactiveMain.ReactiveInit.$Power4percent * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power4percent',
 						$start = md.ReactiveMain.ReactiveInit.$Power4percent,
@@ -622,12 +621,12 @@
 						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + '55%',
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 104}]" />
-						<set_value name="$power4bonuspercentMax"
+                        <set_value name="$power4bonuspercentMax"
 							exact="[150,md.ReactiveMain.ReactiveInit.$Power4bonuspercent * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power4bonuspercent',
 						$start = md.ReactiveMain.ReactiveInit.$Power4bonuspercent,
@@ -641,10 +640,10 @@
 						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + '60%',
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 105}]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 							$id = 'Power4UIMaxChangeValue',
 							$start = md.ReactiveMain.ReactiveInit.$Power4UIMaxChangeValue,
@@ -656,18 +655,18 @@
 							$onSliderCellConfirm = OnSMOSliderChange
 						]" />
                         <!-- [Lvl 5] 114 - 115 -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text='']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 12}, $color = 'Helper.color.blue']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 102}]" />
-						<set_value name="$power5aproxMax"
+                        <set_value name="$power5aproxMax"
 							exact="[2700000000Cr,md.ReactiveMain.ReactiveInit.$Power5aprox * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power5aprox',
 						$start = md.ReactiveMain.ReactiveInit.$Power5aprox,
@@ -681,12 +680,12 @@
 						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '900,000,000 CR',
 						$onSliderCellConfirm = OnSMOSliderChangeCRvalue
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 103}]" />
-						<set_value name="$power5percentMax"
+                        <set_value name="$power5percentMax"
 							exact="[250,md.ReactiveMain.ReactiveInit.$Power5percent * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power5percent',
 						$start = md.ReactiveMain.ReactiveInit.$Power5percent,
@@ -700,12 +699,12 @@
 						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + '85%',
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 104}]" />
-						<set_value name="$power5bonuspercentMax"
+                        <set_value name="$power5bonuspercentMax"
 							exact="[250,md.ReactiveMain.ReactiveInit.$Power5bonuspercent * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power5bonuspercent',
 						$start = md.ReactiveMain.ReactiveInit.$Power5bonuspercent,
@@ -719,10 +718,10 @@
 						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + '90%',
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 105}]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 							$id = 'Power5UIMaxChangeValue',
 							$start = md.ReactiveMain.ReactiveInit.$Power5UIMaxChangeValue,
@@ -734,18 +733,18 @@
 							$onSliderCellConfirm = OnSMOSliderChange
 						]" />
                         <!-- [Lvl 6] 117 - 119 -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text='']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 14}, $color = 'Helper.color.blue']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 102}]" />
-						<set_value name="$power6aproxMax"
+                        <set_value name="$power6aproxMax"
 							exact="[4350000000Cr,md.ReactiveMain.ReactiveInit.$Power6aprox * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power6aprox',
 						$start = md.ReactiveMain.ReactiveInit.$Power6aprox,
@@ -759,12 +758,12 @@
 						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '1,450,000,000 CR',
 						$onSliderCellConfirm = OnSMOSliderChangeCRvalue
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 103}]" />
-						<set_value name="$power6percentMax"
+                        <set_value name="$power6percentMax"
 							exact="[350,md.ReactiveMain.ReactiveInit.$Power6percent * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power6percent',
 						$start = md.ReactiveMain.ReactiveInit.$Power6percent,
@@ -778,12 +777,12 @@
 						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + '120%',
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 104}]" />
-						<set_value name="$power6bonuspercentMax"
+                        <set_value name="$power6bonuspercentMax"
 							exact="[350,md.ReactiveMain.ReactiveInit.$Power6bonuspercent * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power6bonuspercent',
 						$start = md.ReactiveMain.ReactiveInit.$Power6bonuspercent,
@@ -797,10 +796,10 @@
 						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + '125%',
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 105}]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 							$id = 'Power6UIMaxChangeValue',
 							$start = md.ReactiveMain.ReactiveInit.$Power6UIMaxChangeValue,
@@ -812,18 +811,18 @@
 							$onSliderCellConfirm = OnSMOSliderChange
 						]" />
                         <!-- [Lvl 7] 120 - 122 -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text='']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 16}, $color = 'Helper.color.blue']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 102}]" />
-						<set_value name="$power7aproxMax"
+                        <set_value name="$power7aproxMax"
 							exact="[10500000000Cr,md.ReactiveMain.ReactiveInit.$Power7aprox * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power7aprox',
 						$start = md.ReactiveMain.ReactiveInit.$Power7aprox,
@@ -837,12 +836,12 @@
 						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '3,500,000,000 CR',
 						$onSliderCellConfirm = OnSMOSliderChangeCRvalue
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 103}]" />
-						<set_value name="$power7percentMax"
+                        <set_value name="$power7percentMax"
 							exact="[350,md.ReactiveMain.ReactiveInit.$Power7percent * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power7percent',
 						$start = md.ReactiveMain.ReactiveInit.$Power7percent,
@@ -856,12 +855,12 @@
 						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + '170%',
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 104}]" />
-						<set_value name="$power7bonuspercentMax"
+                        <set_value name="$power7bonuspercentMax"
 							exact="[350,md.ReactiveMain.ReactiveInit.$Power7bonuspercent * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power7bonuspercent',
 						$start = md.ReactiveMain.ReactiveInit.$Power7bonuspercent,
@@ -875,10 +874,10 @@
 						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + '173%',
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 105}]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 							$id = 'Power7UIMaxChangeValue',
 							$start = md.ReactiveMain.ReactiveInit.$Power7UIMaxChangeValue,
@@ -890,18 +889,18 @@
 							$onSliderCellConfirm = OnSMOSliderChange
 						]" />
                         <!-- [Lvl 8] 123 - 125 -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text='']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 18}, $color = 'Helper.color.blue']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 102}]" />
-						<set_value name="$power8aproxMax"
+                        <set_value name="$power8aproxMax"
 							exact="[39000000000Cr,md.ReactiveMain.ReactiveInit.$Power8aprox * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power8aprox',
 						$start = md.ReactiveMain.ReactiveInit.$Power8aprox,
@@ -915,12 +914,12 @@
 						$mouseOverText = {2005311642,1104} + '\n' + {2005311642,899} + ' ' + '13,000,000,000 CR',
 						$onSliderCellConfirm = OnSMOSliderChangeCRvalue
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 103}]" />
-						<set_value name="$power8percentMax"
+                        <set_value name="$power8percentMax"
 							exact="[500,md.ReactiveMain.ReactiveInit.$Power8percent * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power8percent',
 						$start = md.ReactiveMain.ReactiveInit.$Power8percent,
@@ -934,12 +933,12 @@
 						$mouseOverText = {2005311642,1105} + '\n' + {2005311642,899} + ' ' + '240%',
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 104}]" />
-						<set_value name="$power8bonuspercentMax"
+                        <set_value name="$power8bonuspercentMax"
 							exact="[500,md.ReactiveMain.ReactiveInit.$Power8bonuspercent * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 						$id = 'Power8bonuspercent',
 						$start = md.ReactiveMain.ReactiveInit.$Power8bonuspercent,
@@ -953,10 +952,10 @@
 						$mouseOverText = {2005311642,1106} + '\n' + {2005311642,899} + ' ' + '242%',
 						$onSliderCellConfirm = OnSMOSliderChange
 					]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 105}]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 							$id = 'Power8UIMaxChangeValue',
 							$start = md.ReactiveMain.ReactiveInit.$Power8UIMaxChangeValue,
@@ -968,15 +967,15 @@
 							$onSliderCellConfirm = OnSMOSliderChange
 						]" />
                         <!-- Advanced -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text='']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
                         <!-- Experimental Amplitude checkbox-->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 212}]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
 							param="table[
 						$id = 'isAmplitudeExperimental',
 						$checked = md.ReactiveMain.ReactiveInit.$isAmplitudeExperimental,
@@ -987,10 +986,10 @@
 						$onClick = OnSMOSCheckboxChange
 					]" />
                         <!-- Relative Amplitude checkbox-->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 213}]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
 							param="table[
 						$id = 'isAmplitudeRelative',
 						$checked = md.ReactiveMain.ReactiveInit.$isAmplitudeRelative,
@@ -1001,14 +1000,14 @@
 						$onClick = OnSMOSCheckboxChange
 					]" />
                         <!-- Divisor Amplitude -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 300}, $color = 'Helper.color.blue']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 208}]" />
-						<set_value name="$UIRelationDivisorRangeMax"
+                        <set_value name="$UIRelationDivisorRangeMax"
 							exact="[15,md.ReactiveMain.ReactiveInit.$UIRelationDivisorRange * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 							$id = 'UIRelationDivisorRange',
 							$start = md.ReactiveMain.ReactiveInit.$UIRelationDivisorRange,
@@ -1022,13 +1021,12 @@
 							$onSliderCellConfirm = OnSMOSliderChange
 						]" />
                         <!-- Divisor Value -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 209}]" />
-						<set_value name="$UIRelationDivisorMax"
+                        <set_value name="$UIRelationDivisorMax"
 							exact="[15,md.ReactiveMain.ReactiveInit.$UIRelationDivisor * 2].max" />
-
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 							$id = 'UIRelationDivisor',
 							$start = md.ReactiveMain.ReactiveInit.$UIRelationDivisor,
@@ -1042,13 +1040,12 @@
 							$onSliderCellConfirm = OnSMOSliderChange
 						]" />
                         <!-- Relation Factor Multiplier -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 210}]" />
-						<set_value name="$relationFactorMulMax"
+                        <set_value name="$relationFactorMulMax"
 							exact="[20,md.ReactiveMain.ReactiveInit.$RelationFactorMul * 2].max" />
-
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 							$id = 'RelationFactorMul',
 							$start = md.ReactiveMain.ReactiveInit.$RelationFactorMul,
@@ -1062,12 +1059,12 @@
 							$onSliderCellConfirm = OnSMOSliderChange
 						]" />
                         <!-- Relation Factor Treshold -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 211}]" />
-						<set_value name="$relationTreshholdMax"
+                        <set_value name="$relationTreshholdMax"
 							exact="[45,md.ReactiveMain.ReactiveInit.$RelationTreshhold * 2].max" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 							$id = 'RelationTreshhold',
 							$start = md.ReactiveMain.ReactiveInit.$RelationTreshhold,
@@ -1081,16 +1078,16 @@
 							$onSliderCellConfirm = OnSMOSliderChange
 						]" />
                         <!-- Cooldowns -->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text='']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 301}, $color = 'Helper.color.blue']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 302}]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 							$id = 'MainFactionCooldown',
 							$start = md.ReactiveMain.ReactiveInit.$MainFactionCooldown,
@@ -1101,10 +1098,10 @@
 							$mouseOverText = {2005311642,1020} + '\n' + {2005311642,899} + ' ' + '0s',
 							$onSliderCellConfirm = OnSMOSliderChange
 						]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 303}]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 							$id = 'EnemyFactionCooldown',
 							$start = md.ReactiveMain.ReactiveInit.$EnemyFactionCooldown,
@@ -1115,10 +1112,10 @@
 							$mouseOverText = {2005311642,1021} + '\n' + {2005311642,899} + ' ' + '0s',
 							$onSliderCellConfirm = OnSMOSliderChange
 						]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text={2005311642, 304}]" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Slider"
 							param="table[
 							$id = 'GlobalCooldown',
 							$start = md.ReactiveMain.ReactiveInit.$GlobalCooldown,
@@ -1130,16 +1127,16 @@
 							$onSliderCellConfirm = OnSMOSliderChange
 						]" />
                         <!-- DEBUG checkbox-->
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text='']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text='']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text='Debug', $color = 'Helper.color.red']" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
 							param="table[
 						$id = 'isDebug',
 						$checked = md.ReactiveMain.ReactiveInit.$isDebug,
@@ -1149,63 +1146,63 @@
 						$mouseOverText = 'Debug' + '\n' + {2005311642,899} + ' ' + 'False',
 						$onClick = OnSMOSCheckboxChange
 					]" />
-					</actions>
-				</cue>
-				<cue name="OnSMOSCheckboxChange" instantiate="true">
-					<conditions>
-						<event_cue_signalled />
-					</conditions>
-					<actions>
+                    </actions>
+                </cue>
+                <cue name="OnSMOSCheckboxChange" instantiate="true">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <actions>
                         <!-- <debug_text text="event.param.$id + ' to: ' + @event.param.$value + '
 						or '
 					+ @event.param.$checked" /> -->
-						<debug_text
+                        <debug_text
 							text="event.param.$id + ' pre: ' + md.ReactiveMain.ReactiveInit.{'$' + event.param.$id}" />
-						<set_value name="md.ReactiveMain.ReactiveInit.{'$' + event.param.$id}"
+                        <set_value name="md.ReactiveMain.ReactiveInit.{'$' + event.param.$id}"
 							exact="event.param.$checked" />
-						<debug_text
+                        <debug_text
 							text="event.param.$id + ' post: ' + md.ReactiveMain.ReactiveInit.{'$' + event.param.$id}" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Refresh_Menu" />
-					</actions>
-				</cue>
-				<cue name="OnSMOSliderChange" instantiate="true">
-					<conditions>
-						<event_cue_signalled />
-					</conditions>
-					<actions>
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Refresh_Menu" />
+                    </actions>
+                </cue>
+                <cue name="OnSMOSliderChange" instantiate="true">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <actions>
                         <!-- <debug_text text="event.param.$id + ' to: ' + @event.param.$value + '
 						or '
 					+ @event.param.$checked" /> -->
-						<debug_text
+                        <debug_text
 							text="event.param.$id + ' pre: ' + md.ReactiveMain.ReactiveInit.{'$' + event.param.$id}" />
-						<set_value name="md.ReactiveMain.ReactiveInit.{'$' + event.param.$id}"
+                        <set_value name="md.ReactiveMain.ReactiveInit.{'$' + event.param.$id}"
 							exact="event.param.$value" />
-						<debug_text
+                        <debug_text
 							text="event.param.$id + ' post: ' + md.ReactiveMain.ReactiveInit.{'$' + event.param.$id}" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Refresh_Menu" />
-					</actions>
-				</cue>
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Refresh_Menu" />
+                    </actions>
+                </cue>
                 <!-- special fix for CR values cuz Mod APIs is handling Cr values different than
 			vanilla. -->
-				<cue name="OnSMOSliderChangeCRvalue" instantiate="true">
-					<conditions>
-						<event_cue_signalled />
-					</conditions>
-					<actions>
+                <cue name="OnSMOSliderChangeCRvalue" instantiate="true">
+                    <conditions>
+                        <event_cue_signalled />
+                    </conditions>
+                    <actions>
                         <!-- <debug_text text="event.param.$id + ' to: ' + @event.param.$value + '
 						or '
 					+ @event.param.$checked" /> -->
-						<debug_text
+                        <debug_text
 							text="event.param.$id + ' pre: ' + md.ReactiveMain.ReactiveInit.{'$' + event.param.$id}" />
-						<set_value name="md.ReactiveMain.ReactiveInit.{'$' + event.param.$id}"
+                        <set_value name="md.ReactiveMain.ReactiveInit.{'$' + event.param.$id}"
 							exact="event.param.$value*1Cr" />
                         <!-- the fix is *1Cr (it should append 00 to the value) -->
-						<debug_text
+                        <debug_text
 							text="event.param.$id + ' post: ' + md.ReactiveMain.ReactiveInit.{'$' + event.param.$id}" />
-						<signal_cue_instantly cue="md.Simple_Menu_API.Refresh_Menu" />
-					</actions>
-				</cue>
-			</cues>
-		</cue>
-	</cues>
+                        <signal_cue_instantly cue="md.Simple_Menu_API.Refresh_Menu" />
+                    </actions>
+                </cue>
+            </cues>
+        </cue>
+    </cues>
 </mdscript>
