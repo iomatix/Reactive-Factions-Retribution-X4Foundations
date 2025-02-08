@@ -205,8 +205,8 @@
                         </do_else>
                     </actions>
                 </cue>
-                <!-- checkinterval once per 5 minutes, do if 25 minutes has passed -->
-                <cue name="ReactivePlayerPowerUpdate" checkinterval="5m"
+                <!-- checkinterval once per 6 minutes, do if 25 minutes has passed -->
+                <cue name="ReactivePlayerPowerUpdate" checkinterval="6m"
                     checktime="player.age + 1500s" instantiate="true">
                     <actions>
                         <!-- Re-allocate Memory For Factions. Loads new factions or removes deleted
