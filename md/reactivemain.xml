@@ -220,6 +220,7 @@
               <set_faction_relation_locked faction="faction.scaleplate" locked="true" />
             </do_else>
 
+            <!-- Lock/Unlock Yaki -->
             <do_if value="$Yakilock == false">
               <set_faction_relation_locked faction="faction.yaki" locked="false" />
             </do_if>
