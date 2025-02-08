@@ -5,14 +5,14 @@
 - TODO: RepHits for more events like e.g. destroying assets //vary on community feedback, or as new mod e.g. credits and rewards for activities or dynamic events/missions (if is it possible). - Rewards system, accumulating CR & Rep per faction for these activities and pay if randomized threshold CR+Rep is accumulated with fancy/gift message. New Mod Menu for this. Enemies should be excluded (enemy should not send gifts of CR+Rep to the player) like in main functionality.
 - TODO: Political lobbing e.g. change relation X and Y, Player and X etc. for credits/rep/assets/law etc. Send envoy delegation or via new black market NPC ?  //vary on community feedback
 - TODO: More RPG tiers //vary on community feedback
-- TODO: KD Menu API integration adding new features and moving existing there. // or some new system provided by Egosoft from 7.0 to 8.0? https://wiki.egosoft.com:1337/X4%20Foundations%20Wiki/Modding%20Support/Breaking%20Changes/ 
+- TODO: KD Menu API integration adding new features and moving existing there. // or some new system provided by Egosoft from 7.0 to 8.0? https://wiki.egosoft.com:1337/X4%20Foundations%20Wiki/Modding%20Support/Breaking%20Changes/
 
 ## 2.2.6 Yaki Lock and the faction filter
 
 - Added Yaki lock option to the mod's menu UI. You may want to turn it on during the Yaki storyline to prevent losing reputation with the Yaki faction.
 - Changed the check interval of the main method from debug 90 seconds back to immersive 25 minutes.
 - Added Yaki to the faction filter.
-- SCA and Yaki are removed from the faction filter if their lock is turned off within the mod menu.`
+- SCA and Yaki are removed from the faction filter if their lock is turned off within the mod menu.
 
 ## 2.2.5 User Info
 
