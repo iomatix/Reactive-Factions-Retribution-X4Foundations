@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<diff name="notifications" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://x4dynlib.access.ly/libraries/md.xsd">
-<!--<add sel="//mdscript[@name='Notifications']/cues/cue[@name='Init']/cues/cue[@name='PlayerRelationDiscounts']/cues/cue[@name='PlayerRelationDiscounts_Unlock']/conditions"><check_value value="event.param3 != null" /></add>-->
-<add sel="//mdscript[@name='Notifications']/cues/cue[@name='Init']/cues/cue[@name='BaseRelationChanged']/conditions"><check_value value="event.param3 != null" /></add>
+<diff name="notifications"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://x4dynlib.access.ly/libraries/md.xsd">
+    <!--<add sel="//mdscript[@name='Notifications']/cues/cue[@name='Init']/cues/cue[@name='PlayerRelationDiscounts']/cues/cue[@name='PlayerRelationDiscounts_Unlock']/conditions"><check_value value="event.param3 != null" /></add>-->
+    <add sel="//mdscript[@name='Notifications']/cues/cue[@name='Init']/cues/cue[@name='BaseRelationChanged']/conditions">
+        <check_value value="event.param3 != null" />
+    </add>
 </diff>
