@@ -42,7 +42,7 @@
         <t id="200">Default Assets Cost Modifier</t>
         <t id="201">Trading Assets Cost Modifier</t>
         <t id="202">Mining Assets Cost Modifier</t>
-        <t id="203">Auxillary Assets Cost Modifier</t>
+        <t id="203">Auxiliary Assets Cost Modifier</t>
         <t id="204">Production Assets Cost Modifier</t>
         <t id="205">Station Assets Cost Modifier</t>
         <t id="206">Wharf Station Assets Cost Modifier</t>
@@ -54,14 +54,14 @@
         <t id="212">Experimental Amplitude</t>
         <t id="213">Relative Amplitude</t>
         <t id="300">Advanced Settings</t>
-        <t id="301">Optimalization</t>
+        <t id="301">Optimization</t>
         <t id="302">Bonus Cooldown</t>
         <t id="303">Penalty Cooldown</t>
         <t id="304">Global Cooldown</t>
         <t id="899">Default:</t>
         <t id="998">Completely mutes notifications caused by the modification.</t>
         <t id="999">Turns on all notifications caused by the modification.</t>
-        <t id="1000">Lock of Scale Plate Pact reputaion value.</t>
+        <t id="1000">Lock of Scale Plate Pact reputation value.</t>
         <t id="1001">Lock of bonus reputation gain for factions hostile to player.</t>
         <t id="1002">Minimum cost of an asset to take it into account during calculations.</t>
         <t id="1003">Modifiers specify the percentage value of owned Assets.</t>
