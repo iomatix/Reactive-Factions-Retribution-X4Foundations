@@ -8,7 +8,7 @@
 				<debug_text text="''" />
 			</actions>
 		</cue>
-		<cue name="Init" instantiate="false" version="225">
+		<cue name="Init" instantiate="false" version="226">
 			<actions>
 				<!-- General Menu -->
 				<set_value name="md.$MenuVarTable" exact="table[]" />
@@ -131,6 +131,20 @@
 							param="table[
 						$id = 'SCAlock',
 						$checked = md.ReactiveMain.ReactiveInit.$SCAlock,
+						$col = 2,
+						$width = 'Helper.standardButtonHeight', $height = 'Helper.standardButtonHeight',
+						$default = true,
+						$mouseOverText = {2005311642,1000} + '\n' + {2005311642,899} + ' ' + 'True',
+						$onClick = OnSMOSCheckboxChange
+					]" />
+                        <!-- Yaki Lock checkbox-->
+						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+							param="table[$col=1, $text={2005311642, 100}]" />
+						<signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
+							param="table[
+						$id = 'Yakilock',
+						$checked = md.ReactiveMain.ReactiveInit.$Yakilock,
 						$col = 2,
 						$width = 'Helper.standardButtonHeight', $height = 'Helper.standardButtonHeight',
 						$default = false,

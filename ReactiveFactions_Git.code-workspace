@@ -9,8 +9,9 @@
 		}
 	],
 	"settings": {
-		"spaceboxai.personalizedName": "ollama run codegeex4",
+		"spaceboxai.personalizedName": "deepseek-r1:14b",
 		"spaceboxai.customModel": "codegeex4",
-		"spaceboxai.generateCode-enabled": true
+		"spaceboxai.generateCode-enabled": true,
+		"spaceboxai.apiBaseUrl": "http://localhost:11434/v1"
 	}
 }

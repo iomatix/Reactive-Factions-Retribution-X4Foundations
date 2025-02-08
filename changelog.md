@@ -7,6 +7,11 @@
 - TODO: More RPG tiers //vary on community feedback
 - TODO: KD Menu API integration adding new features and moving existing there. // or some new system provided by Egosoft from 7.0 to 8.0? https://wiki.egosoft.com:1337/X4%20Foundations%20Wiki/Modding%20Support/Breaking%20Changes/ 
 
+## 2.2.6 Yaki Lock
+
+- Added Yaki lock option to the mod's menu UI. You may want to turn it on during the Yaki storyline to prevent losing reputation with the Yaki faction.
+- Changed `checkinterval` variable for check method, from debug 90 seconds back to immersive 25 minutes.
+
 ## 2.2.5 User Info
 
 - Added information display to the mod menu.

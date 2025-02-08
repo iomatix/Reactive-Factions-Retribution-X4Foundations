@@ -87,6 +87,7 @@
 		<t id="1105">Percentage value of the reputation gained applied as a penalty to hostile factions in the event.</t>
 		<t id="1106">Percentage value of the reputation gained applied as a bonus reputation to the faction causing the event.</t>
 		<t id="1107">Maximum amplitude of the difference in the reputation gained as a bonus or penalty expressed in in-game Reputation UI unit.</t>
+        <t id="1108">ock of Yaki reputation value. You may want to turn it on during the Yaki storyline to prevent losing reputation with the Yaki faction. This is useful since interacting with their enemies (which includes almost everyone in the galaxy) will otherwise harm your standing with them.</t>
 
 		<t id="1020">Cooldown in gaining bonuses to reputation applied to faction causing the event.</t>
 		<t id="1021">Cooldown in gaining penalties to reputation applied to hostile factions in the event.</t>

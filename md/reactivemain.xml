@@ -4,7 +4,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="http://x4dynlib.access.ly/libraries/md.xsd">
   <cues>
-    <cue name="ReactiveInit" version="225">
+    <cue name="ReactiveInit" version="226">
       <conditions>
         <check_any>
           <event_cue_signalled cue="md.Setup.GameStart" />
@@ -27,6 +27,7 @@
         <set_value name="$TurnOffNotifications" exact="false" />
         <set_value name="$TurnOnAllNotifications" exact="false" />
         <set_value name="$SCAlock" exact="true" />
+        <set_value name="$Yakilock" exact="false" />
         <set_value name="$CheckHostile" exact="true" />
         <set_value name="$CheckCreditsValue" exact="true" />
         <set_value name="$Power1aprox" exact="7500000Cr" />
@@ -145,7 +146,7 @@
           custom="'Reactive Factions Retribution \033G2.0.7\033X' + ' successfully updated.\nSomething new has appeared on a tips page inside of your logbook!'" />
         <write_to_logbook money="185000Cr" category="tips"
           title="'\033B[Update Info]\033X Reactive Factions Retribution \033G[2.0.7]'"
-          text="'\nHello there ' + player.name + ',\nThe modification was successfully updated to version ' +  '\033G2.0.7\033X' + '\n\n The extension menu was updated with new extra options. The default values also have changed. Make sure to check it out!\n Detailed changlog has been attached to the modification folder and is also available on both, Steam and Nexus websites.\n Please report all encountered problems or share your impressions about the modification so far.\n\nOh, also sending a small gift to help your galactic activities prosper!\n\n\033BThank you for being here, Commander! '" />
+          text="'\nHello there ' + player.name + ',\nThe modification was successfully updated to version ' +  '\033G2.0.7\033X' + '\n\n The extension menu was updated with new extra options. The default values also have changed. Make sure to check it out!\n Detailed changelog has been attached to the modification folder and is also available on both, Steam and Nexus websites.\n Please report all encountered problems or share your impressions about the modification so far.\n\nOh, also sending a small gift to help your galactic activities prosper!\n\n\033BThank you for being here, Commander! '" />
         <transfer_money from="faction.visitor" to="faction.player" amount="185000Cr" />
       </patch>
       <!-- 2.1.0 update -->
@@ -161,29 +162,39 @@
           custom="'Reactive Factions Retribution \033G2.1.0\033X' + ' successfully updated.\nSomething new has appeared on a tips page inside of your logbook!'" />
         <write_to_logbook money="75000Cr" category="tips"
           title="'\033B[Update Info]\033X Reactive Factions Retribution \033G[2.1.0]'"
-          text="'\nHello there ' + player.name + ',\nThe modification was successfully updated to version ' +  '\033G2.1.0\033X' + '\n\n  The mod has been updated to support X4 6.0. A few fixes and improvements have been applied to the mod.\n Detailed changlog has been attached to the modification folder and is also available on both, Steam and Nexus websites.\n Please report all encountered problems or share your impressions about the modification so far.\n\nOh, also sending a small gift to help your galactic activities prosper!\n\n\033BThank you for being here, Commander! '" />
+          text="'\nHello there ' + player.name + ',\nThe modification was successfully updated to version ' +  '\033G2.1.0\033X' + '\n\n  The mod has been updated to support X4 6.0. A few fixes and improvements have been applied to the mod.\n Detailed changelog has been attached to the modification folder and is also available on both, Steam and Nexus websites.\n Please report all encountered problems or share your impressions about the modification so far.\n\nOh, also sending a small gift to help your galactic activities prosper!\n\n\033BThank you for being here, Commander! '" />
         <transfer_money from="faction.visitor" to="faction.player" amount="7500Cr" />
       </patch>
       <!-- 2.2.0 update -->
       <patch sinceversion="220">
-        <!--- -->
         <debug_to_file name="'Patch_RFR'" directory="'ReactiveFactionsRetribution_log'"
           text="'[ReactiveFactionsRetribution LOG] 2.2.0 for 7.0 update - check the changelog on Nexus page for more information.'"
           output="$isDebug" append="true" />
         <write_to_logbook money="75000Cr" category="tips"
           title="'\033B[Update Info]\033X Reactive Factions Retribution \033G[2.2.0]'"
-          text="'\nHello there ' + player.name + ',\nThe modification was successfully updated to version ' +  '\033G2.2.0\033X' + '\n\n  The mod has been updated to support X4 7.0. A few fixes and improvements have been applied to the mod.\n Detailed changlog has been attached to the modification folder and is also available on both, Steam and Nexus websites.\n Please report all encountered problems or share your impressions about the modification so far.\n\nOh, also sending a small gift to help your galactic activities prosper!\n\n\033BThank you for being here, Commander! '" />
+          text="'\nHello there ' + player.name + ',\nThe modification was successfully updated to version ' +  '\033G2.2.0\033X' + '\n\n  The mod has been updated to support X4 7.0. A few fixes and improvements have been applied to the mod.\n Detailed changelog has been attached to the modification folder and is also available on both, Steam and Nexus websites.\n Please report all encountered problems or share your impressions about the modification so far.\n\nOh, also sending a small gift to help your galactic activities prosper!\n\n\033BThank you for being here, Commander! '" />
         <transfer_money from="faction.visitor" to="faction.player" amount="7500Cr" />
       </patch>
       <!-- 2.2.4 update -->
       <patch sinceversion="224">
-        <!--- -->
         <debug_to_file name="'Patch_RFR'" directory="'ReactiveFactionsRetribution_log'"
           text="'[ReactiveFactionsRetribution LOG] 2.2.4 update - check the changelog on Nexus page for more information.'"
           output="$isDebug" append="true" />
         <write_to_logbook money="5000Cr" category="tips"
           title="'\033B[Update Info]\033X Reactive Factions Retribution \033G[2.2.4]'"
-          text="'\nHello there ' + player.name + ',\nThe modification was successfully updated to version ' +  '\033G2.2.4\033X' + '\n\n  The mod has been updated providing simple logging feature to the mod. The notifications will appear within the tips tab of your logbook.\n Detailed changlog has been attached to the modification folder and is also available on both, Steam and Nexus websites.\n Please report all encountered problems or share your impressions about the modification so far.\n\nOh, also sending a small gift to help your galactic activities prosper!\n\n\033BThank you for being here, Commander! '" />
+          text="'\nHello there ' + player.name + ',\nThe modification was successfully updated to version ' +  '\033G2.2.4\033X' + '\n\n  The mod has been updated providing simple logging feature to the mod. The notifications will appear within the tips tab of your logbook.\n Detailed changelog has been attached to the modification folder and is also available on both, Steam and Nexus websites.\n Please report all encountered problems or share your impressions about the modification so far.\n\nOh, also sending a small gift to help your galactic activities prosper!\n\n\033BThank you for being here, Commander! '" />
+        <transfer_money from="faction.visitor" to="faction.player" amount="5000Cr" />
+      </patch>
+      <!-- 2.2.6 update -->
+      <patch sinceversion="226">
+         <set_value name="$Yakilock" exact="false" />
+
+        <debug_to_file name="'Patch_RFR'" directory="'ReactiveFactionsRetribution_log'"
+          text="'[ReactiveFactionsRetribution LOG] 2.2.6 update - check the changelog on Nexus page for more information.'"
+          output="$isDebug" append="true" />
+        <write_to_logbook money="5000Cr" category="tips"
+          title="'\033B[Update Info]\033X Reactive Factions Retribution \033G[2.2.6]'"
+          text="'\nHello there ' + player.name + ',\nThe modification was successfully updated to version ' +  '\033G2.2.6\033X' + '\n\n The mod has been updated to add Yaki lock to the mod menu. You may want to turn it on during the Yaki storyline to prevent losing reputation with the Yaki faction. \n Detailed changelog has been attached to the modification folder and is also available on both, Steam and Nexus websites.\n Please report all encountered problems or share your impressions about the modification so far.\n\nOh, also sending a small gift to help your galactic activities prosper!\n\n\033BThank you for being here, Commander! '" />
         <transfer_money from="faction.visitor" to="faction.player" amount="5000Cr" />
       </patch>
 
@@ -191,8 +202,7 @@
       <cues>
         <!-- checkinterval -->
         <!-- DEBUG: 1min, DEFAULT: 20min IMMERSIVE: 25-35min -->
-         <!-- TODO: SET BACK TO 25m -->
-        <cue name="ReactivePlayerPowerUpdate" checkinterval="90s" checktime="player.age + 60s" instantiate="true">
+        <cue name="ReactivePlayerPowerUpdate" checkinterval="25m" checktime="player.age + 60s" instantiate="true">
           <actions>
             <!-- Re-allocate Memory For Factions. Loads new factions or removes deleted factions. -->
             <include_actions ref="LoadAllFactionsToAllocatedMemory" />
@@ -208,6 +218,13 @@
             </do_if>
             <do_else>
               <set_faction_relation_locked faction="faction.scaleplate" locked="true" />
+            </do_else>
+
+            <do_if value="$Yakilock == false">
+              <set_faction_relation_locked faction="faction.yaki" locked="false" />
+            </do_if>
+            <do_else>
+              <set_faction_relation_locked faction="faction.yaki" locked="true" />
             </do_else>
 
             <!-- calculating total assets cost -->
