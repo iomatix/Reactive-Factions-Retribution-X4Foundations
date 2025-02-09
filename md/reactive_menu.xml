@@ -140,7 +140,7 @@
                         <!-- Yaki Lock checkbox-->
                         <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
                         <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
-							param="table[$col=1, $text={2005311642, 100}]" />
+							param="table[$col=1, $text={2005311642, 106}]" />
                         <signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
 							param="table[
 						$id = 'Yakilock',
@@ -148,7 +148,7 @@
 						$col = 2,
 						$width = 'Helper.standardButtonHeight', $height = 'Helper.standardButtonHeight',
 						$default = false,
-						$mouseOverText = {2005311642,1000} + '\n' + {2005311642,899} + ' ' + 'False',
+						$mouseOverText = {2005311642,1108} + '\n' + {2005311642,899} + ' ' + 'False',
 						$onClick = OnSMOSCheckboxChange
 					]" />
                         <!-- Hostile Check checkbox-->
