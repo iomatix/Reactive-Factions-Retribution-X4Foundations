@@ -1,11 +1,11 @@
-
 ==================================== ******** =================================================================================================================
-				      2.2.6 - Yaki Lock and the faction filter
+				      2.2.6 & 2.2.7 - Yaki Lock and the faction filter
 ==================================== ******** =================================================================================================================
 - Added Yaki lock option to the mod's menu UI. You may want to turn it on during the Yaki storyline to prevent losing reputation with the Yaki faction.
 - Changed the check interval of the main method from debug 90 seconds back to immersive 25 minutes.
 - Added Yaki to the faction filter.
-- SCA and Yaki are removed from the faction filter if their lock is turned off within the mod menu.`
+- SCA and Yaki are removed from the faction filter if their lock is turned off within the mod menu.
+- (2.2.7) Hot-fix, connected language entries to the mod's menu for Yaki Lock.
 ==================================== ******** =================================================================================================================
 				      2.2.5 - User Info
 ==================================== ******** =================================================================================================================
