@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- de -->
+<language id="49">
+    <page id="2005311642" title="Reactive Factions Retribution" descr="Texts" voice="no">
+        <t id="1">Das Reactive Factions Retribution-Modul ist installiert</t>
+        <!-- Grundlegende Sprachkonfiguration, Änderungen sind nach Belieben möglich -->
+        <t id="2">Gemeiner Freibeuter</t>
+        <t id="3">Du wirst als gemeiner Freibeuter wahrgenommen. Es gibt unendlich viele Wesen wie dich in der Galaxie. Es spielt keine Rolle, wer du in der Vergangenheit warst oder was du jetzt planst. Mit reinem Gewissen stehst du kurz vor dem Bankrott auf galaktischer Ebene. Deine Taten haben keine Bedeutung auf der intergalaktischen Bühne.</t>
+        <t id="4">Erkennbare Persönlichkeit</t>
+        <t id="5">Du wirst als erkennbare Persönlichkeit wahrgenommen. Die Wesen der Galaxie nennen dich einen lokalen Prominenten. Deine Taten haben einen vernachlässigbaren Einfluss auf die intergalaktische Bühne.</t>
+        <t id="6">Aufstrebendes Unternehmen</t>
+        <t id="7">Du bist als CEO-Prominenter eines kleinen aufstrebenden Unternehmens bekannt. Deine Taten haben einen unbedeutenden Einfluss auf die intergalaktische Bühne.</t>
+        <t id="8">Organisation</t>
+        <t id="9">Wir werden gleichermaßen mit den anderen intergalaktischen Unternehmen wahrgenommen. Unsere Taten haben einen spürbaren Einfluss auf die intergalaktische Bühne.</t>
+        <t id="10">Große Organisation</t>
+        <t id="11">Unser Unternehmen wird als eines der großen Organisationen wahrgenommen. Seine Taten haben einen mittelmäßigen Einfluss auf die intergalaktische Bühne.</t>
+        <t id="12">Konzern</t>
+        <t id="13">Unsere Organisation wird als eines der großen galaktischen Unternehmen wahrgenommen. Ihre Taten haben einen bedeutenden Einfluss auf die intergalaktische Bühne.</t>
+        <t id="14">Fraktion</t>
+        <t id="15">Wir werden gleichermaßen mit den anderen Spielern auf der intergalaktischen Bühne wahrgenommen. Unsere Taten haben einen erheblichen Einfluss auf die intergalaktische Politik.</t>
+        <t id="16">Große Fraktion</t>
+        <t id="17">Unsere Fraktion wird als eine der Hauptmächte in der Galaxie wahrgenommen. Ihre Taten haben einen enormen Einfluss auf die intergalaktische Bühne.</t>
+        <t id="18">Galaktisches Imperium</t>
+        <t id="19">Unsere Fraktion hat den Status eines Galaktischen Imperiums erlangt - Du wurdest zu seinem Kaiser ernannt. Die Wesen der gesamten Galaxie beobachten jede deiner Bewegungen genau – ihre Augen sind voller Angst und Hoffnung.</t>
+        <!-- Ende der grundlegenden Sprachkonfiguration -->
+        <!-- Erweiterte Sprachkonfiguration -->
+        <t id="30">Gesamtkosten des Vermögens geschätzt bei:</t>
+        <!-- GUI -->
+        <t id="79">Reactive Factions Retribution</t>
+        <t id="80">Allgemeines Optionsmenü</t>
+        <t id="81">??? Menü</t>
+        <t id="82">??? Menü</t>
+        <t id="83">??? Menü</t>
+        <t id="98">Benachrichtigungen aussetzen</t>
+        <t id="99">Detaillierte Benachrichtigungen</t>
+        <t id="100">SCA Ruf-Sperre</t>
+        <t id="101">Feindlicher Bonus-Sperre</t>
+        <t id="102">Vermögens-Schwellenwert</t>
+        <t id="103">Strafkoeffizient</t>
+        <t id="104">Bonuskoeffizient</t>
+        <t id="105">Maximale Rufamplitude</t>
+        <t id="106">Yaki-Ruf-Sperre</t>
+        <t id="199">Mindestpreis des Vermögens</t>
+        <t id="200">Standard-Vermögens-Kostenmodifikator</t>
+        <t id="201">Handels-Vermögens-Kostenmodifikator</t>
+        <t id="202">Bergbau-Vermögens-Kostenmodifikator</t>
+        <t id="203">Hilfs-Vermögens-Kostenmodifikator</t>
+        <t id="204">Produktions-Vermögens-Kostenmodifikator</t>
+        <t id="205">Stations-Vermögens-Kostenmodifikator</t>
+        <t id="206">Werftstation-Vermögens-Kostenmodifikator</t>
+        <t id="207">Credits berücksichtigen</t>
+        <t id="208">Divisor-Amplitude</t>
+        <t id="209">Rufdivisor</t>
+        <t id="210">Beziehungsfaktor-Multiplikator</t>
+        <t id="211">Beziehungsfaktor-Schwellenwert</t>
+        <t id="212">Experimentelle Amplitude</t>
+        <t id="213">Relative Amplitude</t>
+        <t id="300">Erweiterte Einstellungen</t>
+        <t id="301">Optimierung</t>
+        <t id="302">Bonus-Abklingzeit</t>
+        <t id="303">Straf-Abklingzeit</t>
+        <t id="304">Globale Abklingzeit</t>
+        <t id="899">Standard:</t>
+        <t id="998">Stellt alle Benachrichtigungen, die durch die Modifikation verursacht werden, stumm.</t>
+        <t id="999">Schaltet alle Benachrichtigungen, die durch die Modifikation verursacht werden, ein.</t>
+        <t id="1000">Sperre des Skalenplatten-Pakt-Rufwertes.</t>
+        <t id="1001">Sperre des Bonus-Rufgewinns für feindliche Fraktionen des Spielers.</t>
+        <t id="1002">Mindestwert eines Vermögens, um es während der Berechnungen zu berücksichtigen.</t>
+        <t id="1003">Modifikatoren geben den Prozentsatzwert des besessenen Vermögens an.</t>
+        <t id="1004">Der Algorithmus wird den Betrag an Credits, die der Spieler besitzt, in die endgültige Berechnung einbeziehen.</t>
+        <t id="1005">Der Algorithmus wird eine experimentelle Begrenzung der Rufamplitude berechnen, was zu weniger signifikanten Veränderungen im Ruf führt.</t>
+        <t id="1006">Der Algorithmus wird eine relative Begrenzung anstelle einer absoluten verwenden, was zu stärkeren Schwankungen im Ruf führt. Wenn der Wert hoch ist, sind die Schwankungen geringer als bei niedrigen Werten, die dazu tendieren, sich hohen Werten zu nähern.</t>
+        <t id="1104">Mindestwert der Credits von Vermögenswerten, um den Einfluss auf diese spezifische Machtstufe zu erhöhen.</t>
+        <t id="1105">Prozentwert des gewonnenen Rufes, der als Strafe für feindliche Fraktionen im Event angewendet wird.</t>
+        <t id="1106">Prozentwert des gewonnenen Rufes, der als Bonus-Ruf auf die Fraktion angewendet wird, die das Event verursacht.</t>
+        <t id="1107">Maximale Amplitude des Rufunterschieds, der als Bonus oder Strafe im Einheitenmaßstab des Spiel-Rufs dargestellt wird.</t>
+        <t id="1108">Sperre des Yaki-Rufwertes. Du möchtest dies möglicherweise während der Yaki-Geschichte aktivieren, um zu verhindern, dass du deinen Ruf mit der Yaki-Fraktion verlierst. Dies ist nützlich, da die Interaktion mit ihren Feinden (was fast alle in der Galaxie einschließt) sonst deinen Ruf bei ihnen schädigen würde.</t>
+        <t id="1020">Abklingzeit beim Erlangen von Bonus-Ruf für die Fraktion, die das Event verursacht.</t>
+        <t id="1021">Abklingzeit beim Erlangen von Straf-Ruf für feindliche Fraktionen im Event.</t>
+        <t id="1022">RFR-Event-Abklingzeit. Erhöht leicht die Hardware-Effizienz, reduziert jedoch die Gesamtreaktionsfähigkeit.</t>
+        <!-- Gefaltete Tipps -->
+        <!-- Erweitert -->
+        <t id="700100">Rufamplitude, in welchem Bereich die</t>
+        <t id="700101">durch</t>
+        <t id="700105">Reduziert den Einfluss von Boni und Strafen für Fraktionen mit einem Ruf nahe der Neutralität. Setze 1, um dies zu deaktivieren.</t>
+        <t id="700106">Hat einen erheblichen Einfluss auf den Betrag der endgültigen Strafe. Eine Erhöhung beschleunigt die Entwicklung der Beziehung.</t>
+        <t id="700107">Maximaler geschätzter Rufwert, der während der Berechnung durch den dynamischen Algorithmus verwendet wird. Kleinere Werte machen Beziehungsänderungen dynamischer und unvorhersehbarer, während größere Werte die Flüssigkeit der Beziehungen auf Kosten der Dynamik verbessern.</t>
+        <!-- Protokolle -->
+        <t id="900100">[Rep Event Info]</t>
+        <t id="900101">[Benachrichtigung]</t>
+        <t id="900102">Dein Ruf bei</t>
+        <t id="900103">wurde um</t>
+        <t id="900104">wurde um</t>
+        <t id="900105">wegen des Rufänderungsereignisses bei</t>
+        <t id="900106">Der Rufunterschied des Ereignisses war</t>
+        <!-- Benutzerinfo im Mod-Menü -->
+        <t id="910100">Vermögenswert nach letzter Auswertung</t>
+        <t id="910101">Aktueller Rang</t>
+    </page>
+</language>

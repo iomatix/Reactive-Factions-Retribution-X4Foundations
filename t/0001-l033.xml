@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- fr -->
+<language id="33">
+    <page id="2005311642" title="Reactive Factions Retribution" descr="Texts" voice="no">
+        <t id="1">Le mod Reactive Factions Retribution est installé</t>
+        <!-- Configuration de base de la langue, n'hésitez pas à la modifier -->
+        <t id="2">Corsaire ordinaire</t>
+        <t id="3">Vous êtes perçu comme un corsaire ordinaire. Il existe une infinité d'êtres comme vous dans la galaxie. Peu importe qui vous étiez dans le passé ou ce que vous planifiez maintenant. Avec une conscience claire, vous êtes au bord de la faillite à l'échelle galactique. Vos actions n'ont aucune importance sur la scène intergalactique.</t>
+        <t id="4">Influenceur reconnaissable</t>
+        <t id="5">Vous êtes perçu comme un individu reconnaissable. Les êtres de la galaxie vous considèrent comme une célébrité locale. Vos actions ont un impact négligeable sur la scène intergalactique.</t>
+        <t id="6">Entreprise naissante</t>
+        <t id="7">Vous êtes connu comme un PDG-Célébrité d'une petite entreprise naissante. Vos actions ont un impact insignifiant sur la scène intergalactique.</t>
+        <t id="8">Organisation</t>
+        <t id="9">Nous sommes perçus au même niveau que les autres entreprises intergalactiques. Nos actions ont un impact notable sur la scène intergalactique.</t>
+        <t id="10">Grande organisation</t>
+        <t id="11">Notre entreprise est perçue comme l'une des grandes organisations. Ses actions ont un impact médiocre sur la scène intergalactique.</t>
+        <t id="12">Corporation</t>
+        <t id="13">Notre organisation est perçue comme l'une des principales corporations galactiques. Ses actions ont un impact significatif sur la scène intergalactique.</t>
+        <t id="14">Faction</t>
+        <t id="15">Nous sommes perçus au même niveau que les autres joueurs sur la scène intergalactique. Nos actions ont un impact significatif sur la politique intergalactique.</t>
+        <t id="16">Faction majeure</t>
+        <t id="17">Notre faction est perçue comme l'une des forces principales de la galaxie. Ses actions ont un impact énorme sur la scène intergalactique.</t>
+        <t id="18">Empire Galactique</t>
+        <t id="19">Notre faction a obtenu le statut d'Empire Galactique - Vous avez été nommé empereur. Les êtres de toute la galaxie observent chacun de vos mouvements avec des yeux pleins de peur et d'espoir.</t>
+        <!-- Fin de la configuration de base -->
+        <!-- Configuration avancée -->
+        <t id="30">Coût total des actifs estimé à :</t>
+        <!--GUI-->
+        <t id="79">Reactive Factions Retribution</t>
+        <t id="80">Menu des options générales</t>
+        <t id="81">??? Menu</t>
+        <t id="82">??? Menu</t>
+        <t id="83">??? Menu</t>
+        <t id="98">Suspendre les notifications</t>
+        <t id="99">Notifications détaillées</t>
+        <t id="100">Verrouillage de la réputation SCA</t>
+        <t id="101">Verrouillage du bonus pour les factions hostiles</t>
+        <t id="102">Seuil des actifs</t>
+        <t id="103">Coefficient de pénalité</t>
+        <t id="104">Coefficient de bonus</t>
+        <t id="105">Amplitude maximale de la réputation</t>
+        <t id="106">Verrouillage de la réputation Yaki</t>
+        <t id="199">Prix minimum d'un actif</t>
+        <t id="200">Modificateur de coût des actifs par défaut</t>
+        <t id="201">Modificateur de coût des actifs commerciaux</t>
+        <t id="202">Modificateur de coût des actifs miniers</t>
+        <t id="203">Modificateur de coût des actifs auxiliaires</t>
+        <t id="204">Modificateur de coût des actifs de production</t>
+        <t id="205">Modificateur de coût des actifs de station</t>
+        <t id="206">Modificateur de coût des actifs de chantier naval</t>
+        <t id="207">Prendre en compte les crédits</t>
+        <t id="208">Amplitude du diviseur</t>
+        <t id="209">Diviseur de réputation</t>
+        <t id="210">Multiplicateur du facteur de relation</t>
+        <t id="211">Seuil du facteur de relation</t>
+        <t id="212">Amplitude expérimentale</t>
+        <t id="213">Amplitude relative</t>
+        <t id="300">Paramètres avancés</t>
+        <t id="301">Optimisation</t>
+        <t id="302">Temps de recharge des bonus</t>
+        <t id="303">Temps de recharge des pénalités</t>
+        <t id="304">Temps de recharge global</t>
+        <t id="899">Par défaut :</t>
+        <t id="998">Désactive complètement les notifications causées par la modification.</t>
+        <t id="999">Active toutes les notifications causées par la modification.</t>
+        <t id="1000">Verrouillage de la valeur de réputation du Pacte de la Plaque d'Écaille.</t>
+        <t id="1001">Verrouillage du gain de réputation bonus pour les factions hostiles au joueur.</t>
+        <t id="1002">Coût minimum d'un actif pour le prendre en compte dans les calculs.</t>
+        <t id="1003">Les modificateurs spécifient la valeur en pourcentage des actifs possédés.</t>
+        <t id="1004">L'algorithme prendra en compte le montant des crédits détenus par le joueur dans le calcul final.</t>
+        <t id="1005">L'algorithme calculera expérimentalement un limiteur d'amplitude de réputation, entraînant des changements moins significatifs.</t>
+        <t id="1006">L'algorithme utilisera un limiteur relatif au lieu d'un limiteur absolu, entraînant des fluctuations plus importantes. Si la valeur est élevée, les fluctuations seront plus petites que dans le cas de valeurs faibles qui tendent à approcher des valeurs élevées.</t>
+        <t id="1104">Valeur minimale de crédits des actifs pour augmenter l'influence à ce niveau de puissance spécifique.</t>
+        <t id="1105">Pourcentage de la réputation gagnée appliquée comme pénalité aux factions hostiles lors de l'événement.</t>
+        <t id="1106">Pourcentage de la réputation gagnée appliquée comme bonus à la faction causant l'événement.</t>
+        <t id="1107">Amplitude maximale de la différence de réputation gagnée comme bonus ou pénalité, exprimée en unité d'interface utilisateur de réputation du jeu.</t>
+        <t id="1108">Verrouillage de la valeur de réputation Yaki. Vous pouvez l'activer pendant l'histoire des Yaki pour éviter de perdre de la réputation avec eux. Utile car interagir avec leurs ennemis (qui incluent presque tout le monde dans la galaxie) nuirait autrement à votre relation.</t>
+        <t id="1020">Temps de recharge pour les bonus de réputation appliqués à la faction causant l'événement.</t>
+        <t id="1021">Temps de recharge pour les pénalités de réputation appliquées aux factions hostiles lors de l'événement.</t>
+        <t id="1022">Temps de recharge des événements RFR. Améliore légèrement l'efficacité matérielle mais réduit la réactivité globale.</t>
+        <!-- Conseils repliés -->
+        <!-- Avancé -->
+        <t id="700100">Amplitude de réputation dans laquelle la</t>
+        <t id="700101">est divisée par</t>
+        <t id="700105">Réduit l'impact des bonus et des pénalités pour les factions dont la réputation est proche du neutre. Réglez à 1 pour désactiver.</t>
+        <t id="700106">A un impact significatif sur le montant de la pénalité finale. L'augmenter accélère l'évolution des relations.</t>
+        <t id="700107">Valeur maximale de réputation estimée utilisée lors du calcul par l'algorithme dynamique. Les petites valeurs rendent les changements de relation plus dynamiques et imprévisibles, tandis que les grandes valeurs améliorent la fluidité des relations au détriment du dynamisme.</t>
+        <!-- Journaux -->
+        <t id="900100">[Info événement réputation]</t>
+        <t id="900101">[Notification]</t>
+        <t id="900102">Votre réputation avec</t>
+        <t id="900103">a augmenté de</t>
+        <t id="900104">a diminué de</t>
+        <t id="900105">en raison d'un événement de changement de réputation avec</t>
+        <t id="900106">La différence de réputation de l'événement était</t>
+        <!-- Informations utilisateur dans le menu du mod -->
+        <t id="910100">Valeur des actifs après la dernière évaluation</t>
+        <t id="910101">Rang actuel</t>
+    </page>
+</language>

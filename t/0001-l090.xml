@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language>
+<!-- en -->
+<language id="90">
     <page id="2005311642" title="Reactive Factions Retribution" descr="Texts" voice="no">
-        <t id="1">Reactive Faction Retribution mod is installed</t>
+        <t id="1">Reactive Factions Retribution mod is installed</t>
         <!-- Basic language config, feel free to edit it as you will -->
         <t id="2">Common Privateer</t>
         <t id="3">You are perceived as a common privateer. There are infinitely many beings like you in the galaxy. It doesn't even matter who you were in the past or what you are planning now. With a clear conscience, you are on the verge of bankruptcy on a galactic scale. Your actions don't matter on the intergalactic scene.</t>

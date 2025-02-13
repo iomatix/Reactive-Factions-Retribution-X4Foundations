@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- es -->
+<language id="34">
+    <page id="2005311642" title="Reactive Factions Retribution" descr="Texts" voice="no">
+        <t id="1">El mod Reactive Faction Retribution está instalado</t>
+        <!-- Configuración básica de idioma, siéntete libre de editarla -->
+        <t id="2">Corsario común</t>
+        <t id="3">Eres percibido como un corsario común. Hay infinitos seres como tú en la galaxia. Ni siquiera importa quién fuiste en el pasado o qué planeas ahora. Con la conciencia tranquila, estás al borde de la bancarrota a escala galáctica. Tus acciones no importan en el escenario intergaláctico.</t>
+        <t id="4">Influencer reconocible</t>
+        <t id="5">Eres percibido como un individuo reconocible. Los seres de la galaxia te consideran una celebridad local. Tus acciones tienen un impacto insignificante en el escenario intergaláctico.</t>
+        <t id="6">Empresa incipiente</t>
+        <t id="7">Eres conocido como un CEO-Celebridad de una pequeña empresa emergente. Tus acciones tienen un impacto mínimo en el escenario intergaláctico.</t>
+        <t id="8">Organización</t>
+        <t id="9">Somos percibidos al mismo nivel que otras compañías intergalácticas. Nuestras acciones tienen un impacto notable en el escenario intergaláctico.</t>
+        <t id="10">Gran organización</t>
+        <t id="11">Nuestra empresa es considerada una de las grandes organizaciones. Sus acciones tienen un impacto mediocre en el escenario intergaláctico.</t>
+        <t id="12">Corporación</t>
+        <t id="13">Nuestra organización es vista como una de las principales corporaciones galácticas. Sus acciones tienen un impacto significativo en el escenario intergaláctico.</t>
+        <t id="14">Facción</t>
+        <t id="15">Somos considerados iguales al resto de jugadores en el escenario intergaláctico. Nuestras acciones tienen un impacto significativo en la política intergaláctica.</t>
+        <t id="16">Facción principal</t>
+        <t id="17">Nuestra facción es percibida como una de las fuerzas principales en la galaxia. Sus acciones tienen un impacto enorme en el escenario intergaláctico.</t>
+        <t id="18">Imperio Galáctico</t>
+        <t id="19">Nuestra facción ha obtenido el estatus de Imperio Galáctico. Has sido nombrado su emperador. Todos los seres de la galaxia observan cada uno de tus movimientos con ojos llenos de miedo y esperanza.</t>
+        <!-- Fin de configuración básica -->
+        <!-- Configuración avanzada -->
+        <t id="30">Costo total de activos estimado en:</t>
+        <!--GUI-->
+        <t id="79">Reactive Factions Retribution</t>
+        <t id="80">Menú de opciones generales</t>
+        <t id="81">??? Menú</t>
+        <t id="82">??? Menú</t>
+        <t id="83">??? Menú</t>
+        <t id="98">Suspender notificaciones</t>
+        <t id="99">Notificaciones detalladas</t>
+        <t id="100">Bloqueo de reputación SCA</t>
+        <t id="101">Bloqueo de bonificación hostil</t>
+        <t id="102">Umbral de activos</t>
+        <t id="103">Coeficiente de penalización</t>
+        <t id="104">Coeficiente de bonificación</t>
+        <t id="105">Amplitud máxima de reputación</t>
+        <t id="106">Bloqueo de reputación Yaki</t>
+        <t id="199">Precio mínimo de activo</t>
+        <t id="200">Modificador de costo de activos predeterminado</t>
+        <t id="201">Modificador de costo de activos comerciales</t>
+        <t id="202">Modificador de costo de activos mineros</t>
+        <t id="203">Modificador de costo de activos auxiliares</t>
+        <t id="204">Modificador de costo de activos de producción</t>
+        <t id="205">Modificador de costo de activos de estación</t>
+        <t id="206">Modificador de costo de activos de astillero</t>
+        <t id="207">Considerar créditos</t>
+        <t id="208">Amplitud del divisor</t>
+        <t id="209">Divisor de reputación</t>
+        <t id="210">Multiplicador del factor de relación</t>
+        <t id="211">Umbral del factor de relación</t>
+        <t id="212">Amplitud experimental</t>
+        <t id="213">Amplitud relativa</t>
+        <t id="300">Configuraciones avanzadas</t>
+        <t id="301">Optimización</t>
+        <t id="302">Tiempo de espera para bonificaciones</t>
+        <t id="303">Tiempo de espera para penalizaciones</t>
+        <t id="304">Tiempo de espera global</t>
+        <t id="899">Predeterminado:</t>
+        <t id="998">Silencia completamente las notificaciones causadas por la modificación.</t>
+        <t id="999">Activa todas las notificaciones causadas por la modificación.</t>
+        <t id="1000">Bloqueo del valor de reputación con el Pacto de la Placa de Escamas.</t>
+        <t id="1001">Bloqueo de bonificación de reputación para facciones hostiles al jugador.</t>
+        <t id="1002">Costo mínimo de un activo para considerarlo en los cálculos.</t>
+        <t id="1003">Los modificadores especifican el valor porcentual de los activos poseídos.</t>
+        <t id="1004">El algoritmo considerará la cantidad de créditos del jugador en el cálculo final.</t>
+        <t id="1005">El algoritmo calculará experimentalmente un limitador de amplitud de reputación, resultando en cambios menos significativos.</t>
+        <t id="1006">El algoritmo usará un limitador relativo en lugar de absoluto, causando fluctuaciones más sustanciales. Valores altos reducen fluctuaciones cerca de valores altos.</t>
+        <t id="1104">Valor mínimo de créditos en activos para alcanzar este nivel de influencia.</t>
+        <t id="1105">Porcentaje de reputación aplicado como penalización a facciones hostiles en eventos.</t>
+        <t id="1106">Porcentaje de reputación aplicado como bonificación a la facción del evento.</t>
+        <t id="1107">Amplitud máxima de diferencia en reputación (en unidades UI del juego) para bonificaciones/penalizaciones.</t>
+        <t id="1108">Bloquea la reputación con Yaki. Útil durante su historia para evitar perder reputación al interactuar con sus enemigos (casi toda la galaxia).</t>
+        <t id="1020">Tiempo de espera para bonificaciones de reputación con la facción del evento.</t>
+        <t id="1021">Tiempo de espera para penalizaciones de reputación con facciones hostiles.</t>
+        <t id="1022">Tiempo de espera para eventos RFR. Mejora eficiencia pero reduce capacidad de respuesta.</t>
+        <!-- Consejos plegables -->
+        <!-- Avanzado -->
+        <t id="700100">Rango de amplitud de reputación donde el</t>
+        <t id="700101">se divide por</t>
+        <t id="700105">Reduce impacto de bonificaciones/penalizaciones con reputación cercana a neutral. 1 para desactivar.</t>
+        <t id="700106">Afecta fuertemente la penalización final. Incrementarlo acelera cambios en relaciones.</t>
+        <t id="700107">Valor máximo de reputación usado en cálculos dinámicos. Valores bajos=cambios más impredecibles; altos= relaciones más estables.</t>
+        <!-- Registros -->
+        <t id="900100">[Info evento reputación]</t>
+        <t id="900101">[Notificación]</t>
+        <t id="900102">Tu reputación con</t>
+        <t id="900103">aumentó en</t>
+        <t id="900104">disminuyó en</t>
+        <t id="900105">por evento de cambio de reputación con</t>
+        <t id="900106">La diferencia de reputación del evento fue</t>
+        <!-- Info de usuario -->
+        <t id="910100">Valor de activos tras última evaluación</t>
+        <t id="910101">Rango actual</t>
+    </page>
+</language>

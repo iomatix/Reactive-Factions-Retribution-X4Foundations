@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!-- pl -->
+<language id="48">
+    <page id="2005311642" title="Reactive Factions Retribution" descr="Texts" voice="no">
+        <t id="1">Mod Reactive Factions Retribution jest zainstalowany</t>
+        <!-- Podstawowa konfiguracja językowa, możesz ją edytować według uznania -->
+        <t id="2">Zwykły Prywaciarz</t>
+        <t id="3">Jesteś postrzegany jako zwykły prywaciarz. W galaktyce istnieje nieskończona liczba istot podobnych do ciebie. Nie ma znaczenia, kim byłeś w przeszłości ani co planujesz teraz. Z czystym sumieniem jesteś na skraju bankructwa na galaktyczną skalę. Twoje działania nie mają znaczenia na scenie międzygalaktycznej.</t>
+        <t id="4">Rozpoznawalny Influencer</t>
+        <t id="5">Jesteś postrzegany jako rozpoznawalna jednostka. Istoty w galaktyce nazywają cię lokalną celebrytą. Twoje działania mają znikomy wpływ na scenę międzygalaktyczną.</t>
+        <t id="6">Wschodząca Firma</t>
+        <t id="7">Jesteś znany jako CEO-celebryta małej wschodzącej firmy. Twoje działania mają nieznaczny wpływ na scenę międzygalaktyczną.</t>
+        <t id="8">Organizacja</t>
+        <t id="9">Jesteśmy postrzegani na równi z innymi międzygalaktycznymi firmami. Nasze działania mają zauważalny wpływ na scenę międzygalaktyczną.</t>
+        <t id="10">Duża Organizacja</t>
+        <t id="11">Nasza firma jest postrzegana jako jedna z dużych organizacji. Jej działania mają średni wpływ na scenę międzygalaktyczną.</t>
+        <t id="12">Korporacja</t>
+        <t id="13">Nasza organizacja jest postrzegana jako jedna z głównych galaktycznych korporacji. Jej działania mają znaczący wpływ na scenę międzygalaktyczną.</t>
+        <t id="14">Frakcja</t>
+        <t id="15">Jesteśmy postrzegani na równi z innymi graczami na scenie międzygalaktycznej. Nasze działania mają istotny wpływ na politykę międzygalaktyczną.</t>
+        <t id="16">Główna Frakcja</t>
+        <t id="17">Nasza frakcja jest postrzegana jako jedna z głównych sił w galaktyce. Jej działania mają ogromny wpływ na scenę międzygalaktyczną.</t>
+        <t id="18">Galaktyczne Imperium</t>
+        <t id="19">Nasza frakcja uzyskała status Galaktycznego Imperium - Zostałeś mianowany jego cesarzem. Istoty z całej galaktyki bacznie śledzą każdy twój ruch - ich oczy pełne są strachu i nadziei.</t>
+        <!-- Koniec podstawowej konfiguracji językowej -->
+        <!-- Zaawansowana konfiguracja językowa -->
+        <t id="30">Całkowita szacowana wartość aktywów:</t>
+        <!--GUI-->
+        <t id="79">Reactive Factions Retribution</t>
+        <t id="80">Menu Opcji Ogólnych</t>
+        <t id="81">??? Menu</t>
+        <t id="82">??? Menu</t>
+        <t id="83">??? Menu</t>
+        <t id="98">Wstrzymaj Powiadomienia</t>
+        <t id="99">Szczegółowe Powiadomienia</t>
+        <t id="100">Zamek Reputacji SCA</t>
+        <t id="101">Zamek Premii Wrogów</t>
+        <t id="102">Próg Aktywów</t>
+        <t id="103">Współczynnik Kary</t>
+        <t id="104">Współczynnik Premii</t>
+        <t id="105">Maksymalna Amplituda Reputacji</t>
+        <t id="106">Zamek Reputacji Yaki</t>
+        <t id="199">Minimalna Cena Aktywu</t>
+        <t id="200">Domyślny Modyfikator Kosztu Aktywów</t>
+        <t id="201">Modyfikator Kosztu Aktywów Handlu</t>
+        <t id="202">Modyfikator Kosztu Aktywów Górnictwa</t>
+        <t id="203">Modyfikator Kosztu Aktywów Pomocniczych</t>
+        <t id="204">Modyfikator Kosztu Aktywów Produkcji</t>
+        <t id="205">Modyfikator Kosztu Aktywów Stacji</t>
+        <t id="206">Modyfikator Kosztu Aktywów Stacji Stoczni</t>
+        <t id="207">Weź Pod uwagę Kredyty</t>
+        <t id="208">Amplituda Dzielnika</t>
+        <t id="209">Dzielnik Reputacji</t>
+        <t id="210">Mnożnik Czynnika Relacji</t>
+        <t id="211">Próg Czynnika Relacji</t>
+        <t id="212">Eksperymentalna Amplituda</t>
+        <t id="213">Relatywna Amplituda</t>
+        <t id="300">Zaawansowane Ustawienia</t>
+        <t id="301">Optymalizacja</t>
+        <t id="302">Czas Odnowienia Premii</t>
+        <t id="303">Czas Odnowienia Kary</t>
+        <t id="304">Globalny Czas Odnowienia</t>
+        <t id="899">Domyślnie:</t>
+        <t id="998">Całkowicie wycisza powiadomienia spowodowane modyfikacją.</t>
+        <t id="999">Włącza wszystkie powiadomienia spowodowane modyfikacją.</t>
+        <t id="1000">Zamek wartości reputacji Paktu Płyty Skali.</t>
+        <t id="1001">Zamek bonusowego wzrostu reputacji dla frakcji wrogich graczowi.</t>
+        <t id="1002">Minimalny koszt aktywu, aby wziąć go pod uwagę przy obliczeniach.</t>
+        <t id="1003">Modyfikatory określają procentową wartość posiadanych Aktywów.</t>
+        <t id="1004">Algorytm uwzględni ilość kredytów posiadanych przez gracza w końcowym obliczeniu.</t>
+        <t id="1005">Algorytm eksperymentalnie obliczy ogranicznik amplitudy reputacji, prowadząc do mniej znaczących zmian reputacji.</t>
+        <t id="1006">Algorytm będzie używać ogranicznika względnego zamiast bezwzględnego, co skutkuje bardziej znaczącymi fluktuacjami reputacji. Jeśli wartość jest wysoka, fluktuacje będą mniejsze niż w przypadku niskich wartości, które mają tendencję do zbliżania się do wysokich wartości.</t>
+        <t id="1104">Minimalna wartość kredytów aktywów, aby zwiększyć wpływ na ten konkretny poziom mocy.</t>
+        <t id="1105">Procentowy udział reputacji zdobytej jako kara dla wrogich frakcji w wydarzeniu.</t>
+        <t id="1106">Procentowy udział reputacji zdobytej jako bonus dla frakcji powodującej wydarzenie.</t>
+        <t id="1107">Maksymalna amplituda różnicy w zdobytej reputacji jako bonus lub kara wyrażona w jednostkach interfejsu UI Reputacji.</t>
+        <t id="1108">Zamek wartości reputacji Yaki. Może warto włączyć to podczas fabuły Yaki, aby zapobiec utracie reputacji z frakcją Yaki. Jest to przydatne, ponieważ interakcja z ich wrogami (którymi są prawie wszyscy w galaktyce) w przeciwnym razie zaszkodzi twojej pozycji w ich oczach.</t>
+        <t id="1020">Czas Odnowienia w zdobywaniu premii do reputacji zastosowanej do frakcji powodującej wydarzenie.</t>
+        <t id="1021">Czas Odnowienia w zdobywaniu kar reputacyjnych dla wrogich frakcji w wydarzeniu.</t>
+        <t id="1022">Czas Odnowienia Wydarzenia RFR. Nieznacznie zwiększa efektywność sprzętu, ale zmniejsza ogólną reakcję.</t>
+        <!-- Rozwinięte porady -->
+        <!-- Zaawansowane -->
+        <t id="700100">Amplituda reputacji, w której zakres</t>
+        <t id="700101">jest dzielony przez</t>
+        <t id="700105">Zmniejsza wpływ premii i kar dla frakcji z reputacją bliską neutralnej. Ustaw 1, aby wyłączyć tę funkcję.</t>
+        <t id="700106">Ma znaczący wpływ na wysokość ostatecznej kary. Zwiększenie jej przyspiesza ewolucję relacji.</t>
+        <t id="700107">Maksymalna szacowana wartość reputacji używana w obliczeniach przez dynamiczny algorytm. Mniejsze wartości sprawiają, że zmiany relacji są bardziej dynamiczne i nieprzewidywalne, podczas gdy większe wartości poprawiają płynność relacji kosztem dynamizmu.</t>
+        <!-- Logi -->
+        <t id="900100">[Informacje o Wydarzeniu Reputacyjnym]</t>
+        <t id="900101">[Powiadomienie]</t>
+        <t id="900102">Twoja reputacja z</t>
+        <t id="900103">została zwiększona o</t>
+        <t id="900104">została zmniejszona o</t>
+        <t id="900105">z powodu zmiany reputacji z</t>
+        <t id="900106">Różnica reputacji w tym wydarzeniu wyniosła</t>
+        <!-- Informacje użytkownika w menu modyfikacji -->
+        <t id="910100">Wartość aktywów po ostatniej ocenie</t>
+        <t id="910101">Bieżący Ranga</t>
+    </page>
+</language>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- cs -->
+<language id="42">
+    <page id="2005311642" title="Reactive Factions Retribution" descr="Texts" voice="no">
+        <t id="1">Mod Reactive Factions Retribution je nainstalován</t>
+        <!-- Základní konfigurace jazyka, můžete ji upravit podle potřeby -->
+        <t id="2">Obyčejný korzár</t>
+        <t id="3">Jste vnímán jako obyčejný korzár.V galaxii existuje nekonečně mnoho bytostí jako vy. Nezáleží na tom, kým jste byli v minulosti nebo co plánujete nyní. S čistým svědomím jste na pokraji galaktického bankrotu. Vaše činy nemají žádný význam na mezigalaktické scéně.</t>
+        <t id="4">Známý influencer</t>
+        <t id="5">Jste vnímán jako rozpoznatelná osobnost. Bytosti galaxie vás nazývají místní celebritou. Vaše činy mají zanedbatelný dopad na mezigalaktickou scénu.</t>
+        <t id="6">Začínající společnost</t>
+        <t id="7">Jste známý jako CEO-celebrita malé začínající společnosti. Vaše činy mají nepatrný dopad na mezigalaktickou scénu.</t>
+        <t id="8">Organizace</t>
+        <t id="9">Jsme vnímáni stejně jako ostatní mezigalaktické společnosti. Naše činy mají znatelný dopad na mezigalaktickou scénu.</t>
+        <t id="10">Velká organizace</t>
+        <t id="11">Naše společnost je vnímána jako jedna z velkých organizací. Její činy mají průměrný dopad na mezigalaktickou scénu.</t>
+        <t id="12">Korporace</t>
+        <t id="13">Naše organizace je vnímána jako jedna z hlavních galaktických korporací. Její činy mají významný dopad na mezigalaktickou scénu.</t>
+        <t id="14">Frakce</t>
+        <t id="15">Jsme vnímáni na stejné úrovni jako ostatní hráči na mezigalaktické scéně. Naše činy mají zásadní dopad na mezigalaktickou politiku.</t>
+        <t id="16">Hlavní frakce</t>
+        <t id="17">Naše frakce je vnímána jako jedna z hlavních sil v galaxii. Její činy mají obrovský dopad na mezigalaktickou scénu.</t>
+        <t id="18">Galaktické impérium</t>
+        <t id="19">Naše frakce získala status Galaktického impéria - byl jste jmenován jeho císařem. Bytosti celé galaxie bedlivě sledují každý váš krok - jejich oči jsou plné strachu a naděje.</t>
+        <!-- Konec základní konfigurace jazyka -->
+        <!-- Pokročilá konfigurace jazyka -->
+        <t id="30">Celkové náklady na aktiva odhadovány na:</t>
+        <!--GUI-->
+        <t id="79">Reactive Factions Retribution</t>
+        <t id="80">Hlavní nabídka možností</t>
+        <t id="81">??? Menu</t>
+        <t id="82">??? Menu</t>
+        <t id="83">??? Menu</t>
+        <t id="98">Pozastavit oznámení</t>
+        <t id="99">Podrobná oznámení</t>
+        <t id="100">Zámek reputace SCA</t>
+        <t id="101">Zámek nepřátelského bonusu</t>
+        <t id="102">Práh aktiv</t>
+        <t id="103">Koeficient postihu</t>
+        <t id="104">Koeficient bonusu</t>
+        <t id="105">Maximální amplituda reputace</t>
+        <t id="106">Zámek reputace Yaki</t>
+        <t id="199">Minimální cena aktiva</t>
+        <t id="200">Výchozí modifikátor nákladů aktiv</t>
+        <t id="201">Modifikátor nákladů obchodních aktiv</t>
+        <t id="202">Modifikátor nákladů těžebních aktiv</t>
+        <t id="203">Modifikátor nákladů podpůrných aktiv</t>
+        <t id="204">Modifikátor nákladů výrobních aktiv</t>
+        <t id="205">Modifikátor nákladů staničních aktiv</t>
+        <t id="206">Modifikátor nákladů aktiv přístavní stanice</t>
+        <t id="207">Zohlednit kredity</t>
+        <t id="208">Dělicí amplituda</t>
+        <t id="209">Dělič reputace</t>
+        <t id="210">Násobitel faktoru vztahů</t>
+        <t id="211">Práh faktoru vztahů</t>
+        <t id="212">Experimentální amplituda</t>
+        <t id="213">Relativní amplituda</t>
+        <t id="300">Pokročilá nastavení</t>
+        <t id="301">Optimalizace</t>
+        <t id="302">Cooldown bonusu</t>
+        <t id="303">Cooldown postihu</t>
+        <t id="304">Globální cooldown</t>
+        <t id="899">Výchozí:</t>
+        <t id="998">Úplně ztlumí oznámení způsobená modifikací.</t>
+        <t id="999">Zapne všechna oznámení způsobená modifikací.</t>
+        <t id="1000">Zámek hodnoty reputace Scale Plate Pact.</t>
+        <t id="1001">Zámek bonusového nárůstu reputace pro frakce nepřátelské vůči hráči.</t>
+        <t id="1002">Minimální cena majetku pro jeho započítání do výpočtů.</t>
+        <t id="1003">Modifikátory určují procentuální hodnotu vlastněného majetku.</t>
+        <t id="1004">Algoritmus vezme v úvahu množství kreditů držených hráčem pro konečný výpočet.</t>
+        <t id="1005">Algoritmus experimentálně vypočítá limitér amplitudy reputace, což povede k méně významným změnám reputace.</t>
+        <t id="1006">Algoritmus použije relativní limitér namísto absolutního, což povede k výraznějším výkyvům reputace. Pokud je hodnota vysoká, výkyvy budou menší než v případě nízkých hodnot, které mají tendenci se přibližovat vysokým hodnotám.</t>
+        <t id="1104">Minimální hodnota kreditů majetku k navýšení vlivu na tuto konkrétní úroveň moci.</t>
+        <t id="1105">Procentuální hodnota získané reputace aplikovaná jako trest pro nepřátelské frakce v události.</t>
+        <t id="1106">Procentuální hodnota získané reputace aplikovaná jako bonus reputace pro frakci způsobující událost.</t>
+        <t id="1107">Maximální amplituda rozdílu v získané reputaci jako bonus nebo trest vyjádřená v jednotkách UI reputace ve hře.</t>
+        <t id="1108">Zámek hodnoty reputace Yaki. Můžete jej zapnout během příběhu Yaki, abyste zabránili ztrátě reputace s frakcí Yaki. To je užitečné, protože interakce s jejich nepřáteli (což zahrnuje téměř každého v galaxii) by jinak poškodila váš status u nich.</t>
+        <t id="1020">Časový limit pro získávání bonusů k reputaci aplikovaný na frakci způsobující událost.</t>
+        <t id="1021">Časový limit pro získávání trestů k reputaci aplikovaný na nepřátelské frakce v události.</t>
+        <t id="1022">Časový limit událostí RFR. Mírně zvyšuje efektivitu hardwaru, ale snižuje celkovou odezvu.</t>
+        <!-- Folded tips -->
+        <!-- Advanced -->
+        <t id="700100">Rozsah amplitudy reputace, ve kterém</t>
+        <t id="700101">je děleno</t>
+        <t id="700105">Snižuje dopad bonusů a trestů pro frakce s reputací blízkou neutrální. Nastavte 1 pro vypnutí.</t>
+        <t id="700106">Má významný dopad na výši konečného trestu. Zvýšení této hodnoty urychluje vývoj vztahů.</t>
+        <t id="700107">Maximální odhadovaná hodnota reputace použitá při výpočtu dynamickým algoritmem. Menší hodnoty činí změny vztahů dynamičtějšími a nepředvídatelnějšími, zatímco větší hodnoty zlepšují plynulost vztahů na úkor dynamiky.</t>
+        <!-- Logy -->
+        <t id="900100">[Info o reputační události]</t>
+        <t id="900101">[Oznámení]</t>
+        <t id="900102">Vaše reputace s</t>
+        <t id="900103">byla zvýšena o</t>
+        <t id="900104">byla snížena o</t>
+        <t id="900105">kvůli změně reputace s</t>
+        <t id="900106">Rozdíl v reputaci události byl</t>
+        <!-- User Info in Mod Menu -->
+        <t id="910100">Hodnota majetku po posledním vyhodnocení</t>
+        <t id="910101">Aktuální hodnost</t>
+    </page>
+</language>
