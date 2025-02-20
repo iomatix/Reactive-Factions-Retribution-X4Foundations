@@ -8,11 +8,11 @@
 - TODO: KD Menu API integration adding new features and moving existing there. // or some new system provided by Egosoft from 7.0 to 8.0? https://wiki.egosoft.com:1337/X4%20Foundations%20Wiki/Modding%20Support/Breaking%20Changes/
 
 ## 2.2.8 Localization & Fixes
-- **Added** specific localizations for the mod. You can contribute to improving the translation if you are an advanced or native speaker of any language.
+
+- **Added** specific localizations for the mod. [You can contribute to improving the translation if you are an advanced or native speaker of any language](https://github.com/iomatix/Reactive-Factions-Retribution-X4Foundations/tree/main/t).
 - **Improved** exception handling for the `tag.reactivefaction` property. The tag feature may still not work as intended if the issue was not addressed by Ego.
 - **Fixed** an issue within the FactionFilter library that caused a null pointer exception.
 - **Added** a missing bracket that caused another exception.
-
 
 ## 2.2.6 & 2.2.7 Yaki Lock and the faction filter
 
