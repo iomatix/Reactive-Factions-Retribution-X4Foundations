@@ -1,10 +1,10 @@
 ==================================== ******** =================================================================================================================
 				      2.2.8 Fixes and Localization
 ==================================== ******** =================================================================================================================
-- Added localizations todo: improve link
-- Improved exception handling for tag.reactivefaction property. The tag feature may still not work as intended if the issue was not addressed by Ego.
-- Fixed issue within FactionFilter library which caused null pointer exception.
-- Added missing bracket which caused another exception.
+- Added specific localizations for the mod. You can contribute to improving the translation if you are an advanced or native speaker of any language.
+- Improved exception handling for the `tag.reactivefaction` property. The tag feature may still not work as intended if the issue was not addressed by Ego.
+- Fixed an issue within the FactionFilter library that caused a null pointer exception.
+- Added a missing bracket that caused another exception.
 ==================================== ******** =================================================================================================================
 				      2.2.6 & 2.2.7 - Yaki Lock and the faction filter
 ==================================== ******** =================================================================================================================
