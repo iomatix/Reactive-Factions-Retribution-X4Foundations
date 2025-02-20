@@ -1,4 +1,11 @@
 ==================================== ******** =================================================================================================================
+				      2.2.8 Fixes and Localization
+==================================== ******** =================================================================================================================
+- Added localizations todo: improve link
+- Improved exception handling for tag.reactivefaction property. The tag feature may still not work as intended if the issue was not addressed by Ego.
+- Fixed issue within FactionFilter library which caused null pointer exception.
+- Added missing bracket which caused another exception.
+==================================== ******** =================================================================================================================
 				      2.2.6 & 2.2.7 - Yaki Lock and the faction filter
 ==================================== ******** =================================================================================================================
 - Added Yaki lock option to the mod's menu UI. You may want to turn it on during the Yaki storyline to prevent losing reputation with the Yaki faction.

@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="http://x4dynlib.access.ly/libraries/md.xsd">
     <cues>
-        <cue name="ReactiveInit" version="227">
+        <cue name="ReactiveInit" version="228">
             <conditions>
                 <check_any>
                     <event_cue_signalled cue="md.Setup.GameStart" />
@@ -439,8 +439,13 @@
                         reactivefaction, event case is not null -->
                         <!-- tag.{relationchangereason.reactivefaction} won't work for now and it
                         will receive null instead but docs says it should work  -->
+                        <!-- trying tag.reactivefaction for now if is it working -->
                         <check_value
-                            value="event.object == null and event.param3 != null and event.param3 != tag.{relationchangereason.reactivefaction} and event.param != null and event.param2.{1} gt event.param2.{2}" />
+                            value="event.object == null 
+                                and event.param3 != null 
+                                and ((tag.reactivefaction == null) or (tag.reactivefaction != null and event.param3 != tag.reactivefaction))
+                                and event.param != null 
+                                and event.param2.{1} gt event.param2.{2}" />
                         <!-- only trigger once every seconds defined by GlobalCooldown  -->
                         <check_value value="player.age gt $NextPossibleRepChangeTime" />
                         <check_value value="event.param.isactive"
@@ -518,7 +523,7 @@
                             <do_if value="$PlayerPower gt 0 and $isFactionMainOnCooldown == false">
                                 <include_actions ref="FactionFilter" />
                                 <do_if
-                                    value="$FactionMain.ishostileto.{faction.player} and $CheckHostile == true and (not $IgnoredListofFactions.indexof.{$FactionMain}">
+                                    value="$FactionMain.ishostileto.{faction.player} and $CheckHostile == true and (not $IgnoredListofFactions.indexof.{$FactionMain})">
                                     <debug_to_file name="'ReactiveRepUpdate_rejected'"
                                         directory="'ReactiveFactionsRetribution_log'"
                                         text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (BONUS) rep was not changed (Faction is Hostile to Player) with ' + $FactionMain + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower"
@@ -923,21 +928,21 @@
                                     <set_faction_relation faction="$FactionOne"
                                         otherfaction="faction.player"
                                         value="[($FactionOne.relationto.{faction.player} + $RepChange), -1].max"
-                                        reason="tag.{relationchangereason.reactivefaction}" />
+                                        reason="tag.reactivefaction" />
                                     <set_faction_relation faction="faction.player"
                                         otherfaction="$FactionOne"
                                         value="$FactionOne.relationto.{faction.player}"
-                                        reason="tag.{relationchangereason.reactivefaction}" />
+                                        reason="tag.reactivefaction" />
                                 </do_if>
                                 <do_else>
                                     <set_faction_relation faction="$FactionOne"
                                         otherfaction="faction.player"
                                         value="[($FactionOne.relationto.{faction.player} + $RepChange), 1].min"
-                                        reason="tag.{relationchangereason.reactivefaction}" />
+                                        reason="tag.reactivefaction" />
                                     <set_faction_relation faction="faction.player"
                                         otherfaction="$FactionOne"
                                         value="$FactionOne.relationto.{faction.player}"
-                                        reason="tag.{relationchangereason.reactivefaction}" />
+                                        reason="tag.reactivefaction" />
                                 </do_else>
                                 <debug_to_file name="'ReactiveRepUpdate'"
                                     directory="'ReactiveFactionsRetribution_log'"
@@ -990,7 +995,7 @@
                             makes coding so much more tedious and also check locked factions -->
                             <do_all exact="$FactionsList.count" counter="$i">
                                 <do_if
-                                    value="(($FactionList.{i} == faction.scaleplate and SCAlock == false) or ($FactionList.{i} == faction.yaki and Yakilock == false) or $FactionsList.{$i} == faction.buccaneers or $FactionsList.{$i} == faction.court or $FactionsList.{$i} == faction.holyorderfanatic or $FactionsList.{$i} == faction.trinity) and $FactionsList.{$i}.isactive">
+                                    value="($FactionsList.{$i} != null) and (($FactionList.{$i} == faction.scaleplate and SCAlock == false) or ($FactionList.{$i} == faction.yaki and Yakilock == false) or $FactionsList.{$i} == faction.buccaneers or $FactionsList.{$i} == faction.court or $FactionsList.{$i} == faction.holyorderfanatic or $FactionsList.{$i} == faction.trinity) and $FactionsList.{$i}.isactive">
                                     <remove_from_list name="$IgnoredListofFactions"
                                         exact="$FactionsList.{$i}" multiple="true" />
                                     <debug_to_file name="'FactionFilter'"

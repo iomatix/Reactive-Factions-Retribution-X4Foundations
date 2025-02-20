@@ -8,7 +8,7 @@
                 <debug_text text="''" />
             </actions>
         </cue>
-        <cue name="Init" instantiate="false" version="227">
+        <cue name="Init" instantiate="false" version="228">
             <actions>
                 <!-- General Menu -->
                 <set_value name="md.$MenuVarTable" exact="table[]" />
