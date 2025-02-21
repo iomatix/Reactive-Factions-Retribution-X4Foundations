@@ -8,10 +8,12 @@
                 <debug_text text="''" />
             </actions>
         </cue>
-        <cue name="Init" instantiate="false" version="229">
+        <cue name="Init" instantiate="false" version="231">
             <actions>
-                <!-- General Menu -->
+                <!-- Initialize Tables -->
                 <set_value name="md.$MenuVarTable" exact="table[]" />
+                <set_value name="md.$ReactiveFactionsMenuVarTable" exact="table[]" />
+                <set_value name="md.$GeneralSettingsMenuVarTable" exact="table[]" />
                 <!-- Shortcuts -->
                 <set_value name="$RFVT" exact="md.$ReactiveFactionsMenuVarTable" />
                 <set_value name="$GSM" exact="md.$GeneralSettingsMenuVarTable" />
@@ -21,7 +23,7 @@
             <cues>
                 <cue name="ReactiveFactionsMenu">
                     <actions>
-                        <set_value name="$RFVT.$egMenuSelectedFaction" exact="$FactionList.{1}" />
+                        <set_value name="$RFVT.$egMenuSelectedFaction" exact="$FactionsList.{1}" />
                         <!-- This cue runs after init and is primarily used for variable storage for
 					options selection -->
                     </actions>

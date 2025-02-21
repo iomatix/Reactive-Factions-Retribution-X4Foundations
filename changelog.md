@@ -13,7 +13,7 @@
 
 TODO: Pozbyć się błędów, dodać przeliczanie wartości na UI w notyfikacjach
 
-## 2.2.8 & 2.2.9 & 2.3.0 Localization & Fixes
+## 2.2.8 - 2.3.1 Localization & Fixes
 
 - **Added** specific localizations for the mod. [You can contribute to improving the translation if you are an advanced or native speaker of any language](https://github.com/iomatix/Reactive-Factions-Retribution-X4Foundations/tree/main/t).
 - **Improved** exception handling for the `tag.reactivefaction` property. The tag feature may still not work as intended if the issue was not addressed by Ego.
@@ -21,6 +21,8 @@ TODO: Pozbyć się błędów, dodać przeliczanie wartości na UI w notyfikacjac
 - **Added** a missing bracket that caused another exception.
 - **(2.2.9) Hot-fix**, Fixed another issue connected to the typo within the codebase.
 - **(2.3.0) Mandatory-fix**, Reworked FactionFilter library to avoid iterating on removed values.
+- **(2.3.1) Mandatory-fix**, Applied fix for the lock options.
+- **(2.3.1) Minor-fix**, Fixed exceptions from the mod menu implementation.
 
 ## 2.2.6 & 2.2.7 Yaki Lock and the faction filter
 

@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="http://x4dynlib.access.ly/libraries/md.xsd">
     <cues>
-        <cue name="ReactiveInit" version="229">
+        <cue name="ReactiveInit" version="231">
             <conditions>
                 <check_any>
                     <event_cue_signalled cue="md.Setup.GameStart" />
@@ -959,8 +959,7 @@
                     <actions>
                         <!-- Returns $ListofCooldowns -->
                         <!-- List of all factions $ListofCooldowns.{$i}.[faction,mainfactinocooldown,enemyfactioncooldown] -->
-                        <!-- Filter for useless factions -->
-                        <do_if value="$ListofCooldowns != null and $ListofCooldowns.count gt 0">
+                        <do_if value="$ListofCooldowns != null">
                             <remove_value name="$ListofCooldowns" />
                         </do_if>
                         <create_list name="$FactionsList" />
