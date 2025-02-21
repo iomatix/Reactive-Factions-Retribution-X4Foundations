@@ -986,33 +986,44 @@
                         <!-- Requires $FactionsList to filtr -->
                         <!-- Returns $FactionsList filtered  -->
                         <do_if value="$FactionsList != null and $FactionsList.count gt 0">
-                            <!-- we could just use remove_from_list here -->
+                            <!-- Init list of ignored factions -->
                             <set_value name="$IgnoredListofFactions"
                                 exact="[faction.scaleplate, faction.yaki, faction.buccaneers, faction.civilian, faction.court, faction.criminal, faction.holyorderfanatic, faction.khaak, faction.smuggler, faction.trinity, faction.visitor, faction.xenon, faction.ownerless]" />
-                            <!-- catch all visitor factions -->
+                            <!-- Get list of visitors -->
                             <get_factions_by_tag tag="tag.visitor" result="$VisitorList" />
-                            <!-- checking if any factions in ignored list are active. story stuff
-                            makes coding so much more tedious and also check locked factions -->
+                            <!-- Iterating through FactionsList -->
                             <do_all exact="$FactionsList.count" counter="$i">
                                 <do_if
-                                    value="($FactionsList.{$i} != null) and (($FactionsList.{$i} == faction.scaleplate and SCAlock == false) or ($FactionsList.{$i} == faction.yaki and Yakilock == false) or $FactionsList.{$i} == faction.buccaneers or $FactionsList.{$i} == faction.court or $FactionsList.{$i} == faction.holyorderfanatic or $FactionsList.{$i} == faction.trinity) and $FactionsList.{$i}.isactive">
-                                    <remove_from_list name="$IgnoredListofFactions"
-                                        exact="$FactionsList.{$i}" multiple="true" />
+                                    value="($FactionsList.{$i} != null) and 
+                           (
+                             ($FactionsList.{$i} == faction.scaleplate and SCAlock == false) or 
+                             ($FactionsList.{$i} == faction.yaki and Yakilock == false) or 
+                             $FactionsList.{$i} == faction.buccaneers or 
+                             $FactionsList.{$i} == faction.court or 
+                             $FactionsList.{$i} == faction.holyorderfanatic or 
+                             $FactionsList.{$i} == faction.trinity
+                           ) and 
+                           $FactionsList.{$i}.isactive">
+                                    <!-- Instead of removing, let's add it to Ignored -->
+                                    <append_to_list name="$IgnoredListofFactions"
+                                        exact="$FactionsList.{$i}" />
                                     <debug_to_file name="'FactionFilter'"
                                         directory="'ReactiveFactionsRetribution_log'"
-                                        text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Removed active faction from ignore list: ' + $FactionsList.{$i}"
+                                        text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Marked active faction for ignore: ' + $FactionsList.{$i}"
                                         output="$isDebug" append="true" />
                                 </do_if>
                                 <do_elseif
-                                    value="($FactionsList.{$i} != null) and ($FactionsList.{$i}.isactive == false or $FactionsList.{$i}.isvisitor)">
+                                    value="$FactionsList.{$i} == null or ($FactionsList.{$i}.isactive == false or $FactionsList.{$i}.isvisitor)">
+                                    <!-- Add to ignored all elements which are not allocated, not active or are visitors. -->
+                                    <append_to_list name="$IgnoredListofFactions"
+                                        exact="$FactionsList.{$i}" />
                                     <debug_to_file name="'FactionFilter'"
                                         directory="'ReactiveFactionsRetribution_log'"
-                                        text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Removing not allocated, not active, or visitor faction from the main list: ' + $FactionsList.{$i}"
+                                        text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Not allocated, or not active or visitor is marked faction for removal: ' + $FactionsList.{$i}"
                                         output="$isDebug" append="true" />
-                                    <remove_from_list name="$FactionsList"
-                                        exact="$FactionsList.{$i}" multiple="true" />
                                 </do_elseif>
                             </do_all>
+                            <!-- Remove from FactionsList all marked elements -->
                             <remove_from_list name="$FactionsList" list="$IgnoredListofFactions"
                                 multiple="true" />
                             <remove_from_list name="$FactionsList" list="$VisitorList"
