@@ -1004,13 +1004,13 @@
                                         output="$isDebug" append="true" />
                                 </do_if>
                                 <do_elseif
-                                    value="$FactionsList.{$i} == null or $FactionsList.{$i}.isactive == false or $FactionsList.{$i}.isvisitor">
-                                    <remove_from_list name="$FactionsList"
-                                        exact="$FactionsList.{$i}" multiple="true" />
+                                    value="($FactionsList.{$i} != null) and ($FactionsList.{$i}.isactive == false or $FactionsList.{$i}.isvisitor)">
                                     <debug_to_file name="'FactionFilter'"
                                         directory="'ReactiveFactionsRetribution_log'"
-                                        text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Removed not allocated, nulled, not active, or visitor faction from the main list: ' + $FactionsList.{$i}"
+                                        text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Removing not allocated, not active, or visitor faction from the main list: ' + $FactionsList.{$i}"
                                         output="$isDebug" append="true" />
+                                    <remove_from_list name="$FactionsList"
+                                        exact="$FactionsList.{$i}" multiple="true" />
                                 </do_elseif>
                             </do_all>
                             <remove_from_list name="$FactionsList" list="$IgnoredListofFactions"
