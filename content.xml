@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <content id="ws_2545236840" name="ioMatix: Reactive Factions Retribution"
     description="&quot;Reactive Factions Retribution&quot; is a mod that will make factions react to your actions. &#13;&#10;The mod is an improved version of the Reactive Factions mod. Its purpose is to solve the main problems and inconveniences related to the basic version and content enrichment.&#13;&#10;Special thanks to Shuul for development permission and advising during implementation!&#13;&#10;&#13;&#10;More details on Nexus: https://www.nexusmods.com/x4foundations/mods/746"
-    author="iomatix, Shuul and DeadAir" version="228" date="2025-02-21" save="0"
+    author="iomatix, Shuul and DeadAir" version="229" date="2025-02-21" save="0"
     lastupdate="1626184534">
     <dependency id="ws_2042901274" name="SirNukes Mod Support APIs" />
 </content>
