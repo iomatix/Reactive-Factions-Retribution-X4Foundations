@@ -959,7 +959,7 @@
                     <actions>
                         <!-- Returns $ListofCooldowns -->
                         <!-- List of all factions $ListofCooldowns.{$i}.[faction,mainfactinocooldown,enemyfactioncooldown] -->
-                        <do_if value="$ListofCooldowns != null">
+                        <do_if value="$ListofCooldowns?">
                             <remove_value name="$ListofCooldowns" />
                         </do_if>
                         <create_list name="$FactionsList" />

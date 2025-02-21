@@ -23,7 +23,6 @@
             <cues>
                 <cue name="ReactiveFactionsMenu">
                     <actions>
-                        <set_value name="$RFVT.$egMenuSelectedFaction" exact="$FactionsList.{1}" />
                         <!-- This cue runs after init and is primarily used for variable storage for
 					options selection -->
                     </actions>
