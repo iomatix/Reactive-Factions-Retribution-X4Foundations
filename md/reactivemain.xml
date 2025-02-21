@@ -996,8 +996,8 @@
                                 <do_if
                                     value="($FactionsList.{$i} != null) and 
                            (
-                             ($FactionsList.{$i} == faction.scaleplate and SCAlock == false) or 
-                             ($FactionsList.{$i} == faction.yaki and Yakilock == false) or 
+                             ($FactionsList.{$i} == faction.scaleplate and $SCAlock == false) or 
+                             ($FactionsList.{$i} == faction.yaki and $Yakilock == false) or 
                              $FactionsList.{$i} == faction.buccaneers or 
                              $FactionsList.{$i} == faction.court or 
                              $FactionsList.{$i} == faction.holyorderfanatic or 
