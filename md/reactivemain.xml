@@ -995,7 +995,7 @@
                             makes coding so much more tedious and also check locked factions -->
                             <do_all exact="$FactionsList.count" counter="$i">
                                 <do_if
-                                    value="($FactionsList.{$i} != null) and (($FactionList.{$i} == faction.scaleplate and SCAlock == false) or ($FactionList.{$i} == faction.yaki and Yakilock == false) or $FactionsList.{$i} == faction.buccaneers or $FactionsList.{$i} == faction.court or $FactionsList.{$i} == faction.holyorderfanatic or $FactionsList.{$i} == faction.trinity) and $FactionsList.{$i}.isactive">
+                                    value="($FactionsList.{$i} != null) and (($FactionsList.{$i} == faction.scaleplate and SCAlock == false) or ($FactionsList.{$i} == faction.yaki and Yakilock == false) or $FactionsList.{$i} == faction.buccaneers or $FactionsList.{$i} == faction.court or $FactionsList.{$i} == faction.holyorderfanatic or $FactionsList.{$i} == faction.trinity) and $FactionsList.{$i}.isactive">
                                     <remove_from_list name="$IgnoredListofFactions"
                                         exact="$FactionsList.{$i}" multiple="true" />
                                     <debug_to_file name="'FactionFilter'"
