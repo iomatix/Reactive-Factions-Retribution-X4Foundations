@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="http://x4dynlib.access.ly/libraries/md.xsd">
     <cues>
-        <cue name="ReactiveInit" version="232">
+        <cue name="ReactiveInit" version="233">
             <conditions>
                 <check_any>
                     <event_cue_signalled cue="md.Setup.GameStart" />
@@ -440,10 +440,11 @@
                         <!-- tag.{relationchangereason.reactivefaction} won't work for now and it
                         will receive null instead but docs says it should work  -->
                         <!-- trying tag.reactivefaction for now if is it working -->
+                        <!-- tag.reactivefaction -> tag.smalltalkreward for now until it is not fixed by Ego -->
                         <check_value
                             value="not event.object? 
                                 and event.param3? 
-                                and ((not tag.reactivefaction?) or (tag.reactivefaction? and event.param3 != tag.reactivefaction))
+                                and ((not tag.smalltalkreward?) or (tag.smalltalkreward? and event.param3 != tag.smalltalkreward))
                                 and event.param? 
                                 and event.param2.{1} gt event.param2.{2}" />
                         <!-- only trigger once every seconds defined by GlobalCooldown  -->
@@ -928,21 +929,21 @@
                                     <set_faction_relation faction="$FactionOne"
                                         otherfaction="faction.player"
                                         value="[($FactionOne.relationto.{faction.player} + $RepChange), -1].max"
-                                        reason="tag.reactivefaction" />
+                                        reason="tag.smalltalkreward" />
                                     <set_faction_relation faction="faction.player"
                                         otherfaction="$FactionOne"
                                         value="$FactionOne.relationto.{faction.player}"
-                                        reason="tag.reactivefaction" />
+                                        reason="tag.smalltalkreward" />
                                 </do_if>
                                 <do_else>
                                     <set_faction_relation faction="$FactionOne"
                                         otherfaction="faction.player"
                                         value="[($FactionOne.relationto.{faction.player} + $RepChange), 1].min"
-                                        reason="tag.reactivefaction" />
+                                        reason="tag.smalltalkreward" />
                                     <set_faction_relation faction="faction.player"
                                         otherfaction="$FactionOne"
                                         value="$FactionOne.relationto.{faction.player}"
-                                        reason="tag.reactivefaction" />
+                                        reason="tag.smalltalkreward" />
                                 </do_else>
                                 <debug_to_file name="'ReactiveRepUpdate'"
                                     directory="'ReactiveFactionsRetribution_log'"
