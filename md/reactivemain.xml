@@ -441,10 +441,10 @@
                         will receive null instead but docs says it should work  -->
                         <!-- trying tag.reactivefaction for now if is it working -->
                         <check_value
-                            value="event.object == null 
-                                and event.param3 != null 
-                                and ((tag.reactivefaction == null) or (tag.reactivefaction != null and event.param3 != tag.reactivefaction))
-                                and event.param != null 
+                            value="not event.object? 
+                                and event.param3? 
+                                and ((not tag.reactivefaction?) or (tag.reactivefaction? and event.param3 != tag.reactivefaction))
+                                and event.param? 
                                 and event.param2.{1} gt event.param2.{2}" />
                         <!-- only trigger once every seconds defined by GlobalCooldown  -->
                         <check_value value="player.age gt $NextPossibleRepChangeTime" />
@@ -590,7 +590,7 @@
                                     <set_value name="$isRepNegative" exact="false" />
                                     <include_actions ref="CalculatePossibleValueRepChange" />
                                     <do_if
-                                        value="$RepValuePossibleChange != null and $RepBonus gt $RepValuePossibleChange">
+                                        value="$RepValuePossibleChange? and $RepBonus gt $RepValuePossibleChange">
                                         <debug_to_file name="'ReactiveRepUpdate'"
                                             directory="'ReactiveFactionsRetribution_log'"
                                             text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; RepBonus: ' + $RepBonus + ' was higher than '+ $UIRelationChange +' UI. Changed RepValuePossibleChange: ' + $RepValuePossibleChange"
@@ -624,7 +624,7 @@
                                 <!-- Remove buccaneers, holyorderfanatic, trinity when added. -->
                                 <!-- cleaned up this long entry and formatting -->
                                 <do_if
-                                    value="($Enemy != null) and ($Enemy.isactive and $Enemy.isvisitor == false) and (not $IgnoredListofFactions.indexof.{$Enemy})">
+                                    value="($Enemy?) and ($Enemy.isactive and $Enemy.isvisitor == false) and (not $IgnoredListofFactions.indexof.{$Enemy})">
                                     <do_if value="$PlayerPower == 0">
                                         <!-- do nothing on power level 0 -->
                                         <debug_to_file name="'ReactiveRepUpdate_rejected'"
@@ -748,7 +748,7 @@
                                                 <include_actions
                                                     ref="CalculatePossibleValueRepChange" />
                                                 <do_if
-                                                    value="$RepValuePossibleChange != null and $RepHit gt $RepValuePossibleChange">
+                                                    value="$RepValuePossibleChange? and $RepHit gt $RepValuePossibleChange">
                                                     <debug_to_file name="'ReactiveRepUpdate'"
                                                         directory="'ReactiveFactionsRetribution_log'"
                                                         text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; RepHit: ' + $RepHit + ' was harsher than '+ $UIRelationChange +' UI. Changed RepValuePossibleChange: ' + $RepValuePossibleChange"
@@ -795,7 +795,7 @@
                         $FactionPowerLevel -->
                         <!-- Returns $RepValuePossibleChange -->
                         <do_if
-                            value="$FactionPowerLevel gt 0 and $FactionPowerLevel != 99 and $FactionOne != null and $FactionTwo != null">
+                            value="$FactionPowerLevel gt 0 and $FactionPowerLevel != 99 and $FactionOne? and $FactionTwo?">
                             <set_value name="$OldUIRepValue"
                                 exact="$FactionOne.relation.{$FactionOne.relationto.{$FactionTwo}}.uivalue" />
                             <set_value name="$OldRepValue"
@@ -886,7 +886,7 @@
                     <!-- Returns Void -->
                     <!-- Notification Simplifer -->
                     <actions>
-                        <do_if value="$FactionOne != null and $RepChange gt 0">
+                        <do_if value="$FactionOne? and $RepChange gt 0">
                             <!-- Notify the player only IF the target Faction is on relation ~3<>20
                             or ~3<>20 range with the Player and RepChange was significant  -->
                             <do_if
@@ -984,7 +984,7 @@
                     <actions>
                         <!-- Requires $FactionsList to filtr -->
                         <!-- Returns $FactionsList filtered  -->
-                        <do_if value="$FactionsList != null and $FactionsList.count gt 0">
+                        <do_if value="$FactionsList? and $FactionsList.count gt 0">
                             <!-- Init list of ignored factions -->
                             <set_value name="$IgnoredListofFactions"
                                 exact="[faction.scaleplate, faction.yaki, faction.buccaneers, faction.civilian, faction.court, faction.criminal, faction.holyorderfanatic, faction.khaak, faction.smuggler, faction.trinity, faction.visitor, faction.xenon, faction.ownerless]" />
@@ -993,7 +993,7 @@
                             <!-- Iterating through FactionsList -->
                             <do_all exact="$FactionsList.count" counter="$i">
                                 <do_if
-                                    value="($FactionsList.{$i} != null) and 
+                                    value="($FactionsList.{$i}?) and 
                            (
                              ($FactionsList.{$i} == faction.scaleplate and $SCAlock == false) or 
                              ($FactionsList.{$i} == faction.yaki and $Yakilock == false) or 
@@ -1012,7 +1012,7 @@
                                         output="$isDebug" append="true" />
                                 </do_if>
                                 <do_elseif
-                                    value="$FactionsList.{$i} == null or ($FactionsList.{$i}.isactive == false or $FactionsList.{$i}.isvisitor)">
+                                    value="not $FactionsList.{$i}? or ($FactionsList.{$i}.isactive == false or $FactionsList.{$i}.isvisitor)">
                                     <!-- Add to ignored all elements which are not allocated, not active or are visitors. -->
                                     <append_to_list name="$IgnoredListofFactions"
                                         exact="$FactionsList.{$i}" />
