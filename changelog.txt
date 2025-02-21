@@ -9,6 +9,7 @@
 - (2.3.0) Reworked FactionFilter library to avoid iterating on removed values.
 - (2.3.1) Applied fix for the lock options.
 - (2.3.1) Fixed exceptions from the mod menu implementation.
+- (2.3.2) Attempt to handle the non-critical exception related to the ListofCooldowns variable. If the issue persists, it should not impact performance or functionality but will only log a warning: 'Property lookup failed'.
 ==================================== ******** =================================================================================================================
 				      2.2.6 & 2.2.7 - Yaki Lock and the faction filter
 ==================================== ******** =================================================================================================================
