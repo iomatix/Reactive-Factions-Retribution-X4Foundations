@@ -7,7 +7,7 @@
 - TODO: More RPG tiers //vary on community feedback
 - TODO: KD Menu API integration adding new features and moving existing there. // or some new system provided by Egosoft from 7.0 to 8.0? https://wiki.egosoft.com:1337/X4%20Foundations%20Wiki/Modding%20Support/Breaking%20Changes/
 
-## 2.2.8 - 2.3.3 Localization & Fixes
+## 2.2.8 - 2.3.4 Localization & Fixes
 
 - **Added** specific localizations for the mod. [You can contribute to improving the translation if you are an advanced or native speaker of any language](https://github.com/iomatix/Reactive-Factions-Retribution-X4Foundations/tree/main/t).
 - **Improved** exception handling for the `tag.reactivefaction` property. The tag feature may still not work as intended if the issue was not addressed by Ego.
@@ -19,7 +19,7 @@
 - **(2.3.1) Minor-fix**, Fixed exceptions from the mod menu implementation.
 - **(2.3.2) Minor-fix**, Attempt to handle the non-critical exception related to the ListofCooldowns variable. If the issue persists, it should not impact performance or functionality but will only log a warning: `Property lookup failed`.
 - **(2.3.3) Patch**, tag.reactivefaction has been changed tag.smalltalkreward to make it working as intended. According to the tag lookup documentation, "Tag of the given name (tag is created if it doesn't exist)," the tag should be created automatically but is not currently in 7.50. This means that tag.smalltalkreward will not impact reputation changes made by the mod while this patch is applied.
-
+- **(2.3.4) Patch**, Improved Cr formatting of info display within mod menu.
 
 ## 2.2.6 & 2.2.7 Yaki Lock and the faction filter
 
