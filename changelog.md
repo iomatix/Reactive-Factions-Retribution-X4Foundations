@@ -7,12 +7,6 @@
 - TODO: More RPG tiers //vary on community feedback
 - TODO: KD Menu API integration adding new features and moving existing there. // or some new system provided by Egosoft from 7.0 to 8.0? https://wiki.egosoft.com:1337/X4%20Foundations%20Wiki/Modding%20Support/Breaking%20Changes/
 
-
-
-
-
-TODO: Pozbyć się błędów, dodać przeliczanie wartości na UI w notyfikacjach
-
 ## 2.2.8 - 2.3.3 Localization & Fixes
 
 - **Added** specific localizations for the mod. [You can contribute to improving the translation if you are an advanced or native speaker of any language](https://github.com/iomatix/Reactive-Factions-Retribution-X4Foundations/tree/main/t).
