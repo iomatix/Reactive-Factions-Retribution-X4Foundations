@@ -455,8 +455,8 @@
                             comment="Exclude Visitor Factions from processing" />
                         <!-- (hasrelation.<relationrange>.{$faction}) -->
                         <check_value
-                            value="not event.param.hasrelation.killmilitary.{faction.player}"
-                            comment="Exclude killmilitary faction. Assuming that player provided an accidental help." />
+                            value="not event.param.hasrelation.enemy.{faction.player}"
+                            comment="Exclude enemy faction. Assuming that player provided an accidental help." />
                         <!-- to prevent running before power is checked -->
                         <check_value value="$PlayerPower != 99" />
                     </conditions>
@@ -475,10 +475,10 @@
                         <!-- e.g. (dead-code) cancel this cue if the main event faction is
                         killmilitary (hasrelation.<relationrange>.{$faction}) to player, assuming that player provided an
                         accidental help, It will never happen due cue's <conditions/> -->
-                        <do_elseif value="$FactionMain.hasrelation.killmilitary.{faction.player}">
+                        <do_elseif value="$FactionMain.hasrelation.enemy.{faction.player}">
                             <debug_to_file name="'ReactiveRepUpdate_rejected'"
                                 directory="'ReactiveFactionsRetribution_log'"
-                                text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Event faction is killmilitary - assuming that player has provided an accidental help so cancelling the cue and cleaning up...' + $FactionMain"
+                                text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Event faction is enemy - assuming that player has provided an accidental help so cancelling the cue and cleaning up...' + $FactionMain"
                                 output="$isDebug" append="true" />
                             <cancel_cue cue="this" />
                         </do_elseif>
@@ -613,12 +613,13 @@
                             <!-- 2.0.7 Change killmilitary -> enemy -->
                             <get_factions_by_relation relation="enemy" faction="$FactionMain"
                                 result="$EnemiesList" />
-                            <!-- Filter for useless factions -->
+                            <!-- Filter enemies for useless factions -->
                             <create_list name="$FactionsList" />
                             <append_list_elements name="$FactionsList" other="$EnemiesList" />
                             <include_actions ref="FactionFilter" />
                             <remove_value name="$EnemiesList" />
                             <create_list name="$EnemiesList" />
+                            <!-- Gets filtered enemy factions -->
                             <append_list_elements name="$EnemiesList" other="$FactionsList" />
                             <remove_value name="$FactionsList" />
                             <do_for_each name="$Enemy" in="$EnemiesList" counter="$i">
