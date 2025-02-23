@@ -7,11 +7,5 @@
 			"name": "Reactive-Factions-Retribution-X4Foundations",
 			"path": "."
 		}
-	],
-	"settings": {
-		"spaceboxai.personalizedName": "deepseek-r1:14b",
-		"spaceboxai.customModel": "codegeex4",
-		"spaceboxai.generateCode-enabled": true,
-		"spaceboxai.apiBaseUrl": "http://localhost:11434/v1"
-	}
+	]
 }
