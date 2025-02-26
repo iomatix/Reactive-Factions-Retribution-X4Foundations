@@ -1,252 +1,252 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.15 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36" version="26.0.15">
   <diagram name="Page-1" id="YIhNVBorVKuka3wAQhTU">
-    <mxGraphModel dx="6263" dy="6367" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
+    <mxGraphModel dx="5028" dy="5664" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-9" value="Influence Relations - Black Market" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=1000;height=40;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-9" value="Influence Relations - Black Market" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=1000;height=40;" parent="1" vertex="1">
           <mxGeometry x="130" y="50" width="4130" height="1660" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="350" y="340" as="sourcePoint" />
             <mxPoint x="350" y="340" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shape=link;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-4" target="UzbNYFEz1bTIQuiakVWo-11">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shape=link;" parent="1" source="UzbNYFEz1bTIQuiakVWo-4" target="UzbNYFEz1bTIQuiakVWo-11" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-4" value="Black Market&lt;br&gt;NPC" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-4" value="Black Market&lt;br&gt;NPC" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
           <mxGeometry x="40" y="70" width="60" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="583" y="350" as="sourcePoint" />
             <mxPoint x="583" y="350" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-12" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-8" target="UzbNYFEz1bTIQuiakVWo-11">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-12" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="UzbNYFEz1bTIQuiakVWo-8" target="UzbNYFEz1bTIQuiakVWo-11" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-38" value="In-game interaction" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UzbNYFEz1bTIQuiakVWo-12">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-38" value="In-game interaction" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="UzbNYFEz1bTIQuiakVWo-12" vertex="1" connectable="0">
           <mxGeometry x="0.1173" y="-2" relative="1" as="geometry">
             <mxPoint x="-15" y="-2" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-8" value="Player (PC)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-8" value="Player (PC)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
           <mxGeometry x="40" y="250" width="60" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-11" value="Starts Dialogue" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-11" value="Starts Dialogue" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="177" y="200" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-14" target="UzbNYFEz1bTIQuiakVWo-21">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-14" target="UzbNYFEz1bTIQuiakVWo-21" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="713" y="337" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-20" value="NPC Responses&lt;br&gt;&quot;of who?&quot;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UzbNYFEz1bTIQuiakVWo-19">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-20" value="NPC Responses&lt;br&gt;&quot;of who?&quot;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="UzbNYFEz1bTIQuiakVWo-19" vertex="1" connectable="0">
           <mxGeometry x="-0.1931" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-14" value="&quot;Influence Faction Relations&quot;&lt;br&gt;Dialogue Line" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-14" value="&quot;Influence Faction Relations&quot;&lt;br&gt;Dialogue Line" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="643" y="195" width="140" height="75" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-151" target="UzbNYFEz1bTIQuiakVWo-14">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-151" target="UzbNYFEz1bTIQuiakVWo-14" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="420" y="235" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-37" value="No&lt;br&gt;PC Chooses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UzbNYFEz1bTIQuiakVWo-15">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-37" value="No&lt;br&gt;PC Chooses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="UzbNYFEz1bTIQuiakVWo-15" vertex="1" connectable="0">
           <mxGeometry x="-0.1885" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-22" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;create `&lt;i&gt;FactionsList&lt;/i&gt;` then append lookup&lt;br&gt;then use &quot;FactionFilter&quot; library&lt;br&gt;after all remember to cleanup mem&lt;/font&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;rotation=0;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-22" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;create `&lt;i&gt;FactionsList&lt;/i&gt;` then append lookup&lt;br&gt;then use &quot;FactionFilter&quot; library&lt;br&gt;after all remember to cleanup mem&lt;/font&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;rotation=0;" parent="1" vertex="1">
           <mxGeometry x="753" y="260" width="250" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-41" target="UzbNYFEz1bTIQuiakVWo-24">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-41" target="UzbNYFEz1bTIQuiakVWo-24" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="713" y="590" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-26" value="PC Chooses&lt;br&gt;ONE" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UzbNYFEz1bTIQuiakVWo-25">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-26" value="PC Chooses&lt;br&gt;ONE" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="UzbNYFEz1bTIQuiakVWo-25" vertex="1" connectable="0">
           <mxGeometry x="-0.1669" y="2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-21" target="UzbNYFEz1bTIQuiakVWo-39">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-21" target="UzbNYFEz1bTIQuiakVWo-39" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-45" value="Returns" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UzbNYFEz1bTIQuiakVWo-43">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-45" value="Returns" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="UzbNYFEz1bTIQuiakVWo-43" vertex="1" connectable="0">
           <mxGeometry x="-0.2167" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-21" value="&lt;b&gt;Generate Dialogue Lines&lt;/b&gt;&lt;br&gt;el.1 -&amp;gt; `&lt;i&gt;faction.player`&lt;/i&gt;&lt;div&gt;el.2 ..n -&amp;gt; filtered factions&lt;br&gt;&lt;div&gt;from `&lt;i&gt;lookup.faction.list`&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-21" value="&lt;b&gt;Generate Dialogue Lines&lt;/b&gt;&lt;br&gt;el.1 -&amp;gt; `&lt;i&gt;faction.player`&lt;/i&gt;&lt;div&gt;el.2 ..n -&amp;gt; filtered factions&lt;br&gt;&lt;div&gt;from `&lt;i&gt;lookup.faction.list`&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="623" y="350" width="180" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.55;entryY=0.95;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-21" target="UzbNYFEz1bTIQuiakVWo-22">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.55;entryY=0.95;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" parent="1" source="UzbNYFEz1bTIQuiakVWo-21" target="UzbNYFEz1bTIQuiakVWo-22" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-24" target="UzbNYFEz1bTIQuiakVWo-27">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-24" target="UzbNYFEz1bTIQuiakVWo-27" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-29" value="NPC Responses&lt;br&gt;&quot;with who?&quot;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UzbNYFEz1bTIQuiakVWo-28">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-29" value="NPC Responses&lt;br&gt;&quot;with who?&quot;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="UzbNYFEz1bTIQuiakVWo-28" vertex="1" connectable="0">
           <mxGeometry x="-0.2079" y="1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-24" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Faction Dial Line&lt;/span&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-24" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Faction Dial Line&lt;/span&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="643" y="620" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-27" value="&lt;b&gt;Generate Dialogue Lines2&lt;/b&gt;&lt;br&gt;el.1 -&amp;gt; `&lt;i&gt;faction.player`&lt;/i&gt;&lt;div&gt;el.2 ..n -&amp;gt; filtered factions&lt;br&gt;&lt;div&gt;from `&lt;i&gt;lookup.faction.list`&lt;br&gt;&lt;b&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;EXCLUDE PREVIOUS CHOICE&lt;/font&gt;&lt;/b&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-27" value="&lt;b&gt;Generate Dialogue Lines2&lt;/b&gt;&lt;br&gt;el.1 -&amp;gt; `&lt;i&gt;faction.player`&lt;/i&gt;&lt;div&gt;el.2 ..n -&amp;gt; filtered factions&lt;br&gt;&lt;div&gt;from `&lt;i&gt;lookup.faction.list`&lt;br&gt;&lt;b&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;EXCLUDE PREVIOUS CHOICE&lt;/font&gt;&lt;/b&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="618" y="760" width="190" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" target="UzbNYFEz1bTIQuiakVWo-32" source="UzbNYFEz1bTIQuiakVWo-27">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-27" target="UzbNYFEz1bTIQuiakVWo-32" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="713" y="870" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-31" value="PC Chooses&lt;br&gt;ONE" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UzbNYFEz1bTIQuiakVWo-30">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-31" value="PC Chooses&lt;br&gt;ONE" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="UzbNYFEz1bTIQuiakVWo-30" vertex="1" connectable="0">
           <mxGeometry x="-0.1669" y="2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.018;entryY=0.63;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-32" target="UzbNYFEz1bTIQuiakVWo-49">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.018;entryY=0.63;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-32" target="UzbNYFEz1bTIQuiakVWo-49" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="903.0000000000009" y="944.9999999999998" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-35" value="NPC Responses&lt;br&gt;&quot;So what exactly&lt;br&gt;do you want?&quot;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UzbNYFEz1bTIQuiakVWo-34">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-35" value="NPC Responses&lt;br&gt;&quot;So what exactly&lt;br&gt;do you want?&quot;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="UzbNYFEz1bTIQuiakVWo-34" vertex="1" connectable="0">
           <mxGeometry x="-0.0632" y="2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-32" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Faction Dial Line&lt;/span&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-32" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Faction Dial Line&lt;/span&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="643" y="910" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-39" value="Faction Dial Lines List" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-39" value="Faction Dial Lines List" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="648" y="450" width="130" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-40" value="El.1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-39">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-40" value="El.1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-39" vertex="1">
           <mxGeometry y="30" width="130" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-41" value="El.2 ..n" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-39">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-41" value="El.2 ..n" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-39" vertex="1">
           <mxGeometry y="60" width="130" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-46" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Returns similar list like previous process&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;but with removed previous choice&lt;/span&gt;&lt;/div&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;rotation=0;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-46" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Returns similar list like previous process&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;but with removed previous choice&lt;/span&gt;&lt;/div&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;rotation=0;" parent="1" vertex="1">
           <mxGeometry x="793" y="710" width="250" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.55;entryY=0.95;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.859;exitDx=0;exitDy=0;dashed=1;exitPerimeter=0;" edge="1" parent="1" target="UzbNYFEz1bTIQuiakVWo-46" source="UzbNYFEz1bTIQuiakVWo-27">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.55;entryY=0.95;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.859;exitDx=0;exitDy=0;dashed=1;exitPerimeter=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-27" target="UzbNYFEz1bTIQuiakVWo-46" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="838" y="840" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-48" target="UzbNYFEz1bTIQuiakVWo-53">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-48" target="UzbNYFEz1bTIQuiakVWo-53" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-48" target="UzbNYFEz1bTIQuiakVWo-54">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-48" target="UzbNYFEz1bTIQuiakVWo-54" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startFill=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-48" target="UzbNYFEz1bTIQuiakVWo-55">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startFill=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-48" target="UzbNYFEz1bTIQuiakVWo-55" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-48" target="UzbNYFEz1bTIQuiakVWo-56">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-48" target="UzbNYFEz1bTIQuiakVWo-56" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-48" value="&lt;div&gt;Choices Dial Lines&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-48" value="&lt;div&gt;Choices Dial Lines&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1423" y="995" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-49" target="UzbNYFEz1bTIQuiakVWo-48">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-49" target="UzbNYFEz1bTIQuiakVWo-48" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-52" value="PC Chooses&lt;br&gt;One" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UzbNYFEz1bTIQuiakVWo-51">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-52" value="PC Chooses&lt;br&gt;One" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="UzbNYFEz1bTIQuiakVWo-51" vertex="1" connectable="0">
           <mxGeometry x="-0.1778" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-49" value="&lt;b&gt;Generate Dialouge Lines3&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;1. Improve Relation&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;2. Worsen Relation&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;[IF $X.hasrelation.enemy.$Y] 3. Try to Provoke Peace&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;[ELSEIF] 4. Try to Provoke Hatred&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-49" value="&lt;b&gt;Generate Dialouge Lines3&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;1. Improve Relation&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;2. Worsen Relation&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;[IF $X.hasrelation.enemy.$Y] 3. Try to Provoke Peace&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;[ELSEIF] 4. Try to Provoke Hatred&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="913" y="890" width="400" height="280" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-50" value="&lt;div&gt;&lt;font style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;Relation Ranges &lt;/span&gt;&lt;i style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;&amp;lt;relationrange&amp;gt; param&lt;/font&gt;&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;&quot;&gt;&lt;i style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;Default Relation Ranges:&lt;/div&gt;&lt;div&gt;&amp;nbsp; self:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 1.0&amp;nbsp; to&amp;nbsp; 1.0&lt;/div&gt;&lt;div&gt;&amp;nbsp; ally:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 0.5&amp;nbsp; to&amp;nbsp; 1.0&lt;/div&gt;&lt;div&gt;&amp;nbsp; member:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 0.1&amp;nbsp; to&amp;nbsp; 1.0&lt;/div&gt;&lt;div&gt;&amp;nbsp; friend:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 0.01 to&amp;nbsp; 1.0&lt;/div&gt;&lt;div&gt;&amp;nbsp; neutral:&amp;nbsp; &amp;nbsp; &amp;nbsp; -0.01 to&amp;nbsp; 0.01&lt;/div&gt;&lt;div&gt;&amp;nbsp; enemy:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; -1.0&amp;nbsp; to -0.01&lt;/div&gt;&lt;div&gt;&amp;nbsp; killmilitary: -1.0&amp;nbsp; to -0.1&lt;/div&gt;&lt;div&gt;&amp;nbsp; kill:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;-1.0&amp;nbsp; to -0.32&lt;/div&gt;&lt;div&gt;&amp;nbsp; nemesis:&amp;nbsp; &amp;nbsp; &amp;nbsp; -1.0&amp;nbsp; to -1.0&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;UI value mapping (analogously for negative values):&lt;/div&gt;&lt;div&gt;&amp;nbsp; 1.0&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;= 30&lt;/div&gt;&lt;div&gt;&amp;nbsp; 0.32&amp;nbsp; &amp;nbsp; &amp;nbsp; = 25&lt;/div&gt;&lt;div&gt;&amp;nbsp; 0.1&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;= 20&lt;/div&gt;&lt;div&gt;&amp;nbsp; 0.032&amp;nbsp; &amp;nbsp; &amp;nbsp;= 15&lt;/div&gt;&lt;div&gt;&amp;nbsp; 0.01&amp;nbsp; &amp;nbsp; &amp;nbsp; = 10&lt;/div&gt;&lt;div&gt;&amp;nbsp; 0.0032&amp;nbsp; &amp;nbsp; = 5&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;These values are fixed. Between them, logarithmic interpolation is used.&amp;nbsp;&lt;/div&gt;&lt;div&gt;Approximate formulas:&lt;/div&gt;&lt;div&gt;&amp;nbsp; uivalue = 10 * log10(relation * 1000)&lt;/div&gt;&lt;div&gt;&amp;nbsp; relation = 10^(uivalue / 10) / 1000&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Between -0.0032 and +0.0032 (UI -5...+5) linear interpolation is used, and 0.00064 equates to one UI value step.&lt;/div&gt;" style="verticalLabelPosition=middle;verticalAlign=top;html=1;shape=mxgraph.infographic.numberedEntryVert;dy=25;fillColor=#fad7ac;strokeColor=#b46504;fontSize=17;align=left;labelPosition=center;spacingTop=32;fontStyle=1;whiteSpace=wrap;fontColor=#000000;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-50" value="&lt;div&gt;&lt;font style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 36px;&quot;&gt;Relation Ranges &lt;/span&gt;&lt;i style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;&amp;lt;relationrange&amp;gt; param&lt;/font&gt;&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;&quot;&gt;&lt;i style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;Default Relation Ranges:&lt;/div&gt;&lt;div&gt;&amp;nbsp; self:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 1.0&amp;nbsp; to&amp;nbsp; 1.0&lt;/div&gt;&lt;div&gt;&amp;nbsp; ally:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 0.5&amp;nbsp; to&amp;nbsp; 1.0&lt;/div&gt;&lt;div&gt;&amp;nbsp; member:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 0.1&amp;nbsp; to&amp;nbsp; 1.0&lt;/div&gt;&lt;div&gt;&amp;nbsp; friend:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 0.01 to&amp;nbsp; 1.0&lt;/div&gt;&lt;div&gt;&amp;nbsp; neutral:&amp;nbsp; &amp;nbsp; &amp;nbsp; -0.01 to&amp;nbsp; 0.01&lt;/div&gt;&lt;div&gt;&amp;nbsp; enemy:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; -1.0&amp;nbsp; to -0.01&lt;/div&gt;&lt;div&gt;&amp;nbsp; killmilitary: -1.0&amp;nbsp; to -0.1&lt;/div&gt;&lt;div&gt;&amp;nbsp; kill:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;-1.0&amp;nbsp; to -0.32&lt;/div&gt;&lt;div&gt;&amp;nbsp; nemesis:&amp;nbsp; &amp;nbsp; &amp;nbsp; -1.0&amp;nbsp; to -1.0&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;UI value mapping (analogously for negative values):&lt;/div&gt;&lt;div&gt;&amp;nbsp; 1.0&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;= 30&lt;/div&gt;&lt;div&gt;&amp;nbsp; 0.32&amp;nbsp; &amp;nbsp; &amp;nbsp; = 25&lt;/div&gt;&lt;div&gt;&amp;nbsp; 0.1&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;= 20&lt;/div&gt;&lt;div&gt;&amp;nbsp; 0.032&amp;nbsp; &amp;nbsp; &amp;nbsp;= 15&lt;/div&gt;&lt;div&gt;&amp;nbsp; 0.01&amp;nbsp; &amp;nbsp; &amp;nbsp; = 10&lt;/div&gt;&lt;div&gt;&amp;nbsp; 0.0032&amp;nbsp; &amp;nbsp; = 5&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;These values are fixed. Between them, logarithmic interpolation is used.&amp;nbsp;&lt;/div&gt;&lt;div&gt;Approximate formulas:&lt;/div&gt;&lt;div&gt;&amp;nbsp; uivalue = 10 * log10(relation * 1000)&lt;/div&gt;&lt;div&gt;&amp;nbsp; relation = 10^(uivalue / 10) / 1000&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Between -0.0032 and +0.0032 (UI -5...+5) linear interpolation is used, and 0.00064 equates to one UI value step.&lt;/div&gt;" style="verticalLabelPosition=middle;verticalAlign=top;html=1;shape=mxgraph.infographic.numberedEntryVert;dy=25;fillColor=#fad7ac;strokeColor=#b46504;fontSize=17;align=left;labelPosition=center;spacingTop=32;fontStyle=1;whiteSpace=wrap;fontColor=#000000;" parent="1" vertex="1">
           <mxGeometry x="-920" y="20" width="920" height="690" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-53" value="Improve Relation&lt;br&gt;Option" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-53" value="Improve Relation&lt;br&gt;Option" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1613" y="779" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-54" value="Worsen Relation&lt;br&gt;Option" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-54" value="Worsen Relation&lt;br&gt;Option" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1613" y="914" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-55" value="Provoke Peace&lt;br&gt;Option" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-55" value="Provoke Peace&lt;br&gt;Option" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1613" y="1051" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-56" value="Provoke War&lt;br&gt;Option" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-56" value="Provoke War&lt;br&gt;Option" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1613" y="1180" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-61" target="UzbNYFEz1bTIQuiakVWo-86">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-61" target="UzbNYFEz1bTIQuiakVWo-86" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-61" value="Variations Lines" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-61" value="Variations Lines" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1813" y="790" width="140" height="120" as="geometry">
             <mxRectangle x="1580" y="595" width="60" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-62" value="Budget" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-61">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-62" value="Budget" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-61" vertex="1">
           <mxGeometry y="30" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-63" value="Fair Priced" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-61">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-63" value="Fair Priced" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-61" vertex="1">
           <mxGeometry y="60" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-64" value="Expensive" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-61">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-64" value="Expensive" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-61" vertex="1">
           <mxGeometry y="90" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-65" value="Variations Lines" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-65" value="Variations Lines" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1813" y="930" width="140" height="120" as="geometry">
             <mxRectangle x="1580" y="595" width="60" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-66" value="Budget" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-65">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-66" value="Budget" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-65" vertex="1">
           <mxGeometry y="30" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-67" value="Fair Priced" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-65">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-67" value="Fair Priced" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-65" vertex="1">
           <mxGeometry y="60" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-68" value="Expensive" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-65">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-68" value="Expensive" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-65" vertex="1">
           <mxGeometry y="90" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-69" value="Variations Lines" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-69" value="Variations Lines" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1813" y="1069" width="140" height="120" as="geometry">
             <mxRectangle x="1580" y="595" width="60" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-70" value="Budget" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-69">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-70" value="Budget" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-69" vertex="1">
           <mxGeometry y="30" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-71" value="Fair Priced" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-69">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-71" value="Fair Priced" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-69" vertex="1">
           <mxGeometry y="60" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-72" value="Expensive" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-69">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-72" value="Expensive" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-69" vertex="1">
           <mxGeometry y="90" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-73" value="Variations Lines" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-73" value="Variations Lines" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1813" y="1200" width="140" height="120" as="geometry">
             <mxRectangle x="1580" y="595" width="60" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-74" value="Budget" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-73">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-74" value="Budget" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-73" vertex="1">
           <mxGeometry y="30" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-75" value="Fair Priced" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-73">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-75" value="Fair Priced" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-73" vertex="1">
           <mxGeometry y="60" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-76" value="Expensive" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-73">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-76" value="Expensive" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-73" vertex="1">
           <mxGeometry y="90" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-77" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Prices [Cr], Impact chances [%], and outcomes values (if any)&lt;br&gt;should be defined as configurable, connected&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;to the Mod Menu Options&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;Defaults:&lt;br&gt;Budget -&amp;gt; $ImpactChance = 15%, $Price = 35 000 Cr&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;Fair -&amp;gt; $ImpactChance = 25%,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 10px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;$Price = 175 000 Cr&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;Expensive -&amp;gt; $ImpactChance = 45%&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 10px;&quot;&gt;,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 10px;&quot;&gt;$Price = 335 000 Cr&lt;br&gt;(? scale prices with PowerLevel from RFR? compatibility check?)&lt;br&gt;(Provoke should be 10x Expensive by defaults)&lt;/span&gt;&lt;/div&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;rotation=0;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-77" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Prices [Cr], Impact chances [%], and outcomes values (if any)&lt;br&gt;should be defined as configurable, connected&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;to the Mod Menu Options&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;Defaults:&lt;br&gt;Budget -&amp;gt; $ImpactChance = 15%, $Price = 35 000 Cr&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;Fair -&amp;gt; $ImpactChance = 25%,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 10px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;$Price = 175 000 Cr&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;Expensive -&amp;gt; $ImpactChance = 45%&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 10px;&quot;&gt;,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 10px;&quot;&gt;$Price = 335 000 Cr&lt;br&gt;(? scale prices with PowerLevel from RFR? compatibility check?)&lt;br&gt;(Provoke should be 10x Expensive by defaults)&lt;/span&gt;&lt;/div&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;rotation=0;" parent="1" vertex="1">
           <mxGeometry x="1083" y="543" width="580" height="237" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.625;entryY=0.2;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;curved=1;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-61" target="UzbNYFEz1bTIQuiakVWo-77">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.625;entryY=0.2;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;curved=1;" parent="1" source="UzbNYFEz1bTIQuiakVWo-61" target="UzbNYFEz1bTIQuiakVWo-77" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1873" y="673" />
@@ -262,30 +262,30 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.02;entryY=0.196;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;startFill=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-53" target="UzbNYFEz1bTIQuiakVWo-61">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.02;entryY=0.196;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;startFill=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-53" target="UzbNYFEz1bTIQuiakVWo-61" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.002;entryY=0.163;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;startFill=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-54" target="UzbNYFEz1bTIQuiakVWo-65">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.002;entryY=0.163;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;startFill=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-54" target="UzbNYFEz1bTIQuiakVWo-65" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-82" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.004;entryY=0.147;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;startFill=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-55" target="UzbNYFEz1bTIQuiakVWo-69">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-82" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.004;entryY=0.147;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;startFill=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-55" target="UzbNYFEz1bTIQuiakVWo-69" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-83" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.02;entryY=0.128;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;startFill=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-56" target="UzbNYFEz1bTIQuiakVWo-73">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-83" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.02;entryY=0.128;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;startFill=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-56" target="UzbNYFEz1bTIQuiakVWo-73" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-84" target="UzbNYFEz1bTIQuiakVWo-100">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-84" target="UzbNYFEz1bTIQuiakVWo-100" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-104" value="Exec" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UzbNYFEz1bTIQuiakVWo-101">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-104" value="Exec" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="UzbNYFEz1bTIQuiakVWo-101" vertex="1" connectable="0">
           <mxGeometry x="-0.2644" y="-3" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-84" value="&lt;b&gt;Generate New Escort Mission&lt;/b&gt;&lt;div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;1. Spawns two SCA ships with main objective to reach station of $X or $Y faction.&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;2. Spawns additional SCA ships defenders of $X and $Y agents&lt;br&gt;(higher budget eq to more or better ships).&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;3. Player gets objective and notification about the ships and its destinations.&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;4. Player may involve into the mission or left everything to NPCs fleets.&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;&lt;br&gt;Outcomes:&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;Lost of one ship decreases $ImpactChance by configurable $FailurePenalty (defaults: 25%)&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;Lost of the second ship adds $&lt;/i&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;FailurePenalty again and finishes the questline.&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Each successfully delivered ship adds current $ImpactChance to the $ImpactChance stack.&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Best outcomes (defaults) are: Budget -&amp;gt; 45%, Fair -&amp;gt; 75%, Expensive -&amp;gt; 135%&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;&lt;br&gt;&lt;/i&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-84" value="&lt;b&gt;Generate New Escort Mission&lt;/b&gt;&lt;div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;1. Spawns two SCA ships with main objective to reach station of $X or $Y faction.&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;2. Spawns additional SCA ships defenders of $X and $Y agents&lt;br&gt;(higher budget eq to more or better ships).&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;3. Player gets objective and notification about the ships and its destinations.&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;4. Player may involve into the mission or left everything to NPCs fleets.&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;&lt;br&gt;Outcomes:&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;Lost of one ship decreases $ImpactChance by configurable $FailurePenalty (defaults: 25%)&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;Lost of the second ship adds $&lt;/i&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;FailurePenalty again and finishes the questline.&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Each successfully delivered ship adds current $ImpactChance to the $ImpactChance stack.&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Best outcomes (defaults) are: Budget -&amp;gt; 45%, Fair -&amp;gt; 75%, Expensive -&amp;gt; 135%&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;&lt;br&gt;&lt;/i&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="2353" y="820" width="640" height="280" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-91" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-86" target="UzbNYFEz1bTIQuiakVWo-49">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-91" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-86" target="UzbNYFEz1bTIQuiakVWo-49" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="2173" y="1350" />
@@ -293,44 +293,44 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-92" value="NPC Responses&lt;br&gt;&quot;You do not have&lt;br&gt;enough Credits!&quot;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UzbNYFEz1bTIQuiakVWo-91">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-92" value="NPC Responses&lt;br&gt;&quot;You do not have&lt;br&gt;enough Credits!&quot;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="UzbNYFEz1bTIQuiakVWo-91" vertex="1" connectable="0">
           <mxGeometry x="-0.7134" y="5" relative="1" as="geometry">
             <mxPoint x="-5" y="-135" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-96" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UzbNYFEz1bTIQuiakVWo-91">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-96" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="UzbNYFEz1bTIQuiakVWo-91" vertex="1" connectable="0">
           <mxGeometry x="-0.9796" y="2" relative="1" as="geometry">
             <mxPoint y="14" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-97" value="// Regenerate Lines or Break the conversation (?) Maybe the Trader should be rude for RP reasons" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UzbNYFEz1bTIQuiakVWo-91">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-97" value="// Regenerate Lines or Break the conversation (?) Maybe the Trader should be rude for RP reasons" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="UzbNYFEz1bTIQuiakVWo-91" vertex="1" connectable="0">
           <mxGeometry x="0.9687" y="1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-94" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-86" target="UzbNYFEz1bTIQuiakVWo-84">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-94" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="UzbNYFEz1bTIQuiakVWo-86" target="UzbNYFEz1bTIQuiakVWo-84" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-95" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UzbNYFEz1bTIQuiakVWo-94">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-95" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="UzbNYFEz1bTIQuiakVWo-94" vertex="1" connectable="0">
           <mxGeometry x="-0.2389" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-103" value="NPC Responses&lt;div&gt;&quot;Agents are on their way.&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UzbNYFEz1bTIQuiakVWo-94">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-103" value="NPC Responses&lt;div&gt;&quot;Agents are on their way.&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="UzbNYFEz1bTIQuiakVWo-94" vertex="1" connectable="0">
           <mxGeometry x="0.3448" y="-2" relative="1" as="geometry">
             <mxPoint x="-31" y="-32" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-86" value="PC has&lt;div&gt;enough&lt;br&gt;of &lt;b&gt;Cr&amp;nbsp;&lt;/b&gt;?&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-86" value="PC has&lt;div&gt;enough&lt;br&gt;of &lt;b&gt;Cr&amp;nbsp;&lt;/b&gt;?&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="2113" y="900" width="120" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-88" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-67" target="UzbNYFEz1bTIQuiakVWo-86">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-88" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-67" target="UzbNYFEz1bTIQuiakVWo-86" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-74" target="UzbNYFEz1bTIQuiakVWo-86">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-74" target="UzbNYFEz1bTIQuiakVWo-86" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-89" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-70" target="UzbNYFEz1bTIQuiakVWo-86">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-89" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-70" target="UzbNYFEz1bTIQuiakVWo-86" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="2103" y="960" as="targetPoint" />
             <Array as="points">
@@ -339,165 +339,165 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-100" value="&lt;b&gt;Gamble Final Outcome&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;i&gt;[IF $ImpactChance gt 0] 1. Sets $RandomValue min=0 max=$&lt;/i&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;ImpactChance&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;font&gt;[ELSEIF] 2. Sets $RandomValue to exact=0&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;font&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;font&gt;3. Check:&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;font&gt;[IF $RandomValue=0] Critical Failure Outcome&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;font&gt;[ELIF $RandomValue lt 25] Major Failure Outcome&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;font&gt;[ELIF $RandomValue lt 50] Minor Failure Outcome&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;font&gt;[ELIF $RandomValue eq 50] Neutral Outcome&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;[ELIF $RandomValue lt 75] Minor Success&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;Outcome&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;[ELIF $RandomValue lt 100]&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;Major Success&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;Outcome&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;[ELSE &lt;font style=&quot;font-size: 9px;&quot;&gt;(ELIF $RandomValue eq 100 or gt 100)&lt;/font&gt;]&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent; text-align: center;&quot;&gt;Critical Success&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;Outcome&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;4. Send Notification to the player logbook about the results.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;font&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;font&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;&lt;br&gt;&lt;/i&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-100" value="&lt;b&gt;Gamble Final Outcome&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;i&gt;[IF $ImpactChance gt 0] 1. Sets $RandomValue min=0 max=$&lt;/i&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;ImpactChance&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;font&gt;[ELSEIF] 2. Sets $RandomValue to exact=0&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;font&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;font&gt;3. Check:&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;font&gt;[IF $RandomValue=0] Critical Failure Outcome&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;font&gt;[ELIF $RandomValue lt 25] Major Failure Outcome&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;font&gt;[ELIF $RandomValue lt 50] Minor Failure Outcome&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;font&gt;[ELIF $RandomValue eq 50] Neutral Outcome&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;[ELIF $RandomValue lt 75] Minor Success&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;Outcome&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;[ELIF $RandomValue lt 100]&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;Major Success&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;Outcome&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;[ELSE &lt;font style=&quot;font-size: 9px;&quot;&gt;(ELIF $RandomValue eq 100 or gt 100)&lt;/font&gt;]&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent; text-align: center;&quot;&gt;Critical Success&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;Outcome&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;4. Send Notification to the player logbook about the results.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;font&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;font&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;&lt;br&gt;&lt;/i&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="3083" y="820" width="640" height="280" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-141" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-105" target="UzbNYFEz1bTIQuiakVWo-109">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-141" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="UzbNYFEz1bTIQuiakVWo-105" target="UzbNYFEz1bTIQuiakVWo-109" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-105" value="Improve Relation&lt;br&gt;Option" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-105" value="Improve Relation&lt;br&gt;Option" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="3083" y="1090" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-142" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-106" target="UzbNYFEz1bTIQuiakVWo-117">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-142" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="UzbNYFEz1bTIQuiakVWo-106" target="UzbNYFEz1bTIQuiakVWo-117" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-106" value="Worsen Relation&lt;br&gt;Option" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-106" value="Worsen Relation&lt;br&gt;Option" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="3243" y="1090" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-143" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-107" target="UzbNYFEz1bTIQuiakVWo-125">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-143" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="UzbNYFEz1bTIQuiakVWo-107" target="UzbNYFEz1bTIQuiakVWo-125" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-107" value="Provoke Peace&lt;br&gt;Option" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-107" value="Provoke Peace&lt;br&gt;Option" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="3403" y="1090" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-144" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-108" target="UzbNYFEz1bTIQuiakVWo-133">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-144" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-108" target="UzbNYFEz1bTIQuiakVWo-133" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-108" value="Provoke War&lt;br&gt;Option" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-108" value="Provoke War&lt;br&gt;Option" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="3563" y="1090" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-109" value="Improve&amp;nbsp;Outcomes" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-109" value="Improve&amp;nbsp;Outcomes" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="2483" y="1300" width="380" height="260" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-110" value="Crit Failure: Decompromised, Player loses relations to the $X &amp;amp; $Y and grants penalty to reputation decreasing it by abs|faction.enemy.mid|" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-109">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-110" value="Crit Failure: Decompromised, Player loses relations to the $X &amp;amp; $Y and grants penalty to reputation decreasing it by abs|faction.enemy.mid|" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-109" vertex="1">
           <mxGeometry y="30" width="380" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-111" value="Maj Failure: Decompromised, Player loses relations to the $X &amp;amp; $Y" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-109">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-111" value="Maj Failure: Decompromised, Player loses relations to the $X &amp;amp; $Y" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-109" vertex="1">
           <mxGeometry y="80" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-112" value="Min Failure: Worsens Relation by $ImproveOutcomeValue * 0.5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-109">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-112" value="Min Failure: Worsens Relation by $ImproveOutcomeValue * 0.5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-109" vertex="1">
           <mxGeometry y="110" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-113" value="Neutral: Improves Relation by $ImproveOutcomeValue * 0.15" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-109">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-113" value="Neutral: Improves Relation by $ImproveOutcomeValue * 0.15" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-109" vertex="1">
           <mxGeometry y="140" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-114" value="Min Success: Improves Relation by $ImproveOutcomeValue * 0.5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-109">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-114" value="Min Success: Improves Relation by $ImproveOutcomeValue * 0.5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-109" vertex="1">
           <mxGeometry y="170" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-115" value="Maj Success: Improves Relation by $ImproveOutcomeValue" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-109">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-115" value="Maj Success: Improves Relation by $ImproveOutcomeValue" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-109" vertex="1">
           <mxGeometry y="200" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-116" value="Crit Success: Improves Relation by $ImproveOutcomeValue * 1.75" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-109">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-116" value="Crit Success: Improves Relation by $ImproveOutcomeValue * 1.75" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-109" vertex="1">
           <mxGeometry y="230" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-117" value="Worsen&amp;nbsp; Outcomes" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-117" value="Worsen&amp;nbsp; Outcomes" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="2893" y="1300" width="380" height="270" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-118" value="Crit Failure: Decompromised, Player loses relations to the $X &amp;amp; $Y and grants penalty to reputation decreasing it by abs|faction.enemy.mid|" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-117">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-118" value="Crit Failure: Decompromised, Player loses relations to the $X &amp;amp; $Y and grants penalty to reputation decreasing it by abs|faction.enemy.mid|" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-117" vertex="1">
           <mxGeometry y="30" width="380" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-119" value="Maj Failure: Decompromised, Player loses relations to the $X &amp;amp; $Y" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-117">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-119" value="Maj Failure: Decompromised, Player loses relations to the $X &amp;amp; $Y" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-117" vertex="1">
           <mxGeometry y="90" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-120" value="Min Failure: Improves Relation by $WorsenOutcomeValue * 0.15" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-117">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-120" value="Min Failure: Improves Relation by $WorsenOutcomeValue * 0.15" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-117" vertex="1">
           <mxGeometry y="120" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-121" value="Neutral: Decreases&amp;nbsp;Relation by $WorsenOutcomeValue * 0.15" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-117">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-121" value="Neutral: Decreases&amp;nbsp;Relation by $WorsenOutcomeValue * 0.15" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-117" vertex="1">
           <mxGeometry y="150" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-122" value="Min Success: Decreases&amp;nbsp;Relation by $WorsenOutcomeValue * 0.5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-117">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-122" value="Min Success: Decreases&amp;nbsp;Relation by $WorsenOutcomeValue * 0.5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-117" vertex="1">
           <mxGeometry y="180" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-123" value="Maj Success: Decreases&amp;nbsp;Relation by $WorsenOutcomeValue&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-117">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-123" value="Maj Success: Decreases&amp;nbsp;Relation by $WorsenOutcomeValue&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-117" vertex="1">
           <mxGeometry y="210" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-124" value="Crit Success: Decreases Relation by $WorsenOutcomeValue&amp;nbsp;* 1.75" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-117">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-124" value="Crit Success: Decreases Relation by $WorsenOutcomeValue&amp;nbsp;* 1.75" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-117" vertex="1">
           <mxGeometry y="240" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-125" value="Peace Outcomes" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-125" value="Peace Outcomes" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="3303" y="1300" width="380" height="270" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-126" value="Crit Failure: Decompromised, Player loses relations to the $X &amp;amp; $Y and grants penalty to reputation decreasing it by abs|faction.enemy.mid|" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-125">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-126" value="Crit Failure: Decompromised, Player loses relations to the $X &amp;amp; $Y and grants penalty to reputation decreasing it by abs|faction.enemy.mid|" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-125" vertex="1">
           <mxGeometry y="30" width="380" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-127" value="Maj Failure: Decompromised, Player loses relations to the $X &amp;amp; $Y" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-125">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-127" value="Maj Failure: Decompromised, Player loses relations to the $X &amp;amp; $Y" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-125" vertex="1">
           <mxGeometry y="90" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-128" value="Min Failure: Decreases&amp;nbsp;Relation by $WorsenOutcomeValue * 0.25" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-125">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-128" value="Min Failure: Decreases&amp;nbsp;Relation by $WorsenOutcomeValue * 0.25" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-125" vertex="1">
           <mxGeometry y="120" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-129" value="Neutral: Improves Relation by $ImproveOutcomeValue * 0.5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-125">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-129" value="Neutral: Improves Relation by $ImproveOutcomeValue * 0.5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-125" vertex="1">
           <mxGeometry y="150" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-130" value="Min Success: Sets Reputation to the enemy.min" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-125">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-130" value="Min Success: Sets Reputation to the enemy.min" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-125" vertex="1">
           <mxGeometry y="180" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-131" value="Maj Success: Increases Reputation by the friend.mid" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-125">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-131" value="Maj Success: Increases Reputation by the friend.mid" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-125" vertex="1">
           <mxGeometry y="210" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-132" value="Crit Success: Increases Reputation by the&amp;nbsp;ally.mid" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-125">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-132" value="Crit Success: Increases Reputation by the&amp;nbsp;ally.mid" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-125" vertex="1">
           <mxGeometry y="240" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-133" value="War Outcomes" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-133" value="War Outcomes" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="3713" y="1300" width="380" height="280" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-134" value="Crit Failure: Decompromised, Player loses relations to the $X &amp;amp; $Y and grants penalty to reputation decreasing it by abs|faction.enemy.mid|" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-133">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-134" value="Crit Failure: Decompromised, Player loses relations to the $X &amp;amp; $Y and grants penalty to reputation decreasing it by abs|faction.enemy.mid|" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-133" vertex="1">
           <mxGeometry y="30" width="380" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-135" value="Maj Failure: Decompromised, Player loses relations to the $X &amp;amp; $Y" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-133">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-135" value="Maj Failure: Decompromised, Player loses relations to the $X &amp;amp; $Y" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-133" vertex="1">
           <mxGeometry y="100" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-136" value="Min Failure: Improves Relation by $ImproveOutcomeValue * 0.25" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-133">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-136" value="Min Failure: Improves Relation by $ImproveOutcomeValue * 0.25" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-133" vertex="1">
           <mxGeometry y="130" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-137" value="Neutral: Decreases&amp;nbsp;Relation by $WorsenOutcomeValue * 0.5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-133">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-137" value="Neutral: Decreases&amp;nbsp;Relation by $WorsenOutcomeValue * 0.5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-133" vertex="1">
           <mxGeometry y="160" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-138" value="Min Success: Sets Reputation to the enemy.mid" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-133">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-138" value="Min Success: Sets Reputation to the enemy.mid" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-133" vertex="1">
           <mxGeometry y="190" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-139" value="Maj Success: Sets Reputation to the killmillitary.mid" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-133">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-139" value="Maj Success: Sets Reputation to the killmillitary.mid" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-133" vertex="1">
           <mxGeometry y="220" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-140" value="Crit Success: Sets Reputation to the killmillitary.max" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="UzbNYFEz1bTIQuiakVWo-133">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-140" value="Crit Success: Sets Reputation to the killmillitary.max" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="UzbNYFEz1bTIQuiakVWo-133" vertex="1">
           <mxGeometry y="250" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-149" value="Make them stack..." style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-149" value="Make them stack...&lt;br&gt;Make more random bonuses?&lt;br&gt;e.g. rep + for player faction" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="2463" y="1580" width="320" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-155" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-151" target="UzbNYFEz1bTIQuiakVWo-154">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-155" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-151" target="UzbNYFEz1bTIQuiakVWo-154" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-156" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UzbNYFEz1bTIQuiakVWo-155">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-156" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="UzbNYFEz1bTIQuiakVWo-155" vertex="1" connectable="0">
           <mxGeometry x="-0.2593" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-158" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=none;startFill=0;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-151" target="UzbNYFEz1bTIQuiakVWo-84">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-158" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=none;startFill=0;dashed=1;dashPattern=8 8;" parent="1" source="UzbNYFEz1bTIQuiakVWo-151" target="UzbNYFEz1bTIQuiakVWo-84" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-151" value="is Escort Mission Active?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-151" value="is Escort Mission Active?" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="353" y="175" width="120" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-153" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.022;entryY=0.497;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="UzbNYFEz1bTIQuiakVWo-11" target="UzbNYFEz1bTIQuiakVWo-151">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-153" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.022;entryY=0.497;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="UzbNYFEz1bTIQuiakVWo-11" target="UzbNYFEz1bTIQuiakVWo-151" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-154" value="There&#39;s no&lt;div&gt;Dialogue Line&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-154" value="There&#39;s no&lt;div&gt;Dialogue Line&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="343" y="375" width="140" height="75" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-157" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;Or moving it step further and adding a new response&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;for the&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&quot;Influence Faction Relations&quot; Dialogue Line&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-157" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;Or moving it step further and adding a new response&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;for the&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&quot;Influence Faction Relations&quot; Dialogue Line&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="180" y="450" width="377" height="117" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-159" value="Influence Relations - Delegation" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=1000;height=40;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-159" value="Influence Relations - Delegation" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=1000;height=40;" parent="1" vertex="1">
           <mxGeometry x="140" y="2000" width="4130" height="1740" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-160" value="&lt;div&gt;The system will influence relations by paying Credits (Cr) or through illegal trades, and then generating missions with gambled RPG outcomes.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Dependencies:&amp;nbsp;&lt;/div&gt;&lt;div&gt;1. Extended Conversation Menu by iforgotmysocks&lt;/div&gt;&lt;div&gt;2. Reactive Factions Retribution&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-160" value="&lt;div&gt;The system will influence relations by paying Credits (Cr) or through illegal trades, and then generating missions with gambled RPG outcomes.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Dependencies:&amp;nbsp;&lt;/div&gt;&lt;div&gt;1. Extended Conversation Menu by iforgotmysocks&lt;/div&gt;&lt;div&gt;2. Reactive Factions Retribution&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" parent="1" vertex="1">
           <mxGeometry x="610" y="-170" width="650" height="240" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-161" value="&lt;div&gt;The system will introduce a new expensive personnel type, Diplomat, and new ship/fleet behavior to order it as a diplomacy convoy. Ownership of the assets should be temporarily transferred to the target during the diplomacy mission.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Each Diplomat should increase Success Rate&lt;/div&gt;&lt;div&gt;Each Marine should decrease Success Rate but also increase chance of not losing assets when they are on board.&lt;/div&gt;&lt;div&gt;On Failure: Worsens relations with owner faction and chance to destroy diplomacy assets and kill the personnel.&lt;/div&gt;&lt;div&gt;On Success: Defined by the type of the convoy.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Types:&lt;/div&gt;&lt;div&gt;1. Peace Delegation -&amp;nbsp;&lt;/div&gt;&lt;div&gt;2. Gift Delegation -&lt;/div&gt;&lt;div&gt;3. Trade Delegation -&lt;/div&gt;&lt;div&gt;4. Cultural Exchange Delegation -&lt;/div&gt;&lt;div&gt;5. Military Alliance Delegation -&lt;/div&gt;&lt;div&gt;6. Scientific Cooperation Delegation -&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;Dependencies:&amp;nbsp;&lt;/div&gt;&lt;div&gt;1. UI Extensions and HUD by kuertee&lt;/div&gt;&lt;div&gt;2. Reactive Factions Retribution&lt;/div&gt;&lt;/div&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-161" value="&lt;div&gt;The system will introduce a new expensive personnel type, Diplomat, and new ship/fleet behavior to order it as a diplomacy convoy. Ownership of the assets should be temporarily transferred to the target during the diplomacy mission.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Each Diplomat should increase Success Rate&lt;/div&gt;&lt;div&gt;Each Marine should decrease Success Rate but also increase chance of not losing assets when they are on board.&lt;/div&gt;&lt;div&gt;On Failure: Worsens relations with owner faction and chance to destroy diplomacy assets and kill the personnel.&lt;/div&gt;&lt;div&gt;On Success: Defined by the type of the convoy.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Types:&lt;/div&gt;&lt;div&gt;1. Peace Delegation -&amp;nbsp;&lt;/div&gt;&lt;div&gt;2. Gift Delegation -&lt;/div&gt;&lt;div&gt;3. Trade Delegation -&lt;/div&gt;&lt;div&gt;4. Cultural Exchange Delegation -&lt;/div&gt;&lt;div&gt;5. Military Alliance Delegation -&lt;/div&gt;&lt;div&gt;6. Scientific Cooperation Delegation -&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;Dependencies:&amp;nbsp;&lt;/div&gt;&lt;div&gt;1. UI Extensions and HUD by kuertee&lt;/div&gt;&lt;div&gt;2. Reactive Factions Retribution&lt;/div&gt;&lt;/div&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" parent="1" vertex="1">
           <mxGeometry x="590.5" y="1715" width="647" height="320" as="geometry" />
         </mxCell>
-        <mxCell id="UzbNYFEz1bTIQuiakVWo-162" value="Different mission types...?" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UzbNYFEz1bTIQuiakVWo-162" value="Different mission types...?" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="2290" y="729" width="320" height="120" as="geometry" />
         </mxCell>
       </root>
