@@ -2,11 +2,11 @@
 
 ## Backlog
 
-- TODO: RepHits for more events like e.g. destroying assets //vary on community feedback, or as new mod e.g. credits and rewards for activities or dynamic events/missions (if is it possible). - Rewards system, accumulating CR & Rep per faction for these activities and pay if randomized threshold CR+Rep is accumulated with fancy/gift message. New Mod Menu for this. Enemies should be excluded (enemy should not send gifts of CR+Rep to the player) like in main functionality.
-- TODO: Political lobbing e.g. change relation X and Y, Player and X etc. for credits/rep/assets/law etc. Send envoy delegation or via new black market NPC ?  //vary on community feedback
+- TODO: RepHits for more events like e.g. destroying assets //vary on community feedback, or as new mod e.g. credits and rewards for activities or dynamic events/missions (if is it possible). - Rewards system, accumulating CR & Rep per faction for these activities and pay if randomized threshold CR+Rep is accumulated with fancy/gift message. New Mod Menu for this. Enemies should be excluded (enemy should not send gifts of CR+Rep to the player) like in the main functionality.
+- TODO: Political lobbying e.g. change relation X and Y, Player and X etc. for credits/rep/assets/law etc. Send envoy delegation or via new black market NPC ?  //vary on community feedback
 - TODO: More RPG tiers //vary on community feedback
 - TODO: KD Menu API integration adding new features and moving existing there. // or some new system provided by Egosoft from 7.0 to 8.0? https://wiki.egosoft.com:1337/X4%20Foundations%20Wiki/Modding%20Support/Breaking%20Changes/
-- TODO: Changeable evaluation cooldown values in mod menu.
+- TODO: Changeable evaluation cooldown values in the mod menu + **stacking rep bonuses/penalties and applying them to the evaluation event instead of instantly.**
 - TODO: Button to trigger evaluation manually.
 
 ## 2.2.8 - 2.3.4 Localization & Fixes
