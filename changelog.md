@@ -6,6 +6,8 @@
 - TODO: Political lobbing e.g. change relation X and Y, Player and X etc. for credits/rep/assets/law etc. Send envoy delegation or via new black market NPC ?  //vary on community feedback
 - TODO: More RPG tiers //vary on community feedback
 - TODO: KD Menu API integration adding new features and moving existing there. // or some new system provided by Egosoft from 7.0 to 8.0? https://wiki.egosoft.com:1337/X4%20Foundations%20Wiki/Modding%20Support/Breaking%20Changes/
+- TODO: Change evaluation cooldown values in mod menu.
+- TODO: Button to trigger evaluation manually.
 
 ## 2.2.8 - 2.3.4 Localization & Fixes
 
