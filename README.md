@@ -5,6 +5,12 @@
 ### [Release on Nexus](https://www.nexusmods.com/x4foundations/mods/746/)
 ### [Release on Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=2545236840)
 
+#### Supporting Development
+
+My mods are **always free to use**.
+
+If you appreciate my work, you can support me by [buying me a coffee](https://buymeacoffee.com/iomatix).
+
 
 ## Debug info:
 
