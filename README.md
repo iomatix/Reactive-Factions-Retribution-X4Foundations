@@ -5,7 +5,7 @@
 ### [Release on Nexus](https://www.nexusmods.com/x4foundations/mods/746/)
 ### [Release on Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=2545236840)
 
-#### Supporting Development
+### Supporting Development
 
 My mods are **always free to use**.
 
