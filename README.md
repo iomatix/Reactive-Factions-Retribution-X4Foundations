@@ -21,15 +21,20 @@ My mods are **always free to use**.
 If you appreciate my work, you can support me by [buying me a coffee](https://buymeacoffee.com/iomatix).
 
 
-## Debug info:
+## Debug Info
 
-### To debug this mod add these params to the game startup line.
+> **ℹ️ To debug this mod:**  
+> Add these parameters to the game startup line:  
+> ```
+> -debug all -logfile "x4-game-%date_~10,4%-%date_~4,2%-%date_~7,2%_%time%.log" -scriptlogfile "x4-script-%date_~10,4%-%date_~4,2%-%date_~7,2%_%time%.log"
+> ```
 
--logfile debugLog.log -scriptlogfiles
+> **⚡ For better performance on multicore CPUs:**  
+> Use the following startup parameters:  
+> ```
+> -malloc=system +mat_antialias 0 window -USEALLAVAILABLECORES
+> ```
 
-### For better performance with decent multicore CPU machine
-
--malloc=system +mat_antialias 0 window -USEALLAVAILABLECORES 
 
 ## [MD Documentation](https://wiki.egosoft.com:1337/X%20Rebirth%20Wiki/Modding%20support/Mission%20Director%20Guide/#HCompletepropertydocumentation)
 
