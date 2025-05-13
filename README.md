@@ -35,24 +35,6 @@ If you appreciate my work, you can support me by [buying me a coffee](https://bu
 > -malloc=system +mat_antialias 0 window -USEALLAVAILABLECORES
 > ```
 
-## Console Commands
-
-> **🖥️ Accessing the Console**  
-> You can enable the in-game console by assigning a hotkey in:  
-> **Settings → Controls → Space → Command Line**  
-> Once mapped, pressing the key will bring up a transparent bar where you can enter commands.
-
-### Useful Console Commands:
-- `refreshmd` → Reloads all MD files and applies changes without restarting the game.
-- `refreshai` → Reloads all AI scripts.
-- `aicompat check` → Checks AI script compatibility.
-- `debug_flags set <flag>` → Enables specific debug flags.
-- `show_all_sectors` → Reveals the entire galaxy map.
-- `unlock_all_blueprints` → Unlocks all blueprints for research.
-- `give_player_money <amount>` → Adds credits to the player account.
-- `spawn_ship <ship_id>` → Spawns a specific ship.
-- `destroy_selected` → Instantly destroys the selected object.
-
 ## Additional Resources
 
 - [Complete Keyboard Command List](https://forum.egosoft.com/viewtopic.php?t=380447) 
