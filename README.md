@@ -1,6 +1,15 @@
 # Reactive Factions Retribution X4:Foundations
 ### The mod is an improved version of the Reactive Factions mod. Its purpose is to solve the main problems and inconveniences related to the basic version and content enrichment.
 
+## Contributions
+
+<a href="https://github.com/iomatix/Reactive-Factions-Retribution-X4Foundations/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=iomatix/Reactive-Factions-Retribution-X4Foundations" />
+</a>
+
+
+**A Special thanks to Shuul and DeadAir for original Reactive Factions mod**
+
 ## Official Releases
 ### [Release on Nexus](https://www.nexusmods.com/x4foundations/mods/746/)
 ### [Release on Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=2545236840)
