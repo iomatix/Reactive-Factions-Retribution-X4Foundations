@@ -10,6 +10,13 @@
 - TODO: Changeable evaluation cooldown values in the mod menu + **stacking rep bonuses/penalties and applying them to the evaluation event instead of instantly.**
 - TODO: Button to trigger evaluation manually.
 
+## 2.4.0 - Support Update & Fixes
+- **Fixed** event sometimes failed to trigger correctly on relation changes.
+- **Fixed** missing tags — now fully excludes the smalltalkreward tag from the relation‐changed event.
+- **Improved** checkinterval cue now uses a separate cooldown variable ($NextPossibleCheckTime) to decouple polling frequency (6 min) from the 25 min cooldown.
+- **Tested** compatibility with X4: Foundations 7.6.0
+- **Changed** Experimental and Relative amplitudes are now ON by default. Those provide changes being more smooth and less arcady. User may turn them off in Extension Options menu provided by [Mod Support APIs](https://www.nexusmods.com/x4foundations/mods/1699).
+
 ## 2.2.8 - 2.3.4 Localization & Fixes
 
 - **Added** specific localizations for the mod. [You can contribute to improving the translation if you are an advanced or native speaker of any language](https://github.com/iomatix/Reactive-Factions-Retribution-X4Foundations/tree/main/t).

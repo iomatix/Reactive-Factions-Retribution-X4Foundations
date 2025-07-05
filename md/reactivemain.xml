@@ -57,8 +57,8 @@
                 <set_value name="$UIRelationDivisor" exact="3" />
                 <set_value name="$RelationFactorMul" exact="4" />
                 <set_value name="$RelationTreshhold" exact="15" />
-                <set_value name="$isAmplitudeExperimental" exact="false" />
-                <set_value name="$isAmplitudeRelative" exact="false" />
+                <set_value name="$isAmplitudeExperimental" exact="true" />
+                <set_value name="$isAmplitudeRelative" exact="true" />
                 <set_value name="$Power1UIMaxChangeValue" exact="1" />
                 <set_value name="$Power2UIMaxChangeValue" exact="1" />
                 <set_value name="$Power3UIMaxChangeValue" exact="2" />
@@ -143,8 +143,8 @@
                     text="'[ReactiveFactionsRetribution LOG] 2.1.0 update - created Mandatory variables to handle important changes.'"
                     output="$isDebug" append="true" />
                 <set_value name="$TurnOnAllNotifications" exact="false" />
-                <set_value name="$isAmplitudeExperimental" exact="false" />
-                <set_value name="$isAmplitudeRelative" exact="false" />
+                <set_value name="$isAmplitudeExperimental" exact="true" />
+                <set_value name="$isAmplitudeRelative" exact="true" />
                 <show_help duration="35s"
                     custom="'Reactive Factions Retribution \033G2.1.0\033X' + ' successfully updated.\nSomething new has appeared on a tips page inside of your logbook!'" />
                 <write_to_logbook money="75000Cr" category="tips"
@@ -205,15 +205,22 @@
                         </do_else>
                     </actions>
                 </cue>
-                <!-- checkinterval once per 6 minutes, do if 25 minutes has passed -->
-                <cue name="ReactivePlayerPowerUpdate" checkinterval="6m"
-                    checktime="player.age + 1500s" instantiate="true">
+                <!-- checkinterval once per 6 minutes, cooldown 25 minutes via NextPossibleCheckTime  -->
+                <cue name="ReactivePlayerPowerUpdate" checkinterval="6m" instantiate="true">
+                    <conditions>
+                        <!-- Check if NextPossibleCheckTime cooldown var is not set or if cooldown has passed -->
+                        <check_value value="not $NextPossibleCheckTime? or player.age gt $NextPossibleCheckTime" />
+                    </conditions>
                     <actions>
+                        <!-- Apply 25 minutes cooldown -->
+                        <set_value name="$NextPossibleCheckTime" exact="player.age + 1500s" />
+
                         <!-- From Global, Trigger Player Power Update Worker Event -->
                         <debug_to_file name="'ReactiveFactionsRetributionTriggers'"
                             directory="'ReactiveFactionsRetribution_log'"
                             text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Interval method tries to trigger Player Power Update Worker.'"
                             output="$isDebug" append="true" />
+
                         <signal_cue
                             cue="TriggerReactivePlayerPowerUpdateWorker" />
                     </actions>
@@ -460,6 +467,7 @@
                 <cue name="ReactiveApplyRep" instantiate="true">
                     <conditions>
                         <event_player_relation_changed />
+
                         <!-- only for positive changes and relationchangereason is not
                         reactivefaction, event case is not null -->
                         <!-- tag.{relationchangereason.reactivefaction} won't work for now and it
@@ -468,9 +476,7 @@
                         <!-- tag.reactivefaction -> tag.smalltalkreward for now until it is not
                         fixed by Ego -->
                         <check_value
-                            value="not event.object? 
-                                and event.param3? 
-                                and ((not tag.smalltalkreward?) or (tag.smalltalkreward? and event.param3 != tag.smalltalkreward))
+                            value="(not tag.smalltalkreward?) or (tag.smalltalkreward? and event.param3 != tag.smalltalkreward)
                                 and event.param? 
                                 and event.param2.{1} gt event.param2.{2}" />
                         <!-- only trigger once every seconds defined by GlobalCooldown  -->
@@ -487,6 +493,30 @@
                         <check_value value="$PlayerPower != 99" />
                     </conditions>
                     <actions>
+                        <debug_to_file name="'ReactiveRepUpdate_events'"
+                            directory="'ReactiveFactionsRetribution_log'"
+                            text="'[ReactiveFactionsRetribution LOG] ' + player.age + ';' + 'ReactiveApplyRep triggered by event: event_player_relation_changed with param: ' + event.param + ' and param2: ' + event.param2 + ' and param3: ' + event.param3"
+                            output="$isDebug" append="true" />
+                        <debug_to_file
+                            name      = "'ReactiveRepUpdate_events'"
+                            directory = "'ReactiveFactionsRetribution_log'"
+                            append    = "true"
+                            output    = "$isDebug"
+                            text      = 
+                            "'[Dump of event_player_relation_changed] t=' + player.age
+                            + '; object?='   + event.object?
+                            + '; param='     + event.param
+                            + '; param2[1]=' + event.param2.{1}
+                            + '; param2[2]=' + event.param2.{2}
+                            + '; param3='    + event.param3
+                            + '; smalltalk?=' + (tag.smalltalkreward? and event.param3 == tag.smalltalkreward)
+                            + '; nextTime='  + $NextPossibleRepChangeTime
+                            + '; playerPow=' + $PlayerPower
+                            + '; active?='   + event.param.isactive
+                            + '; visitor?='  + event.param.isvisitor
+                            + '; enemyRel?=' + event.param.hasrelation.enemy.{faction.player}"
+                        />
+
                         <set_value name="$FactionMain" exact="event.param" />
                         <!-- e.g. (dead-code) cancel this cue if the main event faction is not
                         active or is visitor, It will never happen due cue's <conditions/> -->
@@ -919,17 +949,19 @@
                             or ~3<>20 range with the Player and RepChange was significant  -->
                             <do_if
                                 value="$TurnOnAllNotifications == true or ($TurnOffNotifications == false and (
-                  ($FactionOne.relationto.{faction.player} gt 0.0016 and $FactionOne.relationto.{faction.player} lt 0.1)
-                   or ($FactionOne.relationto.{faction.player} lt -0.0016 and $FactionOne.relationto.{faction.player} gt -0.1)
-                    ) and $RepChange ge 0.0012)">
+                                ($FactionOne.relationto.{faction.player} gt 0.0016 and $FactionOne.relationto.{faction.player} lt 0.1)
+                                 or ($FactionOne.relationto.{faction.player} lt -0.0016 and $FactionOne.relationto.{faction.player} gt -0.1)
+                                ) and $RepChange ge 0.0012)">
                                 <do_if value="$isRepNegative == true">
                                     <set_value name="$RepChange" exact="-1*$RepChange" />
                                     <set_faction_relation faction="$FactionOne"
                                         otherfaction="faction.player"
-                                        value="[($FactionOne.relationto.{faction.player} + $RepChange), -1].max" />
+                                        value="[($FactionOne.relationto.{faction.player} + $RepChange), -1].max"
+                                        reason="tag.smalltalkreward" />
                                     <set_faction_relation faction="faction.player"
                                         otherfaction="$FactionOne"
-                                        value="$FactionOne.relationto.{faction.player}" />
+                                        value="$FactionOne.relationto.{faction.player}"
+                                        reason="tag.smalltalkreward" />
                                     <write_to_logbook category="tips"
                                         title="'\033B' + {2005311642,900100} + '\033X Reactive Factions Retribution \033G' + {2005311642,900101}"
                                         text="{2005311642,900102} + ' ' + $FactionOne +  ' ' + {2005311642,900104} + ' ' + $RepChange + ' ' + {2005311642,900105} + ' ' + $FactionMain + '.\n' + {2005311642,900106} + ' ' + $RepDiff + '.'" />
@@ -937,10 +969,12 @@
                                 <do_else>
                                     <set_faction_relation faction="$FactionOne"
                                         otherfaction="faction.player"
-                                        value="[($FactionOne.relationto.{faction.player} + $RepChange), 1].min" />
+                                        value="[($FactionOne.relationto.{faction.player} + $RepChange), 1].min"
+                                        reason="tag.smalltalkreward" />
                                     <set_faction_relation faction="faction.player"
                                         otherfaction="$FactionOne"
-                                        value="$FactionOne.relationto.{faction.player}" />
+                                        value="$FactionOne.relationto.{faction.player}"
+                                        reason="tag.smalltalkreward" />
                                     <write_to_logbook category="tips"
                                         title="'\033B' + {2005311642,900100} + '\033X Reactive Factions Retribution \033G' + {2005311642,900101}"
                                         text="{2005311642,900102} + ' ' + $FactionOne +  ' ' + {2005311642,900103} + ' ' + $RepChange + ' ' + {2005311642,900105} + ' ' + $FactionMain + '.\n' + {2005311642,900106} + ' ' + $RepDiff + '.'" />

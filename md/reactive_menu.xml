@@ -1150,7 +1150,7 @@
 						<!-- DEBUG Player Power Update Button -->
 						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
 						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
-							param="table[$col=1, $text='Debug:']" />
+							param="table[$col=1, $text='Debug Trigger:']" />
 						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Button"
 							param="table[
 						$id       = 'debugPowerBtn', 
