@@ -183,7 +183,7 @@
                     text="'\nHello there ' + player.name + ',\nThe modification was successfully updated to version ' +  '\033G2.2.6\033X' + '\n\n The mod has been updated to add Yaki lock to the mod menu. You may want to turn it on during the Yaki storyline to prevent losing reputation with the Yaki faction. \n Detailed changelog has been attached to the modification folder and is also available on both, Steam and Nexus websites.\n Please report all encountered problems or share your impressions about the modification so far.\n\nOh, also sending a small gift to help your galactic activities prosper!\n\n\033BThank you for being here, Commander! '" />
                 <transfer_money from="faction.visitor" to="faction.player" amount="5000Cr" />
             </patch>
-            <!-- -->
+            <!-- Cues -->
             <cues>
                 <!-- checkinterval for faction Locks -->
                 <cue name="ReactiveFactionLockCue" checkinterval="2m" checktime="player.age + 60s"
@@ -209,11 +209,35 @@
                 <cue name="ReactivePlayerPowerUpdate" checkinterval="6m"
                     checktime="player.age + 1500s" instantiate="true">
                     <actions>
-                        <!-- Re-allocate Memory For Factions. Loads new factions or removes deleted
+                        <!-- From Global, Trigger Player Power Update Worker Event -->
+                        <debug_to_file name="'ReactiveFactionsRetributionTriggers'"
+                            directory="'ReactiveFactionsRetribution_log'"
+                            text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Interval method tries to trigger Player Power Update Worker.'"
+                            output="$isDebug" append="true" />
+                        <signal_cue
+                            cue="TriggerReactivePlayerPowerUpdateWorker" />
+                    </actions>
+                </cue>
+                <!-- Worker for Player Power Update -->
+                <cue name="TriggerReactivePlayerPowerUpdateWorker" instantiate="true">
+                    <conditions>
+                        <check_any>
+                            <event_cue_signalled />
+                        </check_any>
+                    </conditions>
+                    <actions>
+                        <!-- Global Signal Listener -->
+                        <debug_to_file name="'ReactiveFactionsRetributionTriggers'"
+                            directory="'ReactiveFactionsRetribution_log'"
+                            text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Player Power Update Worker triggered by global (md.ReactiveMain.TriggerReactivePlayerPowerUpdateWorker) trigger.'"
+                            output="$isDebug" append="true" />
+                        <!-- Re-allocate Memory For Factions. Loads new factions or removes
+                            deleted
                         factions. -->
                         <include_actions ref="LoadAllFactionsToAllocatedMemory" />
                         <set_value name="$PlayerTotalAssetsCost" exact="0Cr" />
-                        <!-- <do_if value="$PlayerPower?"><remove_value name="$PlayerPower" /></do_if> -->
+                        <!-- <do_if value="$PlayerPower?"><remove_value name="$PlayerPower"
+                        /></do_if> -->
                         <!-- calculating total assets cost -->
                         <find_object name="$PlayerAssetsList" owner="faction.player"
                             space="player.galaxy"
@@ -431,6 +455,7 @@
                         <remove_value name="$PlayerTotalAssetsCost" />
                     </actions>
                 </cue>
+
                 <!-- Rep Penalty/Bonus -->
                 <cue name="ReactiveApplyRep" instantiate="true">
                     <conditions>
@@ -440,7 +465,8 @@
                         <!-- tag.{relationchangereason.reactivefaction} won't work for now and it
                         will receive null instead but docs says it should work  -->
                         <!-- trying tag.reactivefaction for now if is it working -->
-                        <!-- tag.reactivefaction -> tag.smalltalkreward for now until it is not fixed by Ego -->
+                        <!-- tag.reactivefaction -> tag.smalltalkreward for now until it is not
+                        fixed by Ego -->
                         <check_value
                             value="not event.object? 
                                 and event.param3? 
@@ -960,7 +986,8 @@
                 <library name="LoadAllFactionsToAllocatedMemory">
                     <actions>
                         <!-- Returns $ListofCooldowns -->
-                        <!-- List of all factions $ListofCooldowns.{$i}.[faction,mainfactinocooldown,enemyfactioncooldown] -->
+                        <!-- List of all factions
+                        $ListofCooldowns.{$i}.[faction,mainfactinocooldown,enemyfactioncooldown] -->
                         <do_if value="$ListofCooldowns?">
                             <remove_value name="$ListofCooldowns" />
                         </do_if>
@@ -1015,7 +1042,8 @@
                                 </do_if>
                                 <do_elseif
                                     value="not $FactionsList.{$i}? or ($FactionsList.{$i}.isactive == false or $FactionsList.{$i}.isvisitor)">
-                                    <!-- Add to ignored all elements which are not allocated, not active or are visitors. -->
+                                    <!-- Add to ignored all elements which are not allocated, not
+                                    active or are visitors. -->
                                     <append_to_list name="$IgnoredListofFactions"
                                         exact="$FactionsList.{$i}" />
                                     <debug_to_file name="'FactionFilter'"

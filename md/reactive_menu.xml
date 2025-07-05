@@ -1127,17 +1127,17 @@
 							$mouseOverText = {2005311642,1022} + '\n' + {2005311642,899} + ' ' + '0s',
 							$onSliderCellConfirm = OnSMOSliderChange
 						]" />
-                        <!-- DEBUG checkbox-->
-                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+						<!-- DEBUG checkbox-->
+						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text='']" />
-                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text='']" />
-                        <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
 							param="table[$col=1, $text='Debug', $color = 'Helper.color.red']" />
-                        <signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
+						<signal_cue_instantly cue="md.Simple_Menu_API.Make_CheckBox"
 							param="table[
 						$id = 'isDebug',
 						$checked = md.ReactiveMain.ReactiveInit.$isDebug,
@@ -1146,15 +1146,32 @@
 						$default = false,
 						$mouseOverText = 'Debug' + '\n' + {2005311642,899} + ' ' + 'False',
 						$onClick = OnSMOSCheckboxChange
-					]" />
-                    </actions>
-                </cue>
+						]" />
+						<!-- DEBUG Player Power Update Button -->
+						<signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+							param="table[$col=1, $text='Debug:']" />
+						<signal_cue_instantly cue="md.Simple_Menu_API.Make_Button"
+							param="table[
+						$id       = 'debugPowerBtn', 
+						$col      = 2,
+						$colspan  = 2,
+						$text   = table[
+								  $text   =  'Trigger Player Power Update Cue', 
+								  $halign = 'center',
+								],
+						$active = true,
+						$bgColor = 'Color.button_background_default',
+						$onClick = md.ReactiveMain.TriggerReactivePlayerPowerUpdateWorker
+						]" />
+					</actions>
+				</cue>
                 <cue name="OnSMOSCheckboxChange" instantiate="true">
                     <conditions>
                         <event_cue_signalled />
                     </conditions>
                     <actions>
-                        <!-- <debug_text text="event.param.$id + ' to: ' + @event.param.$value + '
+						<!-- <debug_text text="event.param.$id + ' to: ' + @event.param.$value + '
 						or '
 					+ @event.param.$checked" /> -->
                         <debug_text
@@ -1171,7 +1188,7 @@
                         <event_cue_signalled />
                     </conditions>
                     <actions>
-                        <!-- <debug_text text="event.param.$id + ' to: ' + @event.param.$value + '
+						<!-- <debug_text text="event.param.$id + ' to: ' + @event.param.$value + '
 						or '
 					+ @event.param.$checked" /> -->
                         <debug_text
@@ -1183,21 +1200,21 @@
                         <signal_cue_instantly cue="md.Simple_Menu_API.Refresh_Menu" />
                     </actions>
                 </cue>
-                <!-- special fix for CR values cuz Mod APIs is handling Cr values different than
+				<!-- special fix for CR values cuz Mod APIs is handling Cr values different than
 			vanilla. -->
                 <cue name="OnSMOSliderChangeCRvalue" instantiate="true">
                     <conditions>
                         <event_cue_signalled />
                     </conditions>
                     <actions>
-                        <!-- <debug_text text="event.param.$id + ' to: ' + @event.param.$value + '
+						<!-- <debug_text text="event.param.$id + ' to: ' + @event.param.$value + '
 						or '
 					+ @event.param.$checked" /> -->
                         <debug_text
 							text="event.param.$id + ' pre: ' + md.ReactiveMain.ReactiveInit.{'$' + event.param.$id}" />
                         <set_value name="md.ReactiveMain.ReactiveInit.{'$' + event.param.$id}"
 							exact="event.param.$value*1Cr" />
-                        <!-- the fix is *1Cr (it should append 00 to the value) -->
+						<!-- the fix is *1Cr (it should append 00 to the value) -->
                         <debug_text
 							text="event.param.$id + ' post: ' + md.ReactiveMain.ReactiveInit.{'$' + event.param.$id}" />
                         <signal_cue_instantly cue="md.Simple_Menu_API.Refresh_Menu" />
