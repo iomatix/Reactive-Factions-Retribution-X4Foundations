@@ -623,15 +623,15 @@
                                     <set_value name="$RelationFriendshipFactor"
                                         exact="$FactionMain.relationto.{faction.player}" />
                                     <set_value name="$RelationFriendshipFactor"
-                                        exact="(10*log(1000*abs($RelationFriendshipFactor))/log(10))/$RelationTreshhold" />
+                                            exact="(10*log(max(1000*abs($RelationFriendshipFactor),0.0000001))/log(10))/$RelationTreshhold" />
                                     <!-- Multiplier GUI $RelationFactorMul -->
                                     <do_if value="$RelationFriendshipFactor gt 0">
                                         <!-- Convert absolute value to UI value and make it a factor
                                         actualy by dividing
-                  in by Max Value (30 UI Value) but to make things more unstable at end game the
-                  better value will be somewhere in this range 18-25 -->
+                                        in by Max Value (30 UI Value) but to make things more unstable at end game the
+                                        better value will be somewhere in this range 18-25 -->
                                         <set_value name="$RepBonus"
-                                            exact="$RepBonus*log(1.15+($RelationFactorMul*$RelationFriendshipFactor^2))" />
+                                                exact="$RepBonus*log(max(1.15+($RelationFactorMul*$RelationFriendshipFactor^2),0.0001))" />
                                         <debug_to_file name="'ReactiveRepUpdate'"
                                             directory="'ReactiveFactionsRetribution_log'"
                                             text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (Friendship Factor Case) Change recalculated: ' + $RepBonus +'. Values: [FriendshipFactor] ' + $RelationFriendshipFactor + ' [Multiplier] '+$RelationFactorMul"
@@ -640,7 +640,7 @@
                                     <remove_value name="$RelationFriendshipFactor" />
                                     <!-- Check that change isn't more than $UIRelationChange ui
                                     value. If it is, then
-                only go up $UIRelationChange UI -->
+                                    only go up $UIRelationChange UI -->
                                     <set_value name="$FactionOne" exact="$FactionMain" />
                                     <set_value name="$FactionTwo" exact="faction.player" />
                                     <set_value name="$FactionPowerLevel" exact="$PlayerPower" />
@@ -764,8 +764,9 @@
                                             value="$Enemy.relationto.{$FactionMain} lt $Enemy.relationto.{faction.player}">
                                             <!-- Dislike & Friendship Factors -->
                                             <set_value name="$RelationDislikeFactor"
-                                                exact="$Enemy.relationto.{$FactionMain}" />
+                                                    exact="(10*log(max(1000*abs($Enemy.relationto.{$FactionMain}),0.0000001))/log(10))/$RelationTreshhold" />
                                             <set_value name="$RelationFriendshipFactor"
+                                                    exact="(10*log(max(1000*$FactionMain.relationto.{faction.player},0.0000001))/log(10))/$RelationTreshhold" />
                                                 exact="$FactionMain.relationto.{faction.player}" />
                                             <!-- Multiplier GUI $RelationFactorMul -->
                                             <set_value name="$RelationDislikeFactor"
@@ -775,9 +776,9 @@
                                                 a factor actualy by dividing in by Max Value (30 UI Value) but to make things more unstable at end
                                                 game the better value will be somewhere in this range 18-25 -->
                                                 <set_value name="$RelationFriendshipFactor"
-                                                    exact="(10*log(1000*$RelationFriendshipFactor)/log(10))/$RelationTreshhold" />
+                                                        exact="(10*log(max(1000*$RelationFriendshipFactor,0.0000001))/log(10))/$RelationTreshhold" />
                                                 <set_value name="$RepHit"
-                                                    exact="$RepHit*log(1.15+($RelationFactorMul*$RelationDislikeFactor*($RelationDislikeFactor/$RelationFriendshipFactor)))" />
+                                                        exact="$RepHit*log(max(1.15+($RelationFactorMul*$RelationDislikeFactor*($RelationDislikeFactor/$RelationFriendshipFactor)),0.00000001))" />
                                                 <debug_to_file name="'ReactiveRepUpdate'"
                                                     directory="'ReactiveFactionsRetribution_log'"
                                                     text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (Dislike Factor Case 1) Change recalculated: ' + $RepHit +'. Values: [DislikeFactor] ' + $RelationDislikeFactor + ' [FriendshipFactor] ' + $RelationFriendshipFactor + ' [Multiplier] '+$RelationFactorMul"
@@ -785,7 +786,7 @@
                                             </do_if>
                                             <do_else>
                                                 <set_value name="$RepHit"
-                                                    exact="$RepHit*log($RelationFactorMul*$RelationDislikeFactor^2)" />
+                                                        exact="$RepHit*log(max($RelationFactorMul*$RelationDislikeFactor^2,0.0000001))" />
                                                 <debug_to_file name="'ReactiveRepUpdate'"
                                                     directory="'ReactiveFactionsRetribution_log'"
                                                     text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; (Dislike Factor Case 2) Change recalculated: ' + $RepHit +'. Values: [DislikeFactor] ' + $RelationDislikeFactor + ' [Multiplier] '+$RelationFactorMul"

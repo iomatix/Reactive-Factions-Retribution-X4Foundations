@@ -10,7 +10,8 @@
 - TODO: Changeable evaluation cooldown values in the mod menu + **stacking rep bonuses/penalties and applying them to the evaluation event instead of instantly.**
 - TODO: Button to trigger evaluation manually.
 
-## 2.4.0 - 2.4.1 - Support Update & Fixes
+## 2.4.0 - 2.4.2 - Support Update & Fixes
+- **Fixed** expection from math log function.
 - **Fixed** wrongly set relation reason in set_faction_relation. Changed to reason="relationchangereason.smalltalkreward" instead of "tag.smalltalkreward" which wasn't working correctly.
 - **Fixed** event sometimes failed to trigger correctly on relation changes.
 - **Fixed** missing tags — now fully excludes the smalltalkreward tag from the relation‐changed event.
