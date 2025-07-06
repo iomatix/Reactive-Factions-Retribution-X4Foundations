@@ -957,11 +957,11 @@
                                     <set_faction_relation faction="$FactionOne"
                                         otherfaction="faction.player"
                                         value="[($FactionOne.relationto.{faction.player} + $RepChange), -1].max"
-                                        reason="tag.smalltalkreward" />
+                                        reason="relationchangereason.smalltalkreward" />
                                     <set_faction_relation faction="faction.player"
                                         otherfaction="$FactionOne"
                                         value="$FactionOne.relationto.{faction.player}"
-                                        reason="tag.smalltalkreward" />
+                                        reason="relationchangereason.smalltalkreward" />
                                     <write_to_logbook category="tips"
                                         title="'\033B' + {2005311642,900100} + '\033X Reactive Factions Retribution \033G' + {2005311642,900101}"
                                         text="{2005311642,900102} + ' ' + $FactionOne +  ' ' + {2005311642,900104} + ' ' + $RepChange + ' ' + {2005311642,900105} + ' ' + $FactionMain + '.\n' + {2005311642,900106} + ' ' + $RepDiff + '.'" />
@@ -970,11 +970,11 @@
                                     <set_faction_relation faction="$FactionOne"
                                         otherfaction="faction.player"
                                         value="[($FactionOne.relationto.{faction.player} + $RepChange), 1].min"
-                                        reason="tag.smalltalkreward" />
+                                        reason="relationchangereason.smalltalkreward" />
                                     <set_faction_relation faction="faction.player"
                                         otherfaction="$FactionOne"
                                         value="$FactionOne.relationto.{faction.player}"
-                                        reason="tag.smalltalkreward" />
+                                        reason="relationchangereason.smalltalkreward" />
                                     <write_to_logbook category="tips"
                                         title="'\033B' + {2005311642,900100} + '\033X Reactive Factions Retribution \033G' + {2005311642,900101}"
                                         text="{2005311642,900102} + ' ' + $FactionOne +  ' ' + {2005311642,900103} + ' ' + $RepChange + ' ' + {2005311642,900105} + ' ' + $FactionMain + '.\n' + {2005311642,900106} + ' ' + $RepDiff + '.'" />
@@ -990,21 +990,21 @@
                                     <set_faction_relation faction="$FactionOne"
                                         otherfaction="faction.player"
                                         value="[($FactionOne.relationto.{faction.player} + $RepChange), -1].max"
-                                        reason="tag.smalltalkreward" />
+                                        reason="relationchangereason.smalltalkreward" />
                                     <set_faction_relation faction="faction.player"
                                         otherfaction="$FactionOne"
                                         value="$FactionOne.relationto.{faction.player}"
-                                        reason="tag.smalltalkreward" />
+                                        reason="relationchangereason.smalltalkreward" />
                                 </do_if>
                                 <do_else>
                                     <set_faction_relation faction="$FactionOne"
                                         otherfaction="faction.player"
                                         value="[($FactionOne.relationto.{faction.player} + $RepChange), 1].min"
-                                        reason="tag.smalltalkreward" />
+                                        reason="relationchangereason.smalltalkreward" />
                                     <set_faction_relation faction="faction.player"
                                         otherfaction="$FactionOne"
                                         value="$FactionOne.relationto.{faction.player}"
-                                        reason="tag.smalltalkreward" />
+                                        reason="relationchangereason.smalltalkreward" />
                                 </do_else>
                                 <debug_to_file name="'ReactiveRepUpdate'"
                                     directory="'ReactiveFactionsRetribution_log'"
