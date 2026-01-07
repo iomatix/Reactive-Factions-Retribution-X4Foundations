@@ -9,7 +9,6 @@
 - TODO: Changeable evaluation cooldown values in the mod menu + **stacking rep bonuses/penalties and applying them to the evaluation event instead of instantly.**
 - TODO: Button to trigger evaluation manually.
 
-<<<<<<< HEAD
 ## 2.4.0 - 2.4.5 - Support Update & Fixes
 - **Fixed** expection from math log function.
 - **Fixed** wrongly set relation reason in set_faction_relation. Changed to reason="relationchangereason.smalltalkreward" instead of "tag.smalltalkreward" which wasn't working correctly.
@@ -21,7 +20,7 @@
 - **Changed** Removed vanilla notification/logbook spam caused by relationchangereason.smalltalkreward.
 - **Changed** Reactive Factions stopped using smalltalkreward tag. If there is no value for the reason parameter when the rep value change event is triggered, mod will not process it.
 - **Fix** RF reputation adjustments are now fully isolated from smalltalk logic and no longer generate vanilla logbook entries or spam.
-- **Improvement** Logbook values are displayed as an UI reputation value instead of the raw float values.
+- **Improvement** Logbook values are displayed as UI reputation value instead of the raw float values.
 
 ## 2.2.8 - 2.3.4 Localization & Fixes
 

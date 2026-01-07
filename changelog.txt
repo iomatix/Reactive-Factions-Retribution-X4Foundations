@@ -11,7 +11,7 @@
 - **Changed** Removed vanilla notification/logbook spam caused by relationchangereason.smalltalkreward.
 - **Changed** Reactive Factions stopped using smalltalkreward tag. If there is no value for the reason parameter when the rep value change event is triggered, mod will not process it.
 - **Fix** RF reputation adjustments are now fully isolated from smalltalk logic and no longer generate vanilla logbook entries or spam.
-- **Improvement** Logbook values are displayed as an UI reputation value instead of the raw float values.
+- **Improvement** Logbook values are displayed as UI reputation value instead of the raw float values.
 ==================================== ******** =================================================================================================================
 				     2.2.8-2.3.4 Fixes and Localization
 ==================================== ******** =================================================================================================================
