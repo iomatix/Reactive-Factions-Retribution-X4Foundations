@@ -6,12 +6,11 @@
 - TODO: Political lobbying e.g. change relation X and Y, Player and X etc. for credits/rep/assets/law etc. Send envoy delegation or via new black market NPC ?  //vary on community feedback
 - TODO: More RPG tiers //vary on community feedback
 - TODO: KD Menu API integration adding new features and moving existing there. // or some new system provided by Egosoft from 7.0 to 8.0? https://wiki.egosoft.com:1337/X4%20Foundations%20Wiki/Modding%20Support/Breaking%20Changes/
-- TODO: Adding enum for `tag.reactivefaction` property manually via injection - if possible + Feature to toggle different tags via mod menu so user can decide which actions impact the bonuses/penalties.
 - TODO: Changeable evaluation cooldown values in the mod menu + **stacking rep bonuses/penalties and applying them to the evaluation event instead of instantly.**
 - TODO: Button to trigger evaluation manually.
 
 <<<<<<< HEAD
-## 2.4.0 - 2.4.2 - Support Update & Fixes
+## 2.4.0 - 2.4.5 - Support Update & Fixes
 - **Fixed** expection from math log function.
 - **Fixed** wrongly set relation reason in set_faction_relation. Changed to reason="relationchangereason.smalltalkreward" instead of "tag.smalltalkreward" which wasn't working correctly.
 - **Fixed** event sometimes failed to trigger correctly on relation changes.
@@ -19,6 +18,10 @@
 - **Improved** checkinterval cue now uses a separate cooldown variable ($NextPossibleCheckTime) to decouple polling frequency (6 min) from the 25 min cooldown.
 - **Tested** compatibility with X4: Foundations 7.6.0
 - **Changed** Experimental and Relative amplitudes are now ON by default. Those provide changes being more smooth and less arcady. User may turn them off in Extension Options menu provided by [Mod Support APIs](https://www.nexusmods.com/x4foundations/mods/1699).
+- **Changed** Removed vanilla notification/logbook spam caused by relationchangereason.smalltalkreward.
+- **Changed** Reactive Factions stopped using smalltalkreward tag. If there is no value for the reason parameter when the rep value change event is triggered, mod will not process it.
+- **Fix** RF reputation adjustments are now fully isolated from smalltalk logic and no longer generate vanilla logbook entries or spam.
+- **Improvement** Logbook values are displayed as an UI reputation value instead of the raw float values.
 
 ## 2.2.8 - 2.3.4 Localization & Fixes
 

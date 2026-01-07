@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="http://x4dynlib.access.ly/libraries/md.xsd">
     <cues>
-        <cue name="ReactiveInit" version="234">
+        <cue name="ReactiveInit" version="245">
             <conditions>
                 <check_any>
                     <event_cue_signalled cue="md.Setup.GameStart" />
@@ -182,6 +182,16 @@
                     title="'\033B[Update Info]\033X Reactive Factions Retribution \033G[2.2.6]'"
                     text="'\nHello there ' + player.name + ',\nThe modification was successfully updated to version ' +  '\033G2.2.6\033X' + '\n\n The mod has been updated to add Yaki lock to the mod menu. You may want to turn it on during the Yaki storyline to prevent losing reputation with the Yaki faction. \n Detailed changelog has been attached to the modification folder and is also available on both, Steam and Nexus websites.\n Please report all encountered problems or share your impressions about the modification so far.\n\nOh, also sending a small gift to help your galactic activities prosper!\n\n\033BThank you for being here, Commander! '" />
                 <transfer_money from="faction.visitor" to="faction.player" amount="5000Cr" />
+            </patch>
+            <!-- 2.4.5 update -->
+            <patch sinceversion="245">
+                <debug_to_file name="'Patch_RFR'" directory="'ReactiveFactionsRetribution_log'"
+                    text="'[ReactiveFactionsRetribution LOG] 2.4.5 update - check the changelog on Nexus page for more information.'"
+                    output="$isDebug" append="true" />
+                <write_to_logbook money="51000Cr" category="tips"
+                    title="'\033B[Update Info]\033X Reactive Factions Retribution \033G[2.4.5]'"
+                    text="'\nHello there ' + player.name + ',\nThe modification was successfully updated to version ' +  '\033G2.2.6\033X' + '\n\n The mod has been updated with proven fixes and official support to X4 - 8.X!'" />
+                <transfer_money from="faction.visitor" to="faction.player" amount="51000Cr" />
             </patch>
             <!-- Cues -->
             <cues>
@@ -467,18 +477,14 @@
                 <cue name="ReactiveApplyRep" instantiate="true">
                     <conditions>
                         <event_player_relation_changed />
-
                         <!-- only for positive changes and relationchangereason is not
                         reactivefaction, event case is not null -->
-                        <!-- tag.{relationchangereason.reactivefaction} won't work for now and it
-                        will receive null instead but docs says it should work  -->
-                        <!-- trying tag.reactivefaction for now if is it working -->
-                        <!-- tag.reactivefaction -> tag.smalltalkreward for now until it is not
-                        fixed by Ego -->
+                        <!-- From now param3 (reason) for ReactiveFactions is null, and stopped using smalltalkreward tag -->
+                        <!-- If there is no reason in the rep value change, it is not processed -->
                         <check_value
-                            value="(not tag.smalltalkreward?) or (tag.smalltalkreward? and event.param3 != tag.smalltalkreward)
-                                and event.param? 
-                                and event.param2.{1} gt event.param2.{2}" />
+                            value="event.param?
+                                and event.param2.{1} gt event.param2.{2}
+                                and event.param3?" />
                         <!-- only trigger once every seconds defined by GlobalCooldown  -->
                         <check_value value="player.age gt $NextPossibleRepChangeTime" />
                         <check_value value="event.param.isactive"
@@ -509,6 +515,7 @@
                             + '; param2[1]=' + event.param2.{1}
                             + '; param2[2]=' + event.param2.{2}
                             + '; param3='    + event.param3
+                            + '; reactivefactionschange?=' + (event.param3 == 'reactivefactionschange')
                             + '; smalltalk?=' + (tag.smalltalkreward? and event.param3 == tag.smalltalkreward)
                             + '; nextTime='  + $NextPossibleRepChangeTime
                             + '; playerPow=' + $PlayerPower
@@ -849,6 +856,8 @@
                     <actions>
                         <!-- 1.0 = 30		0.32 = 25		0.1 = 20		0.032 = 15		0.01 = 10		0.0032 = 5 -->
                         <!-- 1.0 = 30		0.316 = 25		0.1 = 20		0.0316 = 15		0.01 = 10		0.00316 = 5 -->
+                        <!-- float = 10 ^ ((UI - 30) / 10) -->
+                        <!-- UI = 10 * log10(float) + 30-->
                         <!-- Requires $isRepNegative, $FactionOne, $FactionTwo, and
                         $FactionPowerLevel -->
                         <!-- Returns $RepValuePossibleChange -->
@@ -942,78 +951,103 @@
                 <library name="SetNewReputation">
                     <!-- Requires $FactionOne, $RepChange, $isRepNegative  -->
                     <!-- Returns Void -->
-                    <!-- Notification Simplifer -->
+                    <!-- Notification Simplifier -->
                     <actions>
                         <do_if value="$FactionOne? and $RepChange gt 0">
-                            <!-- Notify the player only IF the target Faction is on relation ~3<>20
-                            or ~3<>20 range with the Player and RepChange was significant  -->
-                            <do_if
-                                value="$TurnOnAllNotifications == true or ($TurnOffNotifications == false and (
-                                ($FactionOne.relationto.{faction.player} gt 0.0016 and $FactionOne.relationto.{faction.player} lt 0.1)
-                                 or ($FactionOne.relationto.{faction.player} lt -0.0016 and $FactionOne.relationto.{faction.player} gt -0.1)
-                                ) and $RepChange ge 0.0012)">
+
+                            <!-- 1. Calculate UI delta based on the float value -->
+                            <set_value name="$FloatValue" exact="$RepChange" />
+                            <include_actions ref="RF_FloatToUI" />
+                            <set_value name="$UIRepChange" exact="$UIValue" />
+
+                            <!-- 1B. Same for RepDiff -->
+                            <set_value name="$FloatValue" exact="$RepDiff" />
+                            <include_actions ref="RF_FloatToUI" />
+                            <set_value name="$UIRepDiff" exact="$UIValue" />
+
+                            <!-- 2. Value declaration to check if we should notify -->
+                            <set_value name="$ShouldNotify" exact="false" />
+
+                            <!-- Mode: Show All -->
+                            <do_if value="$TurnOnAllNotifications == true">
+                                <set_value name="$ShouldNotify" exact="true" />
+                            </do_if>
+
+                            <!-- Mode: Smart (Default) -->
+                            <do_elseif value="$TurnOffNotifications == false">
+                                <do_if value="($UIRepChange gt 0.233)">
+                                    <set_value name="$ShouldNotify" exact="true" />
+                                </do_if>
+                            </do_elseif>
+                            <!-- else: TurnOffNotifications == true => ShouldNotify stays as false -->
+
+                            <!-- 3. check bool isRepNegative if we need to convert the value to negative -->
+                            <do_if value="$isRepNegative == true">
+                                <set_value name="$RepChange"   exact="-1 * $RepChange" />
+                                <set_value name="$UIRepChange" exact="-1 * $UIRepChange" />
+                            </do_if>
+
+                            <!-- 4. Call reputation value change -->
+                            <do_if value="$isRepNegative == true">
+                                <set_faction_relation faction="$FactionOne"
+                                    otherfaction="faction.player"
+                                    value="[($FactionOne.relationto.{faction.player} + $RepChange), -1].max"/>
+                            </do_if>
+                            <do_else>
+                                <set_faction_relation faction="$FactionOne"
+                                    otherfaction="faction.player"
+                                    value="[($FactionOne.relationto.{faction.player} + $RepChange), 1].min"/>
+                            </do_else>
+
+                            <!-- Symetry frakcja.player -> FactionOne -->
+                            <set_faction_relation faction="faction.player"
+                                otherfaction="$FactionOne"
+                                value="$FactionOne.relationto.{faction.player}"/>
+
+                            <!-- 5. Get the Logbook's text ready -->
+                            <!-- Defaults: only UI value -->
+                            <set_value name="$UIRepDisplay" exact="$UIRepChange" />
+
+                            <!-- If ALL notifications ON and UI = 0, show float -->
+                            <do_if value="$TurnOnAllNotifications == true and $UIRepChange == 0">
+                                <set_value name="$UIRepDisplay"
+                                    exact="'0 UI (float: ' + $RepChange + ')'" />
+                            </do_if>
+
+                            <!-- 6. Logbook only if ShouldNotify == true -->
+                            <do_if value="$ShouldNotify == true">
                                 <do_if value="$isRepNegative == true">
-                                    <set_value name="$RepChange" exact="-1*$RepChange" />
-                                    <set_faction_relation faction="$FactionOne"
-                                        otherfaction="faction.player"
-                                        value="[($FactionOne.relationto.{faction.player} + $RepChange), -1].max"
-                                        reason="relationchangereason.smalltalkreward" />
-                                    <set_faction_relation faction="faction.player"
-                                        otherfaction="$FactionOne"
-                                        value="$FactionOne.relationto.{faction.player}"
-                                        reason="relationchangereason.smalltalkreward" />
                                     <write_to_logbook category="tips"
                                         title="'\033B' + {2005311642,900100} + '\033X Reactive Factions Retribution \033G' + {2005311642,900101}"
-                                        text="{2005311642,900102} + ' ' + $FactionOne +  ' ' + {2005311642,900104} + ' ' + $RepChange + ' ' + {2005311642,900105} + ' ' + $FactionMain + '.\n' + {2005311642,900106} + ' ' + $RepDiff + '.'" />
+                                        text="{2005311642,900102} + ' ' + $FactionOne +  ' ' + {2005311642,900104} + ' ' + $UIRepDisplay + ' ' + {2005311642,900105} + ' ' + $FactionMain + '.\n' + {2005311642,900106} + ' ' + $UIRepDiff + '.'" />
                                 </do_if>
                                 <do_else>
-                                    <set_faction_relation faction="$FactionOne"
-                                        otherfaction="faction.player"
-                                        value="[($FactionOne.relationto.{faction.player} + $RepChange), 1].min"
-                                        reason="relationchangereason.smalltalkreward" />
-                                    <set_faction_relation faction="faction.player"
-                                        otherfaction="$FactionOne"
-                                        value="$FactionOne.relationto.{faction.player}"
-                                        reason="relationchangereason.smalltalkreward" />
                                     <write_to_logbook category="tips"
                                         title="'\033B' + {2005311642,900100} + '\033X Reactive Factions Retribution \033G' + {2005311642,900101}"
-                                        text="{2005311642,900102} + ' ' + $FactionOne +  ' ' + {2005311642,900103} + ' ' + $RepChange + ' ' + {2005311642,900105} + ' ' + $FactionMain + '.\n' + {2005311642,900106} + ' ' + $RepDiff + '.'" />
+                                        text="{2005311642,900102} + ' ' + $FactionOne +  ' ' + {2005311642,900103} + ' ' + $UIRepDisplay + ' ' + {2005311642,900105} + ' ' + $FactionMain + '.\n' + {2005311642,900106} + ' ' + $UIRepDiff + '.'" />
                                 </do_else>
+                                <!-- Debug with notifications -->
                                 <debug_to_file name="'ReactiveRepUpdate'"
                                     directory="'ReactiveFactionsRetribution_log'"
                                     text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Rep was changed with ' + $FactionOne + ' by: ' + $RepChange + ' due to change with ' + $FactionMain + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower + ' with notification.'"
                                     output="$isDebug" append="true" />
                             </do_if>
+                            <!-- 7. Debug without notifications -->
                             <do_else>
-                                <do_if value="$isRepNegative == true">
-                                    <set_value name="$RepChange" exact="-1*$RepChange" />
-                                    <set_faction_relation faction="$FactionOne"
-                                        otherfaction="faction.player"
-                                        value="[($FactionOne.relationto.{faction.player} + $RepChange), -1].max"
-                                        reason="relationchangereason.smalltalkreward" />
-                                    <set_faction_relation faction="faction.player"
-                                        otherfaction="$FactionOne"
-                                        value="$FactionOne.relationto.{faction.player}"
-                                        reason="relationchangereason.smalltalkreward" />
-                                </do_if>
-                                <do_else>
-                                    <set_faction_relation faction="$FactionOne"
-                                        otherfaction="faction.player"
-                                        value="[($FactionOne.relationto.{faction.player} + $RepChange), 1].min"
-                                        reason="relationchangereason.smalltalkreward" />
-                                    <set_faction_relation faction="faction.player"
-                                        otherfaction="$FactionOne"
-                                        value="$FactionOne.relationto.{faction.player}"
-                                        reason="relationchangereason.smalltalkreward" />
-                                </do_else>
                                 <debug_to_file name="'ReactiveRepUpdate'"
                                     directory="'ReactiveFactionsRetribution_log'"
                                     text="'[ReactiveFactionsRetribution LOG] ' + player.age + '; Rep was changed with ' + $FactionOne + ' by: ' + $RepChange + ' due to change with ' + $FactionMain + ' rep diff was ' + $RepDiff + ' with current power level of ' + $PlayerPower + ' without notification.'"
                                     output="$isDebug" append="true" />
                             </do_else>
                         </do_if>
+
+                        <!-- Cleanup -->
                         <remove_value name="$FactionOne" />
                         <remove_value name="$RepChange" />
+                        <remove_value name="$UIRepChange" />
+                        <remove_value name="$UIRepDisplay" />
+                        <remove_value name="$FloatValue" />
+                        <remove_value name="$ShouldNotify" />
                         <remove_value name="$isRepNegative" />
                     </actions>
                 </library>
@@ -1093,6 +1127,77 @@
                                 multiple="true" />
                             <remove_value name="$i" />
                         </do_if>
+                    </actions>
+                </library>
+                <library name="RF_FloatToUI">
+                    <!--
+                        Input:  $FloatValue   (delta reputation float, -1.0 .. +1.0)
+                        Output: $UIValue      (delta UI reputation, -30.0 .. +30.0)
+                    -->
+                    <actions>
+
+                        <!-- absolute value -->
+                        <set_value name="$absVal" exact="$FloatValue" />
+                        <do_if value="$absVal lt 0">
+                            <set_value name="$absVal" exact="-1 * $absVal" />
+                        </do_if>
+
+                        <!-- default -->
+                        <set_value name="$UIValue" exact="0.0" />
+
+                        <!-- ===== segment 0 → 5 ===== -->
+                        <do_if value="$absVal lt 0.00316">
+                            <set_value name="$UIValue" exact="($absVal / 0.00316) * 5" />
+                        </do_if>
+
+                        <!-- ===== segment 5 → 10 ===== -->
+                        <do_elseif value="$absVal lt 0.01">
+                            <set_value name="$UIValue"
+                                exact="5 + (($absVal - 0.00316) / (0.01 - 0.00316)) * 5" />
+                        </do_elseif>
+
+                        <!-- ===== segment 10 → 15 ===== -->
+                        <do_elseif value="$absVal lt 0.0316">
+                            <set_value name="$UIValue"
+                                exact="10 + (($absVal - 0.01) / (0.0316 - 0.01)) * 5" />
+                        </do_elseif>
+
+                        <!-- ===== segment 15 → 20 ===== -->
+                        <do_elseif value="$absVal lt 0.1">
+                            <set_value name="$UIValue"
+                                exact="15 + (($absVal - 0.0316) / (0.1 - 0.0316)) * 5" />
+                        </do_elseif>
+
+                        <!-- ===== segment 20 → 25 ===== -->
+                        <do_elseif value="$absVal lt 0.316">
+                            <set_value name="$UIValue"
+                                exact="20 + (($absVal - 0.1) / (0.316 - 0.1)) * 5" />
+                        </do_elseif>
+
+                        <!-- ===== segment 25 → 30 ===== -->
+                        <do_elseif value="$absVal lt 1.0">
+                            <set_value name="$UIValue"
+                                exact="25 + (($absVal - 0.316) / (1.0 - 0.316)) * 5" />
+                        </do_elseif>
+
+                        <!-- ===== >= 1.0 ===== -->
+                        <do_else>
+                            <set_value name="$UIValue" exact="30.0" />
+                        </do_else>
+
+                        <!-- ===== clamp UI ===== -->
+                        <do_if value="$UIValue lt 0">
+                            <set_value name="$UIValue" exact="0" />
+                        </do_if>
+                        <do_if value="$UIValue gt 30">
+                            <set_value name="$UIValue" exact="30" />
+                        </do_if>
+
+                        <!-- restore sign -->
+                        <do_if value="$FloatValue lt 0">
+                            <set_value name="$UIValue" exact="-1 * $UIValue" />
+                        </do_if>
+
                     </actions>
                 </library>
             </cues>
