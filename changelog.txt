@@ -1,4 +1,24 @@
 ==================================== ******** =================================================================================================================
+				     2.4.6 - Maintenance Update & Mandatory Fixes
+==================================== ******** =================================================================================================================
+### Gameplay & Geopolitical Immersion
+- **Refactored Rival Reaction Formulas:** Factions now react with realistic geopolitical outrage. Helping a faction that is already your close ally will now draw the harshest backlash from their enemies, rather than the previous counter-intuitive behavior.
+- **Story & Plot Lock Protection:** The mod now respects storyline diplomacy locks (such as during the Yaki or Terran plotlines). Factions with plot-locked relations will no longer have their standing altered unexpectedly.
+- **Balanced Friendship Scaling:** Toned down the exponential "snowball" reputation gain at late-game standing (+20 to +30) to keep long-term diplomatic progression rewarding and steady.
+- **Fixed Power Level 1 Bonus:** Fixed a bug where players at Power Level 1 were mistakenly receiving Power Level 8 bonus multipliers.
+- **Fixed Faction Locks:** Enabling the Scaleplate (SCA) or Yaki lock in the settings menu now properly exempts them from reactive diplomatic shifts.
+- **Persistent Cooldowns:** Dynamic recalculation of faction rosters will no longer reset active faction cooldown timers.
+
+### Interface & Settings Menu
+- **Fixed Asset Value Display:** Resolved an issue where total player asset values in the main menu were displayed with extra zeroes due to internal game engine money scaling.
+- **Native Cooldown Sliders:** Cooldown sliders (Global, Main Faction, and Enemy Faction) now reliably save and apply exact second values without timing drift.
+- **UI Grid & Layout Fixes:** Fixed alignment issues and missing row breaks in the Extension Settings menu, ensuring all headers and options display cleanly.
+
+### Stability & Performance
+- **Engine Crash & Syntax Fix:** Removed unsupported mathematical symbols that caused silent script syntax errors in the X4 engine log.
+- **Comprehensive Memory Optimization:** Added deep variable cleanups across all script cues, preventing lingering background memory bloat during long playthroughs.
+- **Legacy Patch Fixes:** Fixed credit reward discrepancies in historical update notices and updated the logbook notification to version 2.4.6.
+==================================== ******** =================================================================================================================
 				     2.4.0-2.4.5 - Support Update & Fixes
 ==================================== ******** =================================================================================================================
 - **Fixed** expection from math log function.
